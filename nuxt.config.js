@@ -44,8 +44,8 @@ module.exports = {
   modules: [
     [
       'storyblok-nuxt',
-      { accessToken: 'LzfbLRAF56JNFMkGiOxx0gtt', cacheProvider: 'memory' }
-      // { accessToken: 'lQVIeSpv6rmkjm63jCBqVwtt', cacheProvider: 'memory' }
+      // { accessToken: 'LzfbLRAF56JNFMkGiOxx0gtt', cacheProvider: 'memory' }
+      { accessToken: 'lQVIeSpv6rmkjm63jCBqVwtt', cacheProvider: 'memory' }
     ],
     ['@nuxtjs/markdownit']
   ],
