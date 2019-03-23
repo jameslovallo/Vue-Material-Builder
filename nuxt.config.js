@@ -1,5 +1,6 @@
 const pkg = require('./package')
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+const axios = require('axios')
 
 module.exports = {
   mode: 'universal',
