@@ -1,6 +1,18 @@
 <template>
   <div v-editable="blok">
-    <v-card>
+    <v-card
+      :color="blok.color"
+      :dark="blok.dark"
+      :elevation="blok.elevation"
+      :flat="blok.flat"
+      :height="blok.height"
+      :hover="blok.hover"
+      :min-height="blok.minheight"
+      :raised="blok.raised"
+      :width="blok.width"
+      :class="helpers"
+      :style="style"
+    >
       <v-img :src="blok.image" :aspect-ratio="blok.aspectratio"></v-img>
       <v-card-title primary-title>
         <component
