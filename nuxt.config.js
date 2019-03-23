@@ -79,7 +79,7 @@ module.exports = {
       let cache_version = 0
 
       // other routes that are not in Storyblok with their slug.
-      let routes = ['/']
+      let routes = ['/', '/home']
 
       // Load space and receive latest cache version key to improve performance
       axios
