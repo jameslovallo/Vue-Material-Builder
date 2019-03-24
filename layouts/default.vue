@@ -123,7 +123,7 @@ p, ol, ul {
 }
 
 .v-content__wrap {
-  background: #f5f5f5;
+  background: #f2f2f2;
 }
 
 </style>
