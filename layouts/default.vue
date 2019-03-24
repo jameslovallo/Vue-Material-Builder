@@ -122,4 +122,8 @@ p, ol, ul {
   margin: -.25rem;
 }
 
+.v-content__wrap {
+  background: #f5f5f5;
+}
+
 </style>
