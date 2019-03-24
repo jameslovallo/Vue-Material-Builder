@@ -114,12 +114,12 @@ p, ol, ul {
   grid-gap: 0.5rem;
 }
 
-* .layout > .flex {
+.layout > .flex {
   padding: 0.25rem !important;
 }
 
 .layout {
-  margin: -.25rem !important;
+  margin: -.25rem;
 }
 
 </style>

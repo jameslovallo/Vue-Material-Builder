@@ -20,7 +20,7 @@
       :class="blok.helpers"
       :style="blok.style"
     >
-      <v-toolbar-side-icon @click="drawer = !drawer" class="hidden-md-only"></v-toolbar-side-icon>
+      <v-toolbar-side-icon @click="drawer = !drawer" class="hidden-md-only mr-3"></v-toolbar-side-icon>
       <v-img :src="blok.logo" height="66%" :max-width="blok.logowidth" contain></v-img>
       <v-toolbar-title>{{blok.title}}</v-toolbar-title>
       <v-spacer></v-spacer>

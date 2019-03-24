@@ -10,24 +10,26 @@
       :min-height="blok.minheight"
       :raised="blok.raised"
       :width="blok.width"
-      :class="helpers"
-      :style="style"
+      :class="blok.helpers"
+      :style="blok.style"
     >
       <v-img :src="blok.image" :aspect-ratio="blok.aspectratio"></v-img>
-      <v-card-title primary-title>
+      <v-card-text>
         <component
           :key="blok._uid"
           v-for="blok in blok.cardcontent"
           :blok="blok"
           :is="blok.component | dashify"
         ></component>
-      </v-card-title>
+      </v-card-text>
+      <v-divider></v-divider>
       <v-card-actions>
         <component
           :key="blok._uid"
           v-for="blok in blok.cardactions"
           :blok="blok"
           :is="blok.component | dashify"
+          style="width: 100%;"
         ></component>
       </v-card-actions>
     </v-card>
@@ -39,3 +41,10 @@ export default {
   props: ["blok"]
 };
 </script>
+
+<style>
+.v-card__actions:empty {
+  display: none;
+}
+</style>
+
