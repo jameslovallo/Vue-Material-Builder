@@ -99,15 +99,6 @@ p, ol, ul {
   }
 }
 
-.feature {
-  font-size: 2rem;
-  text-align: center;
-  line-height: 3;
-  background: #ebeff2;
-  border-radius: 10px;
-  flex: 1;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -120,6 +111,10 @@ p, ol, ul {
 
 .layout {
   margin: -.25rem;
+}
+
+.theme--dark .v-divider {
+  opacity: 0.1;
 }
 
 </style>

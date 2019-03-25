@@ -19,6 +19,7 @@
       :style="blok.style"
       :target="blok.target"
       :to="blok.to"
+      v-on="blok.on"
     >
       <component
         :key="blok._uid"

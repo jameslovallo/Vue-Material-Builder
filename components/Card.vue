@@ -18,6 +18,9 @@
         :aspect-ratio="blok.aspectratio"
         :position="blok.hor + '% ' + blok.ver + '%'"
       ></v-img>
+      <v-card-title v-if="blok.title" primary-title :class="blok.titlecolor + ' headline'">
+        {{blok.title}}
+      </v-card-title>
       <v-card-text>
         <component
           :key="blok._uid"
@@ -26,8 +29,8 @@
           :is="blok.component | dashify"
         ></component>
       </v-card-text>
-      <v-divider :class="blok.hasactions"></v-divider>
-      <v-card-actions :class="blok.hasactions">
+      <v-divider v-if="blok.hasactions"></v-divider>
+      <v-card-actions v-if="blok.hasactions" class="pa-3">
         <component
           :key="blok._uid"
           v-for="blok in blok.cardactions"
@@ -45,9 +48,3 @@ export default {
   props: ["blok"]
 };
 </script>
-
-<style>
-.hidden {
-  display: none;
-}
-</style>
