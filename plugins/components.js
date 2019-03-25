@@ -15,6 +15,7 @@ import Markdown from '~/components/Markdown.vue'
 import Divider from '~/components/Divider.vue'
 import Spacer from '~/components/Spacer.vue'
 import Card from '~/components/Card.vue'
+import MediaCard from '~/components/MediaCard.vue'
 
 Vue.component('blok-page', Page)
 Vue.component('blok-grid', Grid)
@@ -32,3 +33,4 @@ Vue.component('blok-markdown', Markdown)
 Vue.component('blok-divider', Divider)
 Vue.component('blok-spacer', Spacer)
 Vue.component('blok-card', Card)
+Vue.component('blok-mediacard', MediaCard)

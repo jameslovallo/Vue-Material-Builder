@@ -13,11 +13,7 @@
       :class="blok.helpers"
       :style="blok.style"
     >
-      <v-img
-        :src="blok.image"
-        :aspect-ratio="blok.aspectratio"
-        :position="blok.hor + '% ' + blok.ver + '%'"
-      ></v-img>
+      <v-img :src="blok.image" :aspect-ratio="blok.aspectratio"></v-img>
       <v-card-text>
         <component
           :key="blok._uid"
@@ -51,3 +47,4 @@ export default {
   display: none;
 }
 </style>
+

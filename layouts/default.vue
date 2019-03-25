@@ -17,7 +17,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+  box-sizing: border-box;  background: #f2f2f2;
 }
 
 *,
@@ -120,10 +120,6 @@ p, ol, ul {
 
 .layout {
   margin: -.25rem;
-}
-
-.v-content__wrap {
-  background: #f2f2f2;
 }
 
 </style>
