@@ -21,9 +21,9 @@ import Page from '~/components/Page.vue'
 import PlainText from '~/components/PlainText.vue'
 import Row from '~/components/Row.vue'
 import Spacer from '~/components/Spacer.vue'
+import Sparkline from '~/components/Sparkline.vue'
 
 // Attach components to storyblok
-Vue.component('blok-page', Page)
 Vue.component('blok-button', Button)
 Vue.component('blok-card', Card)
 Vue.component('blok-column', Column)
@@ -40,6 +40,8 @@ Vue.component('blok-listtile', ListTile)
 Vue.component('blok-markdown', Markdown)
 Vue.component('blok-mediacard', MediaCard)
 Vue.component('blok-navigation', Navigation)
+Vue.component('blok-page', Page)
 Vue.component('blok-row', Row)
 Vue.component('blok-spacer', Spacer)
+Vue.component('blok-sparkline', Sparkline)
 Vue.component('blok-text', PlainText)
