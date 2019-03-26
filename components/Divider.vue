@@ -15,3 +15,9 @@ export default {
   props: ["blok"]
 };
 </script>
+
+<style>
+.theme--dark .v-divider {
+  opacity: 0.1;
+}
+</style>

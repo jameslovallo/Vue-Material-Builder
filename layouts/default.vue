@@ -7,7 +7,6 @@
 </template>
 
 <style>
-
 html {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
@@ -17,7 +16,8 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;  background: #f2f2f2;
+  box-sizing: border-box;
+  background: #f2f2f2;
 }
 
 *,
@@ -35,7 +35,7 @@ h5,
 h6 {
   font-weight: 400;
   line-height: 110%;
-  margin: .25em 0;
+  margin: 0.25em 0;
 }
 
 h1 a,
@@ -79,30 +79,30 @@ strong {
   font-weight: 500;
 }
 
-ol, ul {
+ol,
+ul {
   line-height: 1.5em;
 }
 
-p, ol, ul {
+p,
+ol,
+ul {
   font-size: 14px;
 }
 
 @media (min-width: 400px) and (max-width: 800px) {
-  p, ol, ul {
-    font-size: calc( (14px + 18 - 14) * ((100vw - 400px) / 2) );
+  p,
+  ol,
+  ul {
+    font-size: calc((14px + 18 - 14) * ((100vw - 400px) / 2));
   }
 }
 
 @media (min-width: 800px) {
-  p, ol, ul {
-    font-size:18px;
+  p,
+  ol,
+  ul {
+    font-size: 18px;
   }
 }
-
-
-
-.theme--dark .v-divider {
-  opacity: 0.1;
-}
-
 </style>

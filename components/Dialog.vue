@@ -24,11 +24,12 @@
         :class="blok.helpers"
         :style="blok.style"
       >
-        <v-img
-          :src="blok.image"
-          :aspect-ratio="blok.aspectratio"
-          :position="blok.hor + '% ' + blok.ver + '%'"
-        ></v-img>
+        <component
+          :key="blok._uid"
+          v-for="blok in blok.cardimage"
+          :blok="blok"
+          :is="blok.component | dashify"
+        ></component>
         <v-card-title
           v-if="blok.title"
           primary-title

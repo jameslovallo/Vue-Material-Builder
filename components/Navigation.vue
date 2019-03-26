@@ -1,7 +1,7 @@
 <template>
   <div v-editable="blok">
     <!-- DRAWER -->
-    <v-navigation-drawer v-model="drawer" clipped app fixed>
+    <v-navigation-drawer v-model="drawer" v-if="blok.usedrawer" clipped app>
       <component
         :key="blok._uid"
         v-for="blok in blok.sidebarcontent"
@@ -20,10 +20,12 @@
       :class="blok.helpers"
       :style="blok.style"
     >
-      <v-toolbar-side-icon @click="drawer = !drawer" v-show="blok.sideicon" class="hidden-md-only mr-3"></v-toolbar-side-icon>
-      <v-img :src="blok.logo" height="66%" :max-width="blok.logowidth" contain></v-img>
-      <v-toolbar-title>{{blok.title}}</v-toolbar-title>
-      <v-spacer></v-spacer>
+      <v-toolbar-side-icon
+        @click="drawer = !drawer"
+        v-if="blok.usedrawer"
+        class="hidden-md-only mr-3"
+      ></v-toolbar-side-icon>
+      <v-toolbar-title v-if="blok.title">{{blok.title}}</v-toolbar-title>
       <component
         :key="blok._uid"
         v-for="blok in blok.toolbarcontent"

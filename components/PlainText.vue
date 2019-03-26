@@ -1,7 +1,6 @@
 <template>
   <div v-editable="blok">
     <div>{{blok.text}}</div>
-
   </div>
 </template>
 

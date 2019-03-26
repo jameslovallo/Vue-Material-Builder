@@ -40,8 +40,7 @@ module.exports = {
   plugins: [
     '~/plugins/components',
     '~/plugins/filters',
-    '@/plugins/vuetify',
-    '~/plugins/carousel'
+    '@/plugins/vuetify'
   ],
 
   /*
