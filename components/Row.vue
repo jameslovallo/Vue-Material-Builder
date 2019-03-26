@@ -7,7 +7,7 @@
       :align-space-around="blok.alignspacearound"
       :align-space-between="blok.alignspacebetween"
       :align-start="blok.alignstart"
-      :class="blok.helpers"
+      :class="blok.helpers + ' ' + blok.grid"
       :column="blok.column"
       :justify-center="blok.justifycenter"
       :justify-end="blok.justifyend"
@@ -33,3 +33,13 @@ export default {
   props: ["blok"]
 };
 </script>
+
+<style>
+.layout > .flex {
+  padding: 0.5rem !important;
+}
+
+.negative-margin {
+  margin: 0 -.5rem;
+}
+</style>

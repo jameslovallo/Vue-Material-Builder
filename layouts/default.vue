@@ -99,19 +99,7 @@ p, ol, ul {
   }
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 0.5rem;
-}
 
-.layout > .flex {
-  padding: 0.25rem !important;
-}
-
-.layout {
-  margin: -.25rem;
-}
 
 .theme--dark .v-divider {
   opacity: 0.1;
