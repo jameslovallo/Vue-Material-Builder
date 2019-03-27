@@ -7,6 +7,8 @@ import Column from '~/components/Column.vue'
 import Dialog from '~/components/Dialog.vue'
 import Divider from '~/components/Divider.vue'
 import Drawer from '~/components/Drawer.vue'
+import ExpansionPanel from '~/components/ExpansionPanel.vue'
+import ExpansionPanelContent from '~/components/ExpansionPanelContent.vue'
 import Feature from '~/components/Feature.vue'
 import Grid from '~/components/Grid.vue'
 import Icon from '~/components/Icon.vue'
@@ -21,7 +23,6 @@ import Page from '~/components/Page.vue'
 import PlainText from '~/components/PlainText.vue'
 import Row from '~/components/Row.vue'
 import Spacer from '~/components/Spacer.vue'
-import Sparkline from '~/components/Sparkline.vue'
 
 // Attach components to storyblok
 Vue.component('blok-button', Button)
@@ -29,6 +30,8 @@ Vue.component('blok-card', Card)
 Vue.component('blok-column', Column)
 Vue.component('blok-dialog', Dialog)
 Vue.component('blok-divider', Divider)
+Vue.component('blok-expansionpanel', ExpansionPanel)
+Vue.component('blok-expansionpanelcontent', ExpansionPanelContent)
 Vue.component('blok-drawer', Drawer)
 Vue.component('blok-feature', Feature)
 Vue.component('blok-grid', Grid)
@@ -43,5 +46,4 @@ Vue.component('blok-navigation', Navigation)
 Vue.component('blok-page', Page)
 Vue.component('blok-row', Row)
 Vue.component('blok-spacer', Spacer)
-Vue.component('blok-sparkline', Sparkline)
 Vue.component('blok-text', PlainText)

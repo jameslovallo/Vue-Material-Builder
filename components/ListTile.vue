@@ -36,12 +36,7 @@
 
 <script>
 export default {
-  props: ["blok"],
-  copmputed: {
-    ishidden() {
-      return blok.image;
-    }
-  }
+  props: ["blok"]
 };
 </script>
 
