@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok">
-    <v-expansion-panel popout>
+    <v-expansion-panel>
       <component
         :key="blok._uid"
         v-for="blok in blok.content"
@@ -16,11 +16,3 @@ export default {
   props: ["blok"]
 };
 </script>
-
-<style>
-.v-expansion-panel > .storyblok__outline {
-  flex-basis: 100%;
-  display: flex;
-  justify-content: center;
-}
-</style>
