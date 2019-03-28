@@ -24,7 +24,7 @@
         primary-title
         :class="blok.titlecolor + ' headline'"
       >{{blok.title}}</v-card-title>
-      <v-card-text>
+      <v-card-text v-if="blok.cardcontent">
         <component
           :key="blok._uid"
           v-for="blok in blok.cardcontent"

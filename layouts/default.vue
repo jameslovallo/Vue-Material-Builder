@@ -105,4 +105,11 @@ ul {
     font-size: 18px;
   }
 }
+
+blockquote {
+  border: 1px dashed rgba(127,127,127,0.5);
+  border-left: 5px solid rgba(127,127,127,0.5);
+  border-radius: 5px;
+  padding: 10px;
+}
 </style>
