@@ -11,6 +11,10 @@ import ExpansionPanel from '~/components/ExpansionPanel.vue'
 import ExpansionPanelContent from '~/components/ExpansionPanelContent.vue'
 import Feature from '~/components/Feature.vue'
 import Form from '~/components/Form.vue'
+import FormEmail from '~/components/FormEmail.vue'
+import FormPhone from '~/components/FormPhone.vue'
+import FormText from '~/components/FormText.vue'
+import FormTextArea from '~/components/FormTextArea.vue'
 import MagicGrid from '~/components/MagicGrid.vue'
 import Icon from '~/components/Icon.vue'
 import Image from '~/components/Image.vue'
@@ -37,6 +41,10 @@ Vue.component('blok-expansionpanelcontent', ExpansionPanelContent)
 Vue.component('blok-drawer', Drawer)
 Vue.component('blok-feature', Feature)
 Vue.component('blok-form', Form)
+Vue.component('blok-formemail', FormEmail)
+Vue.component('blok-formphone', FormPhone)
+Vue.component('blok-formtext', FormText)
+Vue.component('blok-formtextarea', FormTextArea)
 Vue.component('blok-magicgrid', MagicGrid)
 Vue.component('blok-icon', Icon)
 Vue.component('blok-image', Image)
