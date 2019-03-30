@@ -17,7 +17,14 @@
       :srcset="blok.srcset"
       :transition="blok.transition"
       :width="blok.width"
-    ></v-img>
+    >
+      <component
+        :key="blok._uid"
+        v-for="blok in blok.image_content"
+        :blok="blok"
+        :is="blok.component | dashify"
+      ></component>
+    </v-img>
   </div>
 </template>
 

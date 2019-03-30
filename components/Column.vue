@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" :class="'flex ' + blok.xscol + ' ' + blok.smcol + ' ' + blok.mdcol + ' ' + blok.lgcol + ' ' + blok.xlcol">
+  <div v-editable="blok" :class="['flex', blok.xscol, blok.smcol, blok.mdcol, blok.lgcol, blok.xlcol]">
     <component
       :key="blok._uid"
       v-for="blok in blok.columncontent"

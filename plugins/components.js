@@ -10,7 +10,8 @@ import Drawer from '~/components/Drawer.vue'
 import ExpansionPanel from '~/components/ExpansionPanel.vue'
 import ExpansionPanelContent from '~/components/ExpansionPanelContent.vue'
 import Feature from '~/components/Feature.vue'
-import Grid from '~/components/Grid.vue'
+import Form from '~/components/Form.vue'
+import MagicGrid from '~/components/MagicGrid.vue'
 import Icon from '~/components/Icon.vue'
 import Image from '~/components/Image.vue'
 import List from '~/components/List.vue'
@@ -21,7 +22,7 @@ import Masonry from '~/components/Masonry.vue'
 import MediaCard from '~/components/MediaCard.vue'
 import Navigation from '~/components/Navigation.vue'
 import Page from '~/components/Page.vue'
-import PlainText from '~/components/PlainText.vue'
+import Text from '~/components/Text.vue'
 import Row from '~/components/Row.vue'
 import Spacer from '~/components/Spacer.vue'
 
@@ -35,7 +36,8 @@ Vue.component('blok-expansionpanel', ExpansionPanel)
 Vue.component('blok-expansionpanelcontent', ExpansionPanelContent)
 Vue.component('blok-drawer', Drawer)
 Vue.component('blok-feature', Feature)
-Vue.component('blok-grid', Grid)
+Vue.component('blok-form', Form)
+Vue.component('blok-magicgrid', MagicGrid)
 Vue.component('blok-icon', Icon)
 Vue.component('blok-image', Image)
 Vue.component('blok-list', List)
@@ -48,4 +50,4 @@ Vue.component('blok-navigation', Navigation)
 Vue.component('blok-page', Page)
 Vue.component('blok-row', Row)
 Vue.component('blok-spacer', Spacer)
-Vue.component('blok-text', PlainText)
+Vue.component('blok-text', Text)

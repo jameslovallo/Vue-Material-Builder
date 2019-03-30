@@ -1,13 +1,13 @@
 <template>
-  <div v-editable="blok">
     <v-layout
+      v-editable="blok"
       :align-baseline="blok.alignbaseline"
       :align-center="blok.aligncenter"
       :align-end="blok.alignend"
       :align-space-around="blok.alignspacearound"
       :align-space-between="blok.alignspacebetween"
       :align-start="blok.alignstart"
-      :class="blok.helpers + ' ' + blok.grid"
+      :class="[blok.helpers, blok.remove_gutter]"
       :column="blok.column"
       :justify-center="blok.justifycenter"
       :justify-end="blok.justifyend"
@@ -25,7 +25,6 @@
         :is="blok.component | dashify"
       ></component>
     </v-layout>
-  </div>
 </template>
 
 <script>
@@ -39,7 +38,7 @@ export default {
   padding: 0.5rem !important;
 }
 
-.negative-margin {
-  margin: 0 -.5rem;
+.remove-gutter {
+  margin: -.5rem;
 }
 </style>

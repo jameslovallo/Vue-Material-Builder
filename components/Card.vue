@@ -19,12 +19,15 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
-      <v-card-title
-        v-if="blok.title"
-        primary-title
-        :class="blok.titlecolor + ' headline'"
-      >{{blok.title}}</v-card-title>
-      <v-card-text v-if="blok.cardcontent">
+      <v-card-title v-if="blok.hastitle">
+        <component
+          :key="blok._uid"
+          v-for="blok in blok.title"
+          :blok="blok"
+          :is="blok.component | dashify"
+        ></component>
+      </v-card-title>
+      <v-card-text>
         <component
           :key="blok._uid"
           v-for="blok in blok.cardcontent"

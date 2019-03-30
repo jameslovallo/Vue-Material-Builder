@@ -2,18 +2,18 @@
   <div v-editable="blok">
     <component
       :key="blok._uid"
-      v-for="blok in blok.nav"
+      v-for="blok in blok.layout"
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
-    <v-container>
+    <div :class="['page-content', blok.container]">
       <component
         :key="blok._uid"
         v-for="blok in blok.body"
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
-    </v-container>
+    </div>
   </div>
 </template>
 
