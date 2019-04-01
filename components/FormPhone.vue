@@ -1,5 +1,5 @@
 <template>
-  <v-text-field v-model="phone" :rules="phoneRules" required label="Phone number" mask="phone"></v-text-field>
+  <v-text-field v-editable="blok" v-model="phone" :rules="phoneRules" required label="Phone number" mask="phone"></v-text-field>
 </template>
 
 <script>

@@ -23,7 +23,6 @@ import ListSubheader from '~/components/ListSubheader.vue'
 import ListTile from '~/components/ListTile.vue'
 import Markdown from '~/components/Markdown.vue'
 import Masonry from '~/components/Masonry.vue'
-import MediaCard from '~/components/MediaCard.vue'
 import Navigation from '~/components/Navigation.vue'
 import Page from '~/components/Page.vue'
 import Text from '~/components/Text.vue'
@@ -53,7 +52,6 @@ Vue.component('blok-listsubheader', ListSubheader)
 Vue.component('blok-listtile', ListTile)
 Vue.component('blok-markdown', Markdown)
 Vue.component('blok-masonry', Masonry)
-Vue.component('blok-mediacard', MediaCard)
 Vue.component('blok-navigation', Navigation)
 Vue.component('blok-page', Page)
 Vue.component('blok-row', Row)

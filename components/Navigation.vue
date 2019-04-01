@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok">
+  <div v-editable="blok" id="nav">
     <!-- DRAWER -->
     <v-navigation-drawer v-model="drawer" v-if="blok.usedrawer" clipped app>
       <component

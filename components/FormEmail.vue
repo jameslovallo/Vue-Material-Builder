@@ -1,5 +1,5 @@
 <template>
-  <v-text-field label="E-mail" name="email" v-model="email" :rules="emailRules" required></v-text-field>
+  <v-text-field v-editable="blok" label="E-mail" name="email" v-model="email" :rules="emailRules" required></v-text-field>
 </template>
 
 <script>

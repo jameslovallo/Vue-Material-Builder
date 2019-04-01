@@ -1,7 +1,5 @@
 <template>
-  <div v-editable="blok">
-    <v-subheader>{{blok.text}}</v-subheader>
-  </div>
+  <v-subheader v-editable="blok">{{blok.text}}</v-subheader>
 </template>
 
 <script>

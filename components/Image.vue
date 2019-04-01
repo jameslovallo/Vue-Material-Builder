@@ -1,31 +1,30 @@
 <template>
-  <div v-editable="blok">
-    <v-img
-      :alt="blok.alt"
-      :aspect-ratio="blok.aspectratio"
-      :contain="blok.contain"
-      :gradient="blok.gradient"
-      :height="blok.height"
-      :lazy-src="blok.src"
-      :max-height="blok.maxheight"
-      :max-width="blok.maxwidth"
-      :min-height="blok.minheight"
-      :min-width="blok.minwidth"
-      :position="blok.hor + '% ' + blok.ver + '%'"
-      :sizes="blok.sizes"
-      :src="blok.src"
-      :srcset="blok.srcset"
-      :transition="blok.transition"
-      :width="blok.width"
-    >
-      <component
-        :key="blok._uid"
-        v-for="blok in blok.image_content"
-        :blok="blok"
-        :is="blok.component | dashify"
-      ></component>
-    </v-img>
-  </div>
+  <v-img
+    v-editable="blok"
+    :alt="blok.alt"
+    :aspect-ratio="blok.aspectratio"
+    :contain="blok.contain"
+    :gradient="blok.gradient"
+    :height="blok.height"
+    :lazy-src="blok.src"
+    :max-height="blok.maxheight"
+    :max-width="blok.maxwidth"
+    :min-height="blok.minheight"
+    :min-width="blok.minwidth"
+    :position="blok.hor + '% ' + blok.ver + '%'"
+    :sizes="blok.sizes"
+    :src="blok.src"
+    :srcset="blok.srcset"
+    :transition="blok.transition"
+    :width="blok.width"
+  >
+    <component
+      :key="blok._uid"
+      v-for="blok in blok.image_content"
+      :blok="blok"
+      :is="blok.component | dashify"
+    ></component>
+  </v-img>
 </template>
 
 <script>

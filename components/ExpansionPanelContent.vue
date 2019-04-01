@@ -1,5 +1,6 @@
 <template>
   <v-expansion-panel-content
+    v-editable="blok"
     :disabled="blok.disabled"
     :hide-actions="blok.hide_actions"
     :lazy="blok.lazy"
