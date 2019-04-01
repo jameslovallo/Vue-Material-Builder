@@ -12,7 +12,6 @@
     :href="blok.href"
     :icon="blok.icon"
     :large="blok.large"
-    :derp="blok.derp"
     :outline="blok.outline"
     :round="blok.round"
     :router="blok.router"
