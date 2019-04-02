@@ -25,11 +25,6 @@ module.exports = {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/css/swiper.min.css'
       }
     ]
   },
@@ -42,13 +37,12 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['@/assets/style/app.styl', 'swiper/dist/css/swiper.css'],
+  css: ['@/assets/style/app.styl'],
 
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
-    { src: '~/plugins/nuxt-swiper-plugin.js', ssr: false },
     '~/plugins/components',
     '~/plugins/filters',
     '@/plugins/vuetify',
