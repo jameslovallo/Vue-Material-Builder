@@ -33,29 +33,19 @@ export default {
   data() {
     return {
       swiperOption: {
-        loop: true,
-        effect: "coverflow",
-        centeredSlides: true,
         slidesPerView: "auto",
-        initialSlide: 1,
-        slideToClickedSlide: true,
-        keyboardControl: true,
-        lazyLoading: true,
-        preventClicks: false,
-        lazyLoadingInPrevNext: true,
-        coverflowEffect: {
-          rotate: 0,
-          stretch: 0,
-          depth: 1000,
-          modifier: 1,
-          slideShadows: false
-        },
+        centeredSlides: true,
+        spaceBetween: 100,
+        onlyExternal: true,
+        effect: "coverflow",
+        speed: 600,
+        coverflowEffect: { slideShadows: false },
         pagination: {
           el: ".swiper-pagination"
         }
       }
     };
-  },
+  }
 };
 </script>
 
