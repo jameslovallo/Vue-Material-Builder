@@ -3,6 +3,7 @@ import Vue from 'vue'
 // Import components from files
 import Button from '~/components/Button.vue'
 import Card from '~/components/Card.vue'
+import Carousel from '~/components/Carousel.vue'
 import Column from '~/components/Column.vue'
 import Dialog from '~/components/Dialog.vue'
 import Divider from '~/components/Divider.vue'
@@ -32,6 +33,7 @@ import Spacer from '~/components/Spacer.vue'
 // Attach components to storyblok
 Vue.component('blok-button', Button)
 Vue.component('blok-card', Card)
+Vue.component('blok-carousel', Carousel)
 Vue.component('blok-column', Column)
 Vue.component('blok-dialog', Dialog)
 Vue.component('blok-divider', Divider)

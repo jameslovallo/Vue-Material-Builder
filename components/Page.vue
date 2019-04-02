@@ -6,6 +6,14 @@
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
+    <div class="page-hero">
+      <component
+        :key="blok._uid"
+        v-for="blok in blok.hero"
+        :blok="blok"
+        :is="blok.component | dashify"
+      ></component>
+    </div>
     <div :class="['page-content', blok.container]">
       <component
         :key="blok._uid"

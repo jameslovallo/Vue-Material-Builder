@@ -110,4 +110,8 @@ blockquote {
   border-radius: 5px;
   padding: 10px;
 }
+
+.fa-phone {
+  transform: scaleX(-1);
+}
 </style>
