@@ -34,12 +34,13 @@ export default {
     return {
       swiperOption: {
         slidesPerView: "auto",
+        loop: true,
         centeredSlides: true,
-        spaceBetween: 100,
         onlyExternal: true,
         effect: "coverflow",
         speed: 600,
-        coverflowEffect: { slideShadows: false },
+        slideToClickedSlide: true,
+        coverflowEffect: { slideShadows: false, rotate: 0 },
         pagination: {
           el: ".swiper-pagination"
         }
@@ -50,6 +51,10 @@ export default {
 </script>
 
 <style>
+.swiper-container-3d {
+  perspective: 125;
+}
+
 .swiper-slide {
   width: auto;
 }
