@@ -32,3 +32,10 @@ export default {
   }
 };
 </script>
+
+<style>
+.v-input__icon .fa {
+  font-size: 16px;
+  margin-left: -2px;
+}
+</style>
