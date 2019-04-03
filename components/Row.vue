@@ -9,6 +9,7 @@
       :align-start="blok.alignstart"
       :class="[blok.helpers, blok.remove_gutter]"
       :column="blok.column"
+      :fill-height="blok.fill_height"
       :justify-center="blok.justifycenter"
       :justify-end="blok.justifyend"
       :justify-space-around="blok.justifyspacearound"

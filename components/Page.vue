@@ -1,8 +1,8 @@
 <template>
-  <div v-editable="blok" class="page">
+  <v-content v-editable="blok" class="page" :id="blok.name" style="min-height: 100vh;">
     <component
       :key="blok._uid"
-      v-for="blok in blok.layout"
+      v-for="blok in blok.main_navigation"
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
@@ -14,7 +14,7 @@
         :is="blok.component | dashify"
       ></component>
     </div>
-    <div :class="['page-content', blok.container]">
+    <div :class="['page-content', blok.page_layout]">
       <component
         :key="blok._uid"
         v-for="blok in blok.body"
@@ -22,7 +22,7 @@
         :is="blok.component | dashify"
       ></component>
     </div>
-  </div>
+  </v-content>
 </template>
 
 <script>
