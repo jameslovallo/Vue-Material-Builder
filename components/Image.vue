@@ -15,7 +15,6 @@
     :sizes="blok.sizes"
     :src="blok.src"
     :srcset="blok.srcset"
-    :transition="blok.transition"
     :width="blok.width"
   >
     <component

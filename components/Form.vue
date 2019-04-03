@@ -16,6 +16,11 @@ import axios from "axios";
 
 export default {
   props: ["blok"],
+  data () {
+      return {
+        valid: false
+      }
+  },
   methods: {
     submit() {
       if (this.$refs.form.validate()) {
