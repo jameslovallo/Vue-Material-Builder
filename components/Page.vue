@@ -23,6 +23,7 @@
       ></component>
     </div>
     <div
+      :v-if="blok.use_background"
       class="page-background"
       :style="'background:' + blok.background_color + ' url(' + '\'' + blok.background_image + '\'' + ')  ' + blok.background_repeat + ' ' + blok.background_vertical_alignment + ' ' + blok.background_horizontal_alignment + '/' + blok.background_image_size"
     ></div>
