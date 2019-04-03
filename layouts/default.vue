@@ -93,6 +93,7 @@ strong {
 ol,
 ul {
   line-height: 1.5em;
+  margin-bottom: 1em;
 }
 
 p,
