@@ -16,6 +16,8 @@
     :src="blok.src"
     :srcset="blok.srcset"
     :width="blok.width"
+    :class="blok.helpers"
+    :style="blok.style"
   >
     <component
       :key="blok._uid"

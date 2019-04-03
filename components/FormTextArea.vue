@@ -1,5 +1,6 @@
 <template>
-  <v-textarea v-editable="blok"
+  <v-textarea
+    v-editable="blok"
     :autofocus="blok.auto_focus"
     :box="blok.box"
     :clear-icon="blok.clear_icon.icon"
@@ -14,7 +15,9 @@
     :required="blok.required"
     :class="blok.helpers"
     :style="blok.style"
-    no-resize></v-textarea>
+    no-resize
+    auto-grow
+  ></v-textarea>
 </template>
 
 <script>

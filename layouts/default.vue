@@ -1,6 +1,21 @@
 <template>
-    <nuxt/>
+  <nuxt/>
 </template>
+
+<script>
+if (process.client) {
+  document.addEventListener("DOMContentLoaded", function() {
+    let vh = window.innerHeight;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  });
+
+  window.addEventListener("resize", evt => {
+    let vh = window.innerHeight;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  });
+}
+</script>
+
 
 <style>
 html {

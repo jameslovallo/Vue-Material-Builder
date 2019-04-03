@@ -1,5 +1,5 @@
 <template>
-  <v-content v-editable="blok" class="page" :id="blok.name" style="min-height: 100vh;">
+  <v-content v-editable="blok" class="page" v-id="blok.name" style="min-height: var(--vh, 100vw);">
     <component
       :key="blok._uid"
       v-for="blok in blok.main_navigation"
@@ -22,6 +22,10 @@
         :is="blok.component | dashify"
       ></component>
     </div>
+    <div
+      class="page-background"
+      :style="'background:' + blok.background_color + ' url(' + '\'' + blok.background_image + '\'' + ')  ' + blok.background_repeat + ' ' + blok.background_vertical_alignment + ' ' + blok.background_horizontal_alignment + '/' + blok.background_image_size"
+    ></div>
   </v-content>
 </template>
 
@@ -30,3 +34,17 @@ export default {
   props: ["blok"]
 };
 </script>
+
+<style>
+.page {
+  position: relative;
+}
+.page-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+</style>
