@@ -1,7 +1,7 @@
 <template>
   <div v-editable="blok" id="nav">
     <!-- DRAWER -->
-    <v-navigation-drawer v-model="drawer" v-if="blok.usedrawer" clipped app>
+    <v-navigation-drawer v-model="drawer" v-if="blok.usedrawer" clipped app dark>
       <component
         :key="blok._uid"
         v-for="blok in blok.sidebarcontent"

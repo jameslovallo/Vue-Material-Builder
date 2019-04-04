@@ -38,7 +38,6 @@ export default {
 .blur-bg {
   overflow: hidden;
   position: relative;
-  border: 1px solid rgba(0,0,0,0.5)
 }
 
 .blur-bg > .v-image__image {
