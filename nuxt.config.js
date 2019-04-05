@@ -37,7 +37,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['@/assets/style/app.styl'],
+  css: ['@/assets/style/app.styl', 'swiper/dist/css/swiper.css'],
 
   /*
    ** Plugins to load before mounting the App
@@ -47,6 +47,7 @@ module.exports = {
     '~/plugins/filters',
     '@/plugins/vuetify',
     '~/plugins/masonry'
+
   ],
 
   /*

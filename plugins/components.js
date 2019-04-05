@@ -3,6 +3,7 @@ import Vue from 'vue'
 // Import components from files
 import Button from '~/components/Button.vue'
 import Card from '~/components/Card.vue'
+import Swiper from '~/components/Swiper.vue'
 import Column from '~/components/Column.vue'
 import Dialog from '~/components/Dialog.vue'
 import Divider from '~/components/Divider.vue'
@@ -55,5 +56,6 @@ Vue.component('blok-masonry', Masonry)
 Vue.component('blok-navigation', Navigation)
 Vue.component('blok-page', Page)
 Vue.component('blok-row', Row)
+Vue.component('blok-swiper', Swiper)
 Vue.component('blok-spacer', Spacer)
 Vue.component('blok-text', Text)
