@@ -77,6 +77,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 #slider label {
@@ -119,6 +120,7 @@ a {
 #s5:checked ~ #slide4 {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
   transform: translate3d(-33%, 0, -200px);
+  z-index: 2;
 }
 
 #s1:checked ~ #slide1,
@@ -128,6 +130,7 @@ a {
 #s5:checked ~ #slide5 {
   box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
   transform: translate3d(0, 0, 0);
+  z-index: 3;
 }
 
 #s1:checked ~ #slide2,
@@ -137,6 +140,7 @@ a {
 #s5:checked ~ #slide1 {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
   transform: translate3d(33%, 0, -200px);
+  z-index: 2;
 }
 
 #s1:checked ~ #slide3,
