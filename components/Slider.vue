@@ -1,5 +1,10 @@
 <template>
-  <section id="slider">
+  <section
+    id="slider"
+    v-editable="blok"
+    :style="'padding-top: calc(' + blok.aspect_ratio/2 + '% + 10px);' + 'padding-bottom: calc(' + blok.aspect_ratio/2 + '% + 10px);'"
+    :class="[blok.indicators, blok.helpers]"
+  >
     <input type="radio" name="slider" id="s1" checked>
     <input type="radio" name="slider" id="s2">
     <input type="radio" name="slider" id="s3">
@@ -12,6 +17,7 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
+      <a v-if="blok.slide_1_link" :href="blok.slide_1_link" :target="blok.slide_1_target"></a>
     </label>
     <label for="s2" id="slide2">
       <component
@@ -20,6 +26,7 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
+      <a v-if="blok.slide_2_link" :href="blok.slide_2_link" :target="blok.slide_2_target"></a>
     </label>
     <label for="s3" id="slide3">
       <component
@@ -28,6 +35,7 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
+      <a v-if="blok.slide_3_link" :href="blok.slide_3_link" :target="blok.slide_3_target"></a>
     </label>
     <label for="s4" id="slide4">
       <component
@@ -36,6 +44,7 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
+      <a v-if="blok.slide_4_link" :href="blok.slide_4_link" :target="blok.slide_4_target"></a>
     </label>
     <label for="s5" id="slide5">
       <component
@@ -44,6 +53,7 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
+      <a v-if="blok.slide_5_link" :href="blok.slide_5_link" :target="blok.slide_5_target"></a>
     </label>
   </section>
 </template>
@@ -55,11 +65,8 @@ export default {
 </script>
 
 <style scoped>
-
 [type="radio"] {
   visibility: hidden;
-  top: 50%;
-  left: 50%;
 }
 
 #slider {
@@ -72,13 +79,6 @@ export default {
   justify-content: center;
 }
 
-#slider:before {
-  content: '';
-  position: relative;
-  display: block;
-  padding-top: 50%;
-}
-
 #slider label {
   margin: auto;
   width: 60%;
@@ -88,10 +88,19 @@ export default {
   left: 0;
   right: 0;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.33s ease-out;
   background: dimgray;
   border-radius: 10px;
   overflow: hidden;
+}
+
+a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
 }
 
 #s1:checked ~ #slide4,
@@ -139,8 +148,16 @@ export default {
   transform: translate3d(66%, 0, -400px);
 }
 
+#s1:checked ~ #slide1 a,
+#s2:checked ~ #slide2 a,
+#s3:checked ~ #slide3 a,
+#s4:checked ~ #slide4 a,
+#s5:checked ~ #slide5 a {
+  pointer-events: all;
+}
+
 [type="radio"]:before {
-  content: '';
+  content: "";
   visibility: visible;
   display: block;
   height: 20px;
@@ -170,7 +187,11 @@ export default {
 }
 
 [type="radio"]:checked:before {
-  border: 3px solid #2196F3;
-  transition: .33s;
+  border: 3px solid #2196f3;
+  transition: 0.33s;
+}
+
+.hide-indicators [type="radio"]:before {
+  display: none;
 }
 </style>
