@@ -100,7 +100,7 @@ export default {
 #s4:checked ~ #slide2,
 #s5:checked ~ #slide3 {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
-  transform: translate3d(-45%, 0, -300px);
+  transform: translate3d(-66%, 0, -400px);
 }
 
 #s1:checked ~ #slide5,
@@ -109,7 +109,7 @@ export default {
 #s4:checked ~ #slide3,
 #s5:checked ~ #slide4 {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
-  transform: translate3d(-22%, 0, -150px);
+  transform: translate3d(-33%, 0, -200px);
 }
 
 #s1:checked ~ #slide1,
@@ -127,7 +127,7 @@ export default {
 #s4:checked ~ #slide5,
 #s5:checked ~ #slide1 {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
-  transform: translate3d(22%, 0, -150px);
+  transform: translate3d(33%, 0, -200px);
 }
 
 #s1:checked ~ #slide3,
@@ -136,7 +136,7 @@ export default {
 #s4:checked ~ #slide1,
 #s5:checked ~ #slide2 {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
-  transform: translate3d(44%, 0, -300px);
+  transform: translate3d(66%, 0, -400px);
 }
 
 [type="radio"]:before {
