@@ -3,7 +3,7 @@
     :active-class="blok.active_class"
     :cycle="blok.cycle"
     :dark="blok.dark"
-    :delimeter-icon="blok.delimeter_icon"
+    :delimeter-icon="blok.delimeter_icon.icon"
     :height="blok.height"
     :hide-controls="blok.hide_controls"
     :hide-delimiters="blok.hide_delimiters"
@@ -11,13 +11,13 @@
     :light="blok.light"
     :mandatory="blok.mandatory"
     :max="blok.max_width"
-    :next-icon="blok.next_icon"
-    :prev-icon="blok.prev_icon"
+    :next-icon="blok.next_icon.icon"
+    :prev-icon="blok.prev_icon.icon"
     :reverse="blok.reverse"
     :touchless="blok.touchless"
     :vertical="blok.vertical"
     :style="blok.style"
-    :class="helpers"
+    :class="blok.helpers"
   >
     <component
       :key="blok._uid"
@@ -33,3 +33,12 @@ export default {
   props: ["blok"]
 };
 </script>
+
+<style>
+.v-carousel__prev {
+  left: 20px;
+}
+.v-carousel__next {
+  right: 20px;
+}
+</style>

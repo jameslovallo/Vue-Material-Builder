@@ -30,6 +30,8 @@ import Page from '~/components/Page.vue'
 import Row from '~/components/Row.vue'
 import Slider from '~/components/Slider.vue'
 import Spacer from '~/components/Spacer.vue'
+import Stepper from '~/components/Stepper.vue'
+import StepperItem from '~/components/StepperItem.vue'
 import Text from '~/components/Text.vue'
 
 // Attach components to storyblok
@@ -62,4 +64,6 @@ Vue.component('blok-page', Page)
 Vue.component('blok-row', Row)
 Vue.component('blok-slider', Slider)
 Vue.component('blok-spacer', Spacer)
+Vue.component('blok-stepper', Stepper)
+Vue.component('blok-stepperitem', StepperItem)
 Vue.component('blok-text', Text)

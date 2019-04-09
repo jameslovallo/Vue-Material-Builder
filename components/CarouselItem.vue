@@ -1,7 +1,6 @@
 <template>
   <v-carousel-item
     :lazy="blok.lazy_load"
-    :transition="blok.transition"
     :disabled="blok.disabled"
   >
     <component
