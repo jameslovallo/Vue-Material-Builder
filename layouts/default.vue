@@ -1,5 +1,17 @@
 <template>
-  <nuxt/>
+  <div class="body">
+    <div
+      v-if="!$store.state.settings.navigation"
+      v-editable="$store.state.settings"
+    >Define header blocks here</div>
+    <component
+      :key="blok._uid"
+      v-for="blok in $store.state.settings.navigation"
+      :blok="blok"
+      :is="blok.component | dashify"
+    ></component>
+    <nuxt/>
+  </div>
 </template>
 
 <script>
