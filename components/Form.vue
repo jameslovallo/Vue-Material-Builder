@@ -1,22 +1,76 @@
 <template>
-  <v-form
+  <v-card
     v-editable="blok"
-    v-model="valid"
-    ref="form"
-    method="post"
-    lazy-validation
-    :action="'https://formspree.io/' + blok.recipient"
+    :color="blok.color"
+    :dark="blok.dark"
+    :elevation="blok.elevation"
+    :flat="blok.flat"
+    :height="blok.height"
+    :hover="blok.hover"
+    :max-height="blok.max_height"
+    :max-width="blok.max_width"
+    :min-height="blok.min_height"
+    :min-width="blok.min_width"
+    :raised="blok.raised"
+    :width="blok.width"
+    :class="blok.helpers"
+    :style="blok.style"
   >
-    <input type="hidden" name="form-name" value="Contact Form">
-    <component
-      :key="blok._uid"
-      v-for="blok in blok.content"
-      :blok="blok"
-      :is="blok.component | dashify"
-    ></component>
-    <v-btn @click="submit" :disabled="!valid" type="submit" value="send">submit</v-btn>
-    <v-btn @click="clear" flat color="red">clear</v-btn>
-  </v-form>
+    <v-form
+      v-editable="blok"
+      v-model="valid"
+      ref="form"
+      method="post"
+      lazy-validation
+      :action="'https://formspree.io/' + blok.recipient"
+    >
+      <component
+        :key="blok._uid"
+        v-for="blok in blok.cardimage"
+        :blok="blok"
+        :is="blok.component | dashify"
+      ></component>
+      <v-card-title v-if="blok.hastitle">
+        <component
+          :key="blok._uid"
+          v-for="blok in blok.title"
+          :blok="blok"
+          :is="blok.component | dashify"
+        ></component>
+      </v-card-title>
+      <v-card-text>
+        <component
+          :key="blok._uid"
+          v-for="blok in blok.form_fields"
+          :blok="blok"
+          :is="blok.component | dashify"
+        ></component>
+      </v-card-text>
+      <v-divider v-if="blok.hasactions"></v-divider>
+      <v-card-actions class="pa-3">
+        <v-btn
+          @click="submit"
+          :disabled="!valid"
+          :color="blok.button_color"
+          :dark="blok.button_dark"
+          :outline="blok.button_outline"
+          :round="blok.button_round"
+          type="submit"
+          value="send"
+        >
+          <component
+            :key="blok._uid"
+            v-for="blok in blok.button_icon"
+            :blok="blok"
+            :is="blok.component | dashify"
+          ></component>
+          {{blok.button_text}}
+        </v-btn>
+        <v-spacer></v-spacer>
+        <v-btn @click="clear" flat color="red">clear</v-btn>
+      </v-card-actions>
+    </v-form>
+  </v-card>
 </template>
 
 <script>
