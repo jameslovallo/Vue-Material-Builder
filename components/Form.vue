@@ -1,12 +1,12 @@
 <template>
-  <v-form v-editable="blok" v-model="valid" ref="form" lazy-validation :netlify="blok.netlify">
+  <v-form v-editable="blok" v-model="valid" ref="form" lazy-validation netlify>
     <component
       :key="blok._uid"
       v-for="blok in blok.content"
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
-    <v-btn @click="submit" :disabled="!valid">submit</v-btn>
+    <v-btn @click="submit" :disabled="!valid" type="submit">submit</v-btn>
     <v-btn @click="clear" flat color="red">clear</v-btn>
   </v-form>
 </template>
