@@ -3,7 +3,7 @@
     <div
       v-if="!$store.state.settings.navigation"
       v-editable="$store.state.settings"
-    >Define header blocks here</div>
+    ></div>
     <component
       :key="blok._uid"
       v-for="blok in $store.state.settings.navigation"
@@ -27,7 +27,6 @@ if (process.client) {
   });
 }
 </script>
-
 
 <style>
 html {
