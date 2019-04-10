@@ -1,13 +1,20 @@
 <template>
-  <v-form v-editable="blok" v-model="valid" ref="form" method="post" lazy-validation netlify>
-    <input type="hidden" name="form-name" value="Contact Form" />
+  <v-form
+    v-editable="blok"
+    v-model="valid"
+    ref="form"
+    method="post"
+    lazy-validation
+    :action="'https://formspree.io/' + blok.recipient"
+  >
+    <input type="hidden" name="form-name" value="Contact Form">
     <component
       :key="blok._uid"
       v-for="blok in blok.content"
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
-    <v-btn @click="submit" :disabled="!valid" type="submit">submit</v-btn>
+    <v-btn @click="submit" :disabled="!valid" type="submit" value="send">submit</v-btn>
     <v-btn @click="clear" flat color="red">clear</v-btn>
   </v-form>
 </template>
@@ -17,10 +24,10 @@ import axios from "axios";
 
 export default {
   props: ["blok"],
-  data () {
-      return {
-        valid: false
-      }
+  data() {
+    return {
+      valid: false
+    };
   },
   methods: {
     submit() {
