@@ -1,5 +1,6 @@
 <template>
-  <v-form v-editable="blok" v-model="valid" ref="form" lazy-validation netlify>
+  <v-form v-editable="blok" v-model="valid" ref="form" method="post" lazy-validation netlify>
+    <input type="hidden" name="form-name" value="Contact Form" />
     <component
       :key="blok._uid"
       v-for="blok in blok.content"
