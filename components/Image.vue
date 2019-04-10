@@ -16,7 +16,7 @@
     :src="blok.src"
     :srcset="blok.srcset"
     :width="blok.width"
-    :class="[blok.helpers, blok.blur_background]"
+    :class="[blok.helpers, blok.blur_background, blok.is_bg]"
     :style="blok.style"
   >
     <component
@@ -48,5 +48,14 @@ export default {
   width: calc(100% + 20px);
   top: -10px;
   left: -10px;
+}
+
+.is-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
 </style>
