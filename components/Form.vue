@@ -46,7 +46,7 @@
           :is="blok.component | dashify"
         ></component>
       </v-card-text>
-      <v-divider v-if="blok.hasactions"></v-divider>
+      <v-divider></v-divider>
       <v-card-actions class="pa-3">
         <v-btn
           @click="submit"
