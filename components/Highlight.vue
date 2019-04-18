@@ -48,8 +48,8 @@ code {
 }
 .lang {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 10px;
+  right: 10px;
 }
 .code-title {
   color: #abb2bf;
