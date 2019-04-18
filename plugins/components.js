@@ -17,6 +17,7 @@ import FormEmail from '~/components/FormEmail.vue'
 import FormPhone from '~/components/FormPhone.vue'
 import FormText from '~/components/FormText.vue'
 import FormTextArea from '~/components/FormTextArea.vue'
+import Highlight from '~/components/Highlight.vue'
 import Icon from '~/components/Icon.vue'
 import Image from '~/components/Image.vue'
 import List from '~/components/List.vue'
@@ -51,6 +52,7 @@ Vue.component('blok-formemail', FormEmail)
 Vue.component('blok-formphone', FormPhone)
 Vue.component('blok-formtext', FormText)
 Vue.component('blok-formtextarea', FormTextArea)
+Vue.component('blok-highlight', Highlight)
 Vue.component('blok-icon', Icon)
 Vue.component('blok-image', Image)
 Vue.component('blok-list', List)

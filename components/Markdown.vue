@@ -15,10 +15,6 @@ export default {
 </script>
 
 <style>
-.markdown code:before,
-.markdown code:after {
-  display: none;
-}
 .v-card__text .markdown *:first-child {
   margin-top: 0;
 }

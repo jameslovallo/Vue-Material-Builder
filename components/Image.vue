@@ -50,12 +50,11 @@ export default {
   left: -10px;
 }
 
-.is-bg {
+.application--wrap .is-bg {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
 }
 </style>

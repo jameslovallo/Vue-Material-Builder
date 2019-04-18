@@ -1,9 +1,6 @@
 <template>
-  <div class="body">
-    <div
-      v-if="!$store.state.settings.navigation"
-      v-editable="$store.state.settings"
-    ></div>
+  <v-app class="body">
+    <div v-if="!$store.state.settings.navigation" v-editable="$store.state.settings"></div>
     <component
       :key="blok._uid"
       v-for="blok in $store.state.settings.navigation"
@@ -11,7 +8,7 @@
       :is="blok.component | dashify"
     ></component>
     <nuxt/>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -134,6 +131,15 @@ blockquote {
   border-left: 5px solid rgba(127, 127, 127, 0.5);
   border-radius: 5px;
   padding: 10px;
+}
+
+code {
+  border-radius: 0;
+}
+
+code:before,
+code:after {
+  display: none;
 }
 
 .fa-phone {
