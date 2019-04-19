@@ -127,10 +127,10 @@ ul {
 }
 
 blockquote {
-  border: 1px dashed rgba(127, 127, 127, 0.5);
-  border-left: 5px solid rgba(127, 127, 127, 0.5);
+  background: rgba(125,125,125,0.1);
+  border-left: 5px solid rgba(125,125,125,0.15);
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 10px 10px 15px;
 }
 
 code {

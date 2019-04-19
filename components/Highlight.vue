@@ -42,9 +42,10 @@ code {
   padding: 1em;
   padding-bottom: 1.25em;
   line-height: 1.33em;
+  font-family: Roboto Mono;
 }
 .hljs {
-  filter: saturate(1.25);
+  filter: saturate(1.5);
 }
 .highlight-wrapper {
   position: relative;

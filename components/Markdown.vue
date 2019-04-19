@@ -15,10 +15,12 @@ export default {
 </script>
 
 <style>
-.v-card__text .markdown *:first-child {
+.markdown *:first-child,
+.markdown blockquote * {
   margin-top: 0;
 }
-.v-card__text .markdown *:last-child {
+.markdown *:last-child,
+.markdown blockquote * {
   margin-bottom: 0;
 }
 </style>

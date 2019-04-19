@@ -30,7 +30,7 @@
         :is="blok.component | dashify"
       ></component>
     </v-card-title>
-    <v-card-text>
+    <v-card-text :class="blok.full_bleed_content">
       <component
         :key="blok._uid"
         v-for="blok in blok.cardcontent"
@@ -56,3 +56,9 @@ export default {
   props: ["blok"]
 };
 </script>
+
+<style scoped>
+.full-bleed {
+  padding: 0;
+}
+</style>
