@@ -43,6 +43,9 @@ code {
   padding-bottom: 1.25em;
   line-height: 1.33em;
 }
+.hljs {
+  filter: saturate(1.25);
+}
 .highlight-wrapper {
   position: relative;
 }
