@@ -6,6 +6,7 @@
     :contain="blok.contain"
     :gradient="blok.gradient"
     :height="blok.height"
+    :lazysrc="blok.src"
     :max-height="blok.maxheight"
     :max-width="blok.maxwidth"
     :min-height="blok.minheight"
@@ -32,7 +33,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .blur-bg {
   overflow: hidden;
   position: relative;

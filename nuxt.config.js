@@ -47,7 +47,6 @@ module.exports = {
     '~/plugins/filters',
     '@/plugins/vuetify',
     '~/plugins/masonry'
-
   ],
 
   /*
@@ -78,7 +77,7 @@ module.exports = {
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
       stylus: {
-        import: ["~assets/style/variables.styl"]
+        import: ['~assets/style/variables.styl']
       }
     },
 
