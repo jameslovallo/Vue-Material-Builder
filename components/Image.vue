@@ -13,7 +13,6 @@
     :position="blok.hor + '% ' + blok.ver + '%'"
     :sizes="blok.sizes"
     :src="blok.src"
-    :srcset="blok.srcset"
     :width="blok.width"
     :class="[blok.helpers, blok.blur_background, blok.is_bg]"
     :style="blok.style"
@@ -33,7 +32,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .blur-bg {
   overflow: hidden;
   position: relative;
