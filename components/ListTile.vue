@@ -10,7 +10,7 @@
     :exact-active-class="blok.exactactiveclass"
     :href="blok.href"
     :nuxt="blok.nuxt"
-    :ripple="blok.ripple"
+    ripple
     :style="blok.style"
     :target="blok.target"
     :to="blok.to"

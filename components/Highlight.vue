@@ -44,11 +44,9 @@ code {
   line-height: 1.33em;
   font-family: Roboto Mono;
 }
-.hljs {
-  filter: saturate(1.5);
-}
 .highlight-wrapper {
   position: relative;
+  filter: saturate(1.25);
 }
 .lang {
   position: absolute;

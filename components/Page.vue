@@ -1,5 +1,10 @@
 <template>
   <v-content v-editable="blok" class="page" v-id="blok.name" style="min-height: var(--vh, 100vw);">
+    <div
+      v-if="blok.use_background"
+      class="page-background"
+      :style="`background: url(${blok.background_image}) ${blok.background_repeat} ${blok.background_horizontal_alignment} ${blok.background_vertical_alignment}/${blok.background_image_size}`"
+    ></div>
     <component
       :key="blok._uid"
       v-for="blok in blok.main_navigation"
@@ -14,7 +19,7 @@
         :is="blok.component | dashify"
       ></component>
     </div>
-    <div :class="['page-content', blok.page_layout]">
+    <div :class="['page-content', blok.page_layout, 'py-5']">
       <component
         :key="blok._uid"
         v-for="blok in blok.body"
@@ -22,11 +27,6 @@
         :is="blok.component | dashify"
       ></component>
     </div>
-    <div
-      v-if="blok.use_background"
-      class="page-background"
-      :style="'background:' + blok.background_color + ' url(' + '\'' + blok.background_image + '\'' + ')  ' + blok.background_repeat + ' ' + blok.background_vertical_alignment + ' ' + blok.background_horizontal_alignment + '/' + blok.background_image_size"
-    ></div>
   </v-content>
 </template>
 
@@ -46,6 +46,5 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
 }
 </style>

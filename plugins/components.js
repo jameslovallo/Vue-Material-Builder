@@ -9,6 +9,7 @@ import Column from '~/components/Column.vue'
 import Dialog from '~/components/Dialog.vue'
 import Divider from '~/components/Divider.vue'
 import Drawer from '~/components/Drawer.vue'
+import Dropdown from '~/components/Dropdown.vue'
 import ExpansionPanel from '~/components/ExpansionPanel.vue'
 import ExpansionPanelContent from '~/components/ExpansionPanelContent.vue'
 import Feature from '~/components/Feature.vue'
@@ -28,6 +29,7 @@ import Markdown from '~/components/Markdown.vue'
 import Masonry from '~/components/Masonry.vue'
 import Navigation from '~/components/Navigation.vue'
 import Page from '~/components/Page.vue'
+import Parallax from '~/components/Parallax.vue'
 import Row from '~/components/Row.vue'
 import Slider from '~/components/Slider.vue'
 import Spacer from '~/components/Spacer.vue'
@@ -44,6 +46,7 @@ Vue.component('blok-column', Column)
 Vue.component('blok-dialog', Dialog)
 Vue.component('blok-divider', Divider)
 Vue.component('blok-drawer', Drawer)
+Vue.component('blok-dropdown', Dropdown)
 Vue.component('blok-expansionpanel', ExpansionPanel)
 Vue.component('blok-expansionpanelcontent', ExpansionPanelContent)
 Vue.component('blok-feature', Feature)
@@ -63,6 +66,7 @@ Vue.component('blok-markdown', Markdown)
 Vue.component('blok-masonry', Masonry)
 Vue.component('blok-navigation', Navigation)
 Vue.component('blok-page', Page)
+Vue.component('blok-parallax', Parallax)
 Vue.component('blok-row', Row)
 Vue.component('blok-slider', Slider)
 Vue.component('blok-spacer', Spacer)
