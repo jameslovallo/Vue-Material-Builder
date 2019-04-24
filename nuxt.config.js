@@ -57,7 +57,8 @@ module.exports = {
       'storyblok-nuxt',
       { accessToken: 'lQVIeSpv6rmkjm63jCBqVwtt', cacheProvider: 'memory' }
     ],
-    ['@nuxtjs/markdownit']
+    ['@nuxtjs/markdownit'],
+    ['@nuxtjs/pwa']
   ],
 
   markdownit: { injected: true },

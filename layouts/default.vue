@@ -15,7 +15,7 @@
 if (process.client) {
   document.addEventListener("DOMContentLoaded", function() {
     let vh = window.innerHeight;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    document.documentElement.style.setProperty("--vh", `${vh}px`);z
   });
 
   window.addEventListener("resize", evt => {

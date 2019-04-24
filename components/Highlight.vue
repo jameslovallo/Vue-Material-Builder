@@ -66,4 +66,11 @@ small {
 }
 </style>
 
-
+<style>
+.hljs-doctag, .hljs-keyword, .hljs-formula, .hljs-built_in {
+  font-style: italic;
+}
+.css .hljs-built_in {
+  color: #56b6c2;
+}
+</style>
