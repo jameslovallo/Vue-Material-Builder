@@ -6,7 +6,7 @@
     :contain="blok.contain"
     :gradient="blok.gradient"
     :height="blok.height"
-    :lazysrc="blok.src"
+    :lazy-src="blok.src"
     :max-height="blok.maxheight"
     :max-width="blok.maxwidth"
     :min-height="blok.minheight"
