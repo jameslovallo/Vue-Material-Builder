@@ -5,12 +5,6 @@
       class="page-background"
       :style="`background: url(${blok.background_image}) ${blok.background_repeat} ${blok.background_horizontal_alignment} ${blok.background_vertical_alignment}/${blok.background_image_size}`"
     ></div>
-    <component
-      :key="blok._uid"
-      v-for="blok in blok.main_navigation"
-      :blok="blok"
-      :is="blok.component | dashify"
-    ></component>
     <div class="page-hero">
       <component
         :key="blok._uid"
