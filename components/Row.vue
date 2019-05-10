@@ -7,7 +7,7 @@
       :align-space-around="blok.alignspacearound"
       :align-space-between="blok.alignspacebetween"
       :align-start="blok.alignstart"
-      :class="[blok.helpers, blok.remove_gutter]"
+      :class="[blok.helpers, blok.remove_gutter, `align-${blok.align}`, `justify-${blok.justify}`, blok.row_or_column]"
       :column="blok.column"
       :fill-height="blok.fill_height"
       :justify-center="blok.justifycenter"

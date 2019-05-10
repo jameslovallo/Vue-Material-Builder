@@ -11,6 +11,7 @@
         :large="blok.button_large"
         :outline="blok.button_outline"
         :round="blok.button_round"
+        :small="blok.button_small"
       >
         <component
           :key="blok._uid"

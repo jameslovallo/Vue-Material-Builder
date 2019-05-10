@@ -1,5 +1,8 @@
 <template>
-  <div v-editable="blok" class="grid">
+  <div
+    v-editable="blok"
+    :style="`display: grid; grid-template-columns: repeat(auto-fit, minmax(${blok.column_size}, 1fr)); grid-gap: ${blok.grid_gap};`"
+  >
     <component
       :key="blok._uid"
       v-for="blok in blok.columns"
@@ -14,11 +17,3 @@ export default {
   props: ["blok"]
 };
 </script>
-
-<style>
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 1rem;
-}
-</style>

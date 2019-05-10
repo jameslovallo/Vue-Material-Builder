@@ -1,6 +1,7 @@
 const pkg = require('./package')
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const axios = require('axios')
+const token = 'lQVIeSpv6rmkjm63jCBqVwtt'
 
 module.exports = {
   mode: 'universal',
@@ -53,10 +54,7 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    [
-      'storyblok-nuxt',
-      { accessToken: 'lQVIeSpv6rmkjm63jCBqVwtt', cacheProvider: 'memory' }
-    ],
+    ['storyblok-nuxt', { accessToken: token, cacheProvider: 'memory' }],
     ['@nuxtjs/markdownit'],
     ['@nuxtjs/pwa']
   ],
@@ -86,12 +84,11 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) { }
   },
 
   generate: {
-    routes: function(callback) {
-      const token = `lQVIeSpv6rmkjm63jCBqVwtt`
+    routes: function (callback) {
       const version = 'published'
       let cache_version = 0
 

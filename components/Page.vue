@@ -1,5 +1,5 @@
 <template>
-  <v-content v-editable="blok" class="page" v-id="blok.name" style="min-height: var(--vh, 100vw);">
+  <v-content v-editable="blok" :id="pageID" class="page" style="min-height: var(--vh, 100vw);">
     <div
       v-if="blok.use_background"
       class="page-background"
@@ -26,7 +26,13 @@
 
 <script>
 export default {
-  props: ["blok"]
+  props: ["blok"],
+  computed: {
+    // a computed getter
+    pageID() {
+      return "home_" + this.$route.params.pathMatch.replace("/", "_");
+    }
+  }
 };
 </script>
 

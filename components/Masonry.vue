@@ -3,7 +3,7 @@
     v-editable="blok"
     :cols="{default: blok.default_rows, 599: blok.xs_rows, 959: blok.sm_rows, 1263: blok.md_rows, 1903: blok.lg_rows}"
     :class="[blok.helpers, 'masonry']"
-    :gutter="10"
+    gutter="10"
     :style="blok.style"
   >
     <component
