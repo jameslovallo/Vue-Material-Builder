@@ -6,16 +6,16 @@
     :contain="blok.contain"
     :gradient="blok.gradient"
     :height="blok.height"
-    :lazy-src="blok.src"
+    :lazy-src="blok.src ? blok.src : `https://source.unsplash.com/random/${randomWidth}x${randomHeight}?${blok.placeholder_search_term}`"
     :max-height="blok.maxheight"
     :max-width="blok.maxwidth"
     :min-height="blok.minheight"
     :min-width="blok.minwidth"
     :position="blok.hor + '% ' + blok.ver + '%'"
     :sizes="blok.sizes"
-    :src="blok.src"
+    :src="blok.src ? blok.src : `https://source.unsplash.com/random/${randomWidth}x${randomHeight}?${blok.placeholder_search_term}`"
     :width="blok.width"
-    :class="[blok.helpers, blok.blur_background, blok.is_bg]"
+    :class="blok.helpers"
     :style="blok.style"
   >
     <component
@@ -29,31 +29,18 @@
 
 <script>
 export default {
-  props: ["blok"]
+  props: ["blok"],
+  computed: {
+    randomHeight() {
+      var min = Math.ceil(1000);
+      var max = Math.floor(500);
+      return Math.floor(Math.random() * (max - min)) + min;
+    },
+    randomWidth() {
+      var min = Math.ceil(1000);
+      var max = Math.floor(500);
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+  }
 };
 </script>
-
-<style>
-.blur-bg {
-  overflow: hidden;
-  position: relative;
-}
-
-.blur-bg > .v-image__image {
-  background-attachment: fixed;
-  position: absolute;
-  filter: blur(5px);
-  height: calc(100% + 20px);
-  width: calc(100% + 20px);
-  top: -10px;
-  left: -10px;
-}
-
-.application--wrap .is-bg {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-</style>

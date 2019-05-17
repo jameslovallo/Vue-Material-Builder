@@ -21,6 +21,14 @@
         :is="blok.component | dashify"
       ></component>
     </div>
+    <div class="page-footer">
+      <component
+        :key="blok._uid"
+        v-for="blok in blok.footer"
+        :blok="blok"
+        :is="blok.component | dashify"
+      ></component>
+    </div>
   </v-content>
 </template>
 
