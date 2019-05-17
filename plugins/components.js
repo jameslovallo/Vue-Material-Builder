@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 // Import components from files
+import Alert from '~/components/Alert.vue'
 import Button from '~/components/Button.vue'
 import Card from '~/components/Card.vue'
 import Carousel from '~/components/Carousel.vue'
@@ -21,6 +22,7 @@ import FormTextArea from '~/components/FormTextArea.vue'
 import Highlight from '~/components/Highlight.vue'
 import Icon from '~/components/Icon.vue'
 import Image from '~/components/Image.vue'
+import Link from '~/components/Link.vue'
 import List from '~/components/List.vue'
 import ListSubheader from '~/components/ListSubheader.vue'
 import ListTile from '~/components/ListTile.vue'
@@ -36,8 +38,10 @@ import Spacer from '~/components/Spacer.vue'
 import Stepper from '~/components/Stepper.vue'
 import StepperItem from '~/components/StepperItem.vue'
 import Text from '~/components/Text.vue'
+import Typer from '~/components/Typer.vue'
 
 // Attach components to storyblok
+Vue.component('blok-alert', Alert)
 Vue.component('blok-button', Button)
 Vue.component('blok-card', Card)
 Vue.component('blok-carousel', Carousel)
@@ -58,6 +62,7 @@ Vue.component('blok-formtextarea', FormTextArea)
 Vue.component('blok-highlight', Highlight)
 Vue.component('blok-icon', Icon)
 Vue.component('blok-image', Image)
+Vue.component('blok-link', Link)
 Vue.component('blok-list', List)
 Vue.component('blok-listsubheader', ListSubheader)
 Vue.component('blok-listtile', ListTile)
@@ -73,3 +78,4 @@ Vue.component('blok-spacer', Spacer)
 Vue.component('blok-stepper', Stepper)
 Vue.component('blok-stepperitem', StepperItem)
 Vue.component('blok-text', Text)
+Vue.component('blok-typer', Typer)

@@ -1,3 +1,4 @@
+const SiteName = "VuetiBlok Template"
 const pkg = require('./package')
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const axios = require('axios')
@@ -10,7 +11,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: SiteName,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -47,7 +48,8 @@ module.exports = {
     '~/plugins/components',
     '~/plugins/filters',
     '@/plugins/vuetify',
-    '~/plugins/masonry'
+    '~/plugins/masonry',
+    { src: 'plugins/vue-typer.js', ssr: false }
   ],
 
   /*
