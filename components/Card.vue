@@ -22,7 +22,7 @@
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
-    <v-card-title v-if="blok.hastitle">
+    <v-card-title v-if="blok.title != false">
       <component
         :key="blok._uid"
         v-for="blok in blok.title"
@@ -30,7 +30,7 @@
         :is="blok.component | dashify"
       ></component>
     </v-card-title>
-    <v-card-text :class="blok.full_bleed_content">
+    <v-card-text v-if="blok.cardcontent != false" :class="blok.full_bleed_content">
       <component
         :key="blok._uid"
         v-for="blok in blok.cardcontent"
@@ -38,8 +38,8 @@
         :is="blok.component | dashify"
       ></component>
     </v-card-text>
-    <v-divider v-if="blok.hasactions"></v-divider>
-    <v-card-actions v-if="blok.hasactions" class="pa-3">
+    <v-divider v-if="blok.cardactions != false"></v-divider>
+    <v-card-actions v-if="blok.cardactions != false" class="pa-3">
       <component
         :key="blok._uid"
         v-for="blok in blok.cardactions"
