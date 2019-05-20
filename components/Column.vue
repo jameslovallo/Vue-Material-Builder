@@ -11,11 +11,6 @@
 
 <script>
 export default {
-  props: ["blok"],
-  computed: {
-    mediaQueries() {
-      var style = 'flex ' + this.blok.xscol;
-    }
-  }
+  props: ["blok"]
 };
 </script>
