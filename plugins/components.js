@@ -13,7 +13,6 @@ import Drawer from '~/components/Drawer.vue'
 import Dropdown from '~/components/Dropdown.vue'
 import ExpansionPanel from '~/components/ExpansionPanel.vue'
 import ExpansionPanelContent from '~/components/ExpansionPanelContent.vue'
-import Feature from '~/components/Feature.vue'
 import Form from '~/components/Form.vue'
 import FormEmail from '~/components/FormEmail.vue'
 import FormPhone from '~/components/FormPhone.vue'
@@ -53,7 +52,6 @@ Vue.component('blok-drawer', Drawer)
 Vue.component('blok-dropdown', Dropdown)
 Vue.component('blok-expansionpanel', ExpansionPanel)
 Vue.component('blok-expansionpanelcontent', ExpansionPanelContent)
-Vue.component('blok-feature', Feature)
 Vue.component('blok-form', Form)
 Vue.component('blok-formemail', FormEmail)
 Vue.component('blok-formphone', FormPhone)

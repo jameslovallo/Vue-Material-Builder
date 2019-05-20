@@ -11,6 +11,7 @@
     </v-navigation-drawer>
     <!-- TOOLBAR -->
     <v-toolbar
+      v-if="blok.toolbar_content != false"
       app
       clipped-left
       :color="blok.color"

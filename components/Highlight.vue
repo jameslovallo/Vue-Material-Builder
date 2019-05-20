@@ -1,26 +1,26 @@
 <template>
   <div v-editable="blok" class="highlight-wrapper">
-    <div class="code-title" v-if="blok.title">
+    <div class="code-title" v-if="blok.title != false">
       {{blok.title}}
-      <small class="description" v-if="blok.description">{{blok.description}}</small>
+      <span class="lang">
+        <i v-if="blok.language == 'js'" class="mdi mdi-language-javascript" style="color: yellow;"></i>
+        <i
+          v-if="blok.language == 'html' && blok.show_html_as_vue == false"
+          class="mdi mdi-language-html5"
+          style="color: #F47A31;"
+        ></i>
+        <i
+          v-if="blok.language == 'html' && blok.show_html_as_vue == true"
+          class="mdi mdi-vuejs"
+          style="color: #3FB984;"
+        ></i>
+        <i v-if="blok.language == 'css'" class="mdi mdi-language-css3" style="color: #1890CF"></i>
+        <i v-if="blok.language == 'json'" class="mdi mdi-json" style="color: limegreen"></i>
+        <i v-if="blok.language == 'md'" class="mdi mdi-markdown" style="color: #3498DB"></i>
+      </span>
+      <small class="description" v-if="blok.description != false">{{blok.description}}</small>
     </div>
     <highlight :language="blok.language" :style="blok.style" :class="blok.helpers">{{ blok.code }}</highlight>
-    <span class="lang">
-      <i v-if="blok.language == 'js'" class="fab fa-lg fa-js" style="color: #F99D36;"></i>
-      <i
-        v-if="blok.language == 'html' && blok.show_html_as_vue == false"
-        class="fab fa-lg fa-html5"
-        style="color: #F47A31;"
-      ></i>
-      <i
-        v-if="blok.language == 'html' && blok.show_html_as_vue == true"
-        class="fab fa-lg fa-vuejs"
-        style="color: #3FB984;"
-      ></i>
-      <i v-if="blok.language == 'css'" class="fab fa-lg fa-css3-alt" style="color: #1890CF"></i>
-      <span v-if="blok.language == 'json'" style="color: limegreen; font-weight: bold;">{ ; }</span>
-      <i v-if="blok.language == 'md'" class="fab fa-lg fa-markdown" style="color: #3498DB"></i>
-    </span>
   </div>
 </template>
 
@@ -49,9 +49,7 @@ code {
   filter: saturate(1.25);
 }
 .lang {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  float: right;
 }
 .code-title {
   color: #abb2bf;

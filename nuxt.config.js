@@ -1,4 +1,4 @@
-const SiteName = "VuetiBlok Template"
+const SiteName = 'VuetiBlok Template'
 const pkg = require('./package')
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const axios = require('axios')
@@ -19,10 +19,6 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
-      },
       {
         rel: 'stylesheet',
         href:
@@ -86,11 +82,11 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) { }
+    extend(config, ctx) {}
   },
 
   generate: {
-    routes: function (callback) {
+    routes: function(callback) {
       const version = 'published'
       let cache_version = 0
 

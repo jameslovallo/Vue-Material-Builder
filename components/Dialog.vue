@@ -1,25 +1,33 @@
 <template>
-  <v-dialog v-editable="blok" v-model="dialog" width="500">
+  <v-dialog
+    v-editable="blok"
+    v-model="dialog"
+    :fullscreen="blok.fullscreen"
+    :max-width="blok.max_width"
+    :origin="blok.origin"
+    :persistent="blok.persistent"
+    :scrollable="blok.scrollable"
+    :width="blok.width"
+  >
     <template v-slot:activator="{ on }">
       <div v-on="on">
         <component
           :key="blok._uid"
-          v-for="blok in blok.dialogtrigger"
+          v-for="blok in blok.open_dialog"
           :blok="blok"
           :is="blok.component | dashify"
+          z
         ></component>
       </div>
     </template>
     <v-card
+      v-editable="blok"
       :color="blok.color"
       :dark="blok.dark"
       :elevation="blok.elevation"
       :flat="blok.flat"
-      :height="blok.height"
       :hover="blok.hover"
-      :min-height="blok.minheight"
       :raised="blok.raised"
-      :width="blok.width"
       :class="blok.helpers"
       :style="blok.style"
     >
@@ -29,12 +37,15 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
-      <v-card-title
-        v-if="blok.title"
-        primary-title
-        :class="blok.titlecolor + ' headline'"
-      >{{blok.title}}</v-card-title>
-      <v-card-text>
+      <v-card-title v-if="blok.title != false">
+        <component
+          :key="blok._uid"
+          v-for="blok in blok.title"
+          :blok="blok"
+          :is="blok.component | dashify"
+        ></component>
+      </v-card-title>
+      <v-card-text v-if="blok.cardcontent != false" :class="blok.full_bleed_content">
         <component
           :key="blok._uid"
           v-for="blok in blok.cardcontent"
@@ -42,8 +53,8 @@
           :is="blok.component | dashify"
         ></component>
       </v-card-text>
-      <v-divider></v-divider>
-      <v-card-actions class="pa-3">
+      <v-divider v-if="blok.cardactions != false"></v-divider>
+      <v-card-actions v-if="blok.cardactions != false || blok.close_dialog != false" class="pa-3">
         <component
           :key="blok._uid"
           v-for="blok in blok.cardactions"
@@ -51,11 +62,10 @@
           :is="blok.component | dashify"
           style="width: 100%;"
         ></component>
-        <v-spacer></v-spacer>
         <div @click="dialog = false">
           <component
             :key="blok._uid"
-            v-for="blok in blok.dialogcloser"
+            v-for="blok in blok.close_dialog"
             :blok="blok"
             :is="blok.component | dashify"
           ></component>

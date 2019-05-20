@@ -30,7 +30,7 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
-      <v-card-title v-if="blok.hastitle">
+      <v-card-title v-if="blok.title != false">
         <component
           :key="blok._uid"
           v-for="blok in blok.title"

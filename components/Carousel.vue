@@ -3,16 +3,16 @@
     :active-class="blok.active_class"
     :cycle="blok.cycle"
     :dark="blok.dark"
-    :delimeter-icon="blok.delimeter_icon.icon"
+    :delimeter-icon="'mdi-' + blok.delimeter_icon"
     :height="blok.height"
     :hide-controls="blok.hide_controls"
     :hide-delimiters="blok.hide_delimiters"
-    :interval="blok.interval"
+    :interval="blok.interval * 1000"
     :light="blok.light"
     :mandatory="blok.mandatory"
     :max="blok.max_width"
-    :next-icon="blok.next_icon.icon"
-    :prev-icon="blok.prev_icon.icon"
+    :next-icon="'mdi-' + blok.next_icon"
+    :prev-icon="'mdi-' + blok.prev_icon"
     :reverse="blok.reverse"
     :touchless="blok.touchless"
     :vertical="blok.vertical"
@@ -33,12 +33,3 @@ export default {
   props: ["blok"]
 };
 </script>
-
-<style>
-.v-carousel__prev {
-  left: 20px;
-}
-.v-carousel__next {
-  right: 20px;
-}
-</style>

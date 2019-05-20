@@ -51,9 +51,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 400;
   line-height: 110%;
   margin: 0.25em 0;
+  font-weight: 400;
 }
 
 h1 a,
@@ -66,27 +66,36 @@ h6 a {
 }
 
 h1 {
-  font-size: 4.2rem;
+  font-size: 96px;
+  letter-spacing: -1.5;
 }
 
 h2 {
-  font-size: 3.56rem;
+  font-size: 60px;
+  letter-spacing: -0.5;
 }
 
 h3 {
-  font-size: 2.92rem;
+  font-size: 48px;
+  letter-spacing: 0;
 }
 
 h4 {
-  font-size: 2.28rem;
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: 0.25;
 }
 
 h5 {
-  font-size: 1.64rem;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 h6 {
-  font-size: 1.15rem;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.15;
 }
 
 em {
