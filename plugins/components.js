@@ -34,7 +34,6 @@ import Parallax from '~/components/Parallax.vue'
 import Row from '~/components/Row.vue'
 import Slider from '~/components/Slider.vue'
 import Spacer from '~/components/Spacer.vue'
-import Sparkline from '~/components/Sparkline.vue'
 import Stepper from '~/components/Stepper.vue'
 import StepperItem from '~/components/StepperItem.vue'
 import Text from '~/components/Text.vue'
@@ -74,7 +73,6 @@ Vue.component('blok-parallax', Parallax)
 Vue.component('blok-row', Row)
 Vue.component('blok-slider', Slider)
 Vue.component('blok-spacer', Spacer)
-Vue.component('blok-sparkline', Sparkline)
 Vue.component('blok-stepper', Stepper)
 Vue.component('blok-stepperitem', StepperItem)
 Vue.component('blok-text', Text)
