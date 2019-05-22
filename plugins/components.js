@@ -19,6 +19,7 @@ import FormEmail from '~/components/FormEmail.vue'
 import FormPhone from '~/components/FormPhone.vue'
 import FormText from '~/components/FormText.vue'
 import FormTextArea from '~/components/FormTextArea.vue'
+import GoogleMap from '~/components/GoogleMap.vue'
 import Highlight from '~/components/Highlight.vue'
 import Icon from '~/components/Icon.vue'
 import Image from '~/components/Image.vue'
@@ -39,6 +40,7 @@ import Stepper from '~/components/Stepper.vue'
 import StepperItem from '~/components/StepperItem.vue'
 import Text from '~/components/Text.vue'
 import Typer from '~/components/Typer.vue'
+import YouTube from '~/components/YouTube.vue'
 
 // Attach components to storyblok
 Vue.component('blok-alert', Alert)
@@ -59,6 +61,7 @@ Vue.component('blok-formemail', FormEmail)
 Vue.component('blok-formphone', FormPhone)
 Vue.component('blok-formtext', FormText)
 Vue.component('blok-formtextarea', FormTextArea)
+Vue.component('blok-googlemap', GoogleMap)
 Vue.component('blok-highlight', Highlight)
 Vue.component('blok-icon', Icon)
 Vue.component('blok-image', Image)
@@ -79,3 +82,4 @@ Vue.component('blok-stepper', Stepper)
 Vue.component('blok-stepperitem', StepperItem)
 Vue.component('blok-text', Text)
 Vue.component('blok-typer', Typer)
+Vue.component('blok-youtube', YouTube)
