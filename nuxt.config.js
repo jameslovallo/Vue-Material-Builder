@@ -2,14 +2,13 @@ const SiteName = 'VuetiBlok Template'
 const pkg = require('./package')
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const axios = require('axios')
-const token = 'lQVIeSpv6rmkjm63jCBqVwtt'
+const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt'
+// const SnipcartAPIKey = ''
 
 module.exports = {
   mode: 'universal',
 
-  /*
-   ** Headers of the page
-   */
+  // Headers of the page
   head: {
     title: SiteName,
     meta: [
@@ -24,22 +23,26 @@ module.exports = {
         href:
           'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Roboto+Mono'
       }
+      // Snipcart Styles
+      // {
+      //   rel: 'stylesheet',
+      //   href: 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
+      // }
+    ],
+    script: [
+      // Snipcart Scripts
+      // { src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js' },
+      // { src: 'https://cdn.snipcart.com/scripts/2.0/snipcart.js', id: 'snipcart', 'data-api-key': SnipcartAPIKey }
     ]
   },
 
-  /*
-   ** Customize the progress-bar color
-   */
+  // Customize the progress-bar color
   loading: { color: '#fff' },
 
-  /*
-   ** Global CSS
-   */
+  // Global CSS
   css: ['@/assets/style/app.styl'],
 
-  /*
-   ** Plugins to load before mounting the App
-   */
+  // Plugins to load before mounting the App
   plugins: [
     '~/plugins/components',
     '~/plugins/filters',
@@ -48,27 +51,24 @@ module.exports = {
     { src: 'plugins/vue-typer.js', ssr: false }
   ],
 
-  /*
-   ** Nuxt.js modules
-   */
+  // Nuxt.js modules
   modules: [
-    ['storyblok-nuxt', { accessToken: token, cacheProvider: 'memory' }],
+    [
+      'storyblok-nuxt',
+      { accessToken: StoryblokToken, cacheProvider: 'memory' }
+    ],
     ['@nuxtjs/markdownit'],
     ['@nuxtjs/pwa']
   ],
 
   markdownit: { injected: true },
 
-  /*
-   ** Router middleware
-   */
+  // Router middleware
   router: {
     middleware: 'setCacheVersion'
   },
 
-  /*
-   ** Build configuration
-   */
+  // Build configuration
   build: {
     extractCSS: true,
     transpile: ['vuetify/lib'],
@@ -79,9 +79,7 @@ module.exports = {
       }
     },
 
-    /*
-     ** You can extend webpack config here
-     */
+    // You can extend webpack config here
     extend(config, ctx) {}
   },
 
@@ -90,12 +88,14 @@ module.exports = {
       const version = 'published'
       let cache_version = 0
 
-      // other routes that are not in Storyblok with their slug.
+      // Other routes that are not in Storyblok with their slug.
       let routes = ['/', '/home']
 
       // Load space and receive latest cache version key to improve performance
       axios
-        .get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`)
+        .get(
+          `https://api.storyblok.com/v1/cdn/spaces/me?token=${StoryblokToken}`
+        )
         .then(space_res => {
           // timestamp of latest publish
           cache_version = space_res.data.space.version
@@ -103,7 +103,7 @@ module.exports = {
           // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
           axios
             .get(
-              `https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cache_version}`
+              `https://api.storyblok.com/v1/cdn/links?token=${StoryblokToken}&version=${version}&cv=${cache_version}`
             )
             .then(res => {
               Object.keys(res.data.links).forEach(key => {
