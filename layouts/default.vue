@@ -1,6 +1,5 @@
 <template>
   <v-app class="body">
-    <div v-if="!$store.state.settings.navigation" v-editable="$store.state.settings"></div>
     <component
       :key="blok._uid"
       v-for="blok in $store.state.settings.navigation"

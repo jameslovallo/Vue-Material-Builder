@@ -1,7 +1,14 @@
 <template>
   <div v-editable="blok" id="nav">
     <!-- DRAWERS -->
-    <v-navigation-drawer v-if="blok.sidebar_content != false" v-model="drawer" clipped app>
+    <v-navigation-drawer
+      v-if="blok.sidebar_content != false"
+      v-model="drawer"
+      clipped
+      app
+      :class="blok.drawer_helpers"
+      :dark="blok.drawer_dark"
+    >
       <component
         :key="blok._uid"
         v-for="blok in blok.sidebar_content"
@@ -29,6 +36,20 @@
         :is="blok.component | dashify"
       ></component>
     </v-toolbar>
+    <v-footer
+      v-if="blok.footer_content != false"
+      app
+      :inset="blok.footer_inset"
+      :color="blok.footer_color"
+      :dark="blok.footer_dark"
+    >
+      <component
+        :key="blok._uid"
+        v-for="blok in blok.footer_content"
+        :blok="blok"
+        :is="blok.component | dashify"
+      ></component>
+    </v-footer>
   </div>
 </template>
 

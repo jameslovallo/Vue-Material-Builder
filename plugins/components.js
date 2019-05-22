@@ -7,6 +7,7 @@ import Card from '~/components/Card.vue'
 import Carousel from '~/components/Carousel.vue'
 import CarouselItem from '~/components/CarouselItem.vue'
 import Column from '~/components/Column.vue'
+import CopyrightText from '~/components/CopyrightText.vue'
 import Dialog from '~/components/Dialog.vue'
 import Divider from '~/components/Divider.vue'
 import Drawer from '~/components/Drawer.vue'
@@ -46,6 +47,7 @@ Vue.component('blok-card', Card)
 Vue.component('blok-carousel', Carousel)
 Vue.component('blok-carouselitem', CarouselItem)
 Vue.component('blok-column', Column)
+Vue.component('blok-copyrighttext', CopyrightText)
 Vue.component('blok-dialog', Dialog)
 Vue.component('blok-divider', Divider)
 Vue.component('blok-drawer', Drawer)
