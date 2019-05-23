@@ -23,6 +23,7 @@
         :data-item-price="blok.item_price"
         :data-item-description="blok.item_description"
         :data-item-image="blok.item_image"
+        :data-item-url="$route"
       >
         <v-icon left>mdi-cart</v-icon>
         {{'$' + blok.item_price}}
