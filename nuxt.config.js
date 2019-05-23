@@ -48,7 +48,6 @@ module.exports = {
     '~/plugins/filters',
     '@/plugins/vuetify',
     '~/plugins/masonry',
-    '~/plugins/vue-fragment',
     { src: 'plugins/vue-typer.js', ssr: false }
   ],
 
