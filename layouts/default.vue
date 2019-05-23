@@ -1,5 +1,5 @@
 <template>
-  <v-app class="app">
+  <v-app :dark="detectTheme">
     <component
       :key="blok._uid"
       v-for="blok in $store.state.settings.navigation"
@@ -12,7 +12,14 @@
 
 <script>
 export default {
-  props: ["blok"]
+  props: ["blok"],
+  computed: {
+    detectTheme() {
+      if (process.client) {
+        return window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+    }
+  }
 };
 if (process.client) {
   document.addEventListener("DOMContentLoaded", function() {
