@@ -1,5 +1,5 @@
 <template>
-  <v-app class="body">
+  <v-app class="app">
     <component
       :key="blok._uid"
       v-for="blok in $store.state.settings.navigation"
@@ -11,6 +11,9 @@
 </template>
 
 <script>
+export default {
+  props: ["blok"]
+};
 if (process.client) {
   document.addEventListener("DOMContentLoaded", function() {
     let vh = window.innerHeight;

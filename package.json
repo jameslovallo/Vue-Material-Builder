@@ -20,6 +20,7 @@
     "storyblok-nuxt": "1.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue-fragment": "^1.5.1",
     "vue-highlight-component": "^1.0.0",
     "vue-typer": "^1.2.0",
     "vuetify": "^1.5.12",
