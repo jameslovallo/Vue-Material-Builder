@@ -1,5 +1,5 @@
 <template>
-  <v-card :color="blok.color" :dark="blok.dark" :flat="blok.flat">
+  <v-card :color="blok.color" :dark="blok.dark" :flat="blok.flat" v-editable="blok">
     <v-img
       :alt="blok.item_image_alt_text"
       :aspect-ratio="blok.item_image_aspect_ratio"
