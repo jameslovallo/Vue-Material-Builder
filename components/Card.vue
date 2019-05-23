@@ -61,4 +61,8 @@ export default {
 .full-bleed {
   padding: 0;
 }
+.v-card__title,
+.v-card__text {
+  position: relative;
+}
 </style>

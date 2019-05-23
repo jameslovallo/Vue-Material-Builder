@@ -1,33 +1,50 @@
 <template>
-  <v-btn
-    v-editable="blok"
-    :active-class="blok.activeclass"
-    :block="blok.block"
-    :color="blok.color"
-    :class="blok.helpers"
-    :dark="blok.dark"
-    :exact="blok.exact"
-    :fab="blok.fab"
-    :flat="blok.flat"
-    :href="blok.href"
-    :icon="blok.icon"
-    :large="blok.large"
-    :outline="blok.outline"
-    :round="blok.round"
-    :router="blok.router"
-    :small="blok.small"
-    :style="blok.style"
-    :target="blok.target"
-    :to="blok.to"
+  <v-tooltip
+    :disabled="!blok.enable_tooltip"
+    :bottom="blok.tooltip_direction === 'bottom'"
+    :left="blok.tooltip_direction === 'left'"
+    :right="blok.tooltip_direction === 'right'"
+    :top="blok.tooltip_direction === 'top'"
   >
-    <component
-      :key="blok._uid"
-      v-for="blok in blok.bicon"
-      :blok="blok"
-      :is="blok.component | dashify"
-    ></component>
-    {{blok.text}}
-  </v-btn>
+    <template v-slot:activator="{ on }">
+      <v-btn
+        v-editable="blok"
+        v-on="on"
+        :absolute="blok.absolute"
+        :active-class="blok.activeclass"
+        :block="blok.block"
+        :bottom="blok.vertical_position === 'bottom'"
+        :class="blok.helpers"
+        :color="blok.color"
+        :dark="blok.dark"
+        :exact="blok.exact"
+        :fab="blok.floating_action_button"
+        :flat="blok.flat"
+        :href="blok.href"
+        :icon="blok.icon"
+        :large="blok.large"
+        :left="blok.horizontal_position === 'left'"
+        :outline="blok.outline"
+        :right="blok.horizontal_position === 'right'"
+        :round="blok.round"
+        :router="blok.router"
+        :small="blok.small"
+        :style="blok.style"
+        :target="blok.target"
+        :to="blok.to"
+        :top="blok.vertical_position === 'top'"
+      >
+        <component
+          :key="blok._uid"
+          v-for="blok in blok.bicon"
+          :blok="blok"
+          :is="blok.component | dashify"
+        ></component>
+        {{blok.text}}
+      </v-btn>
+    </template>
+    <span>{{blok.tooltip_text}}</span>
+  </v-tooltip>
 </template>
 
 <script>
