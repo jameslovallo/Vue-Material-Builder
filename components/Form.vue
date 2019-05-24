@@ -22,7 +22,7 @@
       ref="form"
       method="post"
       lazy-validation
-      :action="'https://formspree.io/' + blok.recipient"
+      :action="'https://formsubmit.co/' + blok.recipient"
     >
       <component
         :key="blok._uid"
@@ -45,6 +45,9 @@
           :blok="blok"
           :is="blok.component | dashify"
         ></component>
+        <input type="hidden" name="_subject" value="New form submission!">
+        <input type="hidden" name="_next" :value="blok.redirect_to">
+        <input type="hidden" name="_replyto">
       </v-card-text>
       <v-divider></v-divider>
       <v-card-actions class="pa-3">
@@ -56,7 +59,6 @@
           :outline="blok.button_outline"
           :round="blok.button_round"
           type="submit"
-          value="send"
         >
           <component
             :key="blok._uid"
@@ -99,10 +101,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.v-input__icon .fa {
-  font-size: 16px;
-  margin-left: -2px;
-}
-</style>

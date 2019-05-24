@@ -158,8 +158,4 @@ code:before,
 code:after {
   display: none;
 }
-
-.fa-phone {
-  transform: scaleX(-1);
-}
 </style>
