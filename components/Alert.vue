@@ -4,7 +4,7 @@
     v-model="alert"
     :color="blok.color"
     :dismissible="blok.dismissable"
-    :icon="blok.icon.icon"
+    :icon="'mdi-' + blok.icon"
     :mode="blok.mode"
     :origin="blok.origin"
     :outline="blok.outline"
