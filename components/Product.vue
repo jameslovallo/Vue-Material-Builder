@@ -25,7 +25,7 @@
         :data-item-image="blok.item_image"
         :data-item-url="'https://vuetiblok.netlify.com' + $route.path"
       >
-        <v-icon left>mdi-cat</v-icon>
+        <v-icon left>mdi-cart</v-icon>
         {{'$' + blok.item_price}}
       </v-btn>
     </v-card-title>

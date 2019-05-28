@@ -6,14 +6,13 @@
     :contain="blok.contain"
     :gradient="blok.gradient"
     :height="blok.height"
-    :lazy-src="blok.src ? blok.src : `https://source.unsplash.com/random/${blok.width ? blok.width : randomWidth}x${blok.height ? blok.height : randomHeight}?${blok.placeholder_search_term}`"
+    :lazy-src="blok.src ? optimizedImage : randomImage"
     :max-height="blok.maxheight"
     :max-width="blok.maxwidth"
     :min-height="blok.minheight"
     :min-width="blok.minwidth"
     :position="blok.hor + '% ' + blok.ver + '%'"
-    :sizes="blok.sizes"
-    :src="blok.src ? blok.src : `https://source.unsplash.com/random/${blok.width ? blok.width : randomWidth}x${blok.height ? blok.height : randomHeight}?${blok.placeholder_search_term}`"
+    :src="blok.src ? optimizedImage : randomImage"
     :width="blok.width"
     :class="blok.helpers"
     :style="blok.style"
@@ -31,15 +30,25 @@
 export default {
   props: ["blok"],
   computed: {
-    randomHeight() {
-      var min = Math.ceil(1000);
-      var max = Math.floor(500);
-      return Math.floor(Math.random() * (max - min)) + min;
+    randomImage() {
+      var min = Math.ceil(600);
+      var max = Math.floor(300);
+      var randomHeight = Math.floor(Math.random() * (max - min)) + min;
+      return `https://source.unsplash.com/random/${
+        this.blok.width ? this.blok.width : 600
+      }x${this.blok.height ? this.blok.height : randomHeight}?${
+        this.blok.placeholder_image_search_term
+      }`;
     },
-    randomWidth() {
-      var min = Math.ceil(1000);
-      var max = Math.floor(500);
-      return Math.floor(Math.random() * (max - min)) + min;
+    optimizedImage() {
+      if (this.blok.src.includes("a.storyblok.com")) {
+        let imageService = "//img2.storyblok.com/";
+        let path = this.blok.src.replace("//a.storyblok.com", "");
+        let options = `${this.blok.optiwidth}x${this.blok.height ? this.blok.height : 0}${this.blok.smart_crop ? '/smart' : ''}`;
+        return imageService + options + path;
+      } else {
+        return this.blok.src;
+      }
     }
   }
 };

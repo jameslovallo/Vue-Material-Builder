@@ -1,9 +1,13 @@
+// Customer-Specific Settings
 const SiteName = 'VuetiBlok Template'
+const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt'
+const SnipcartAPIKey =
+  'NDUwOWE2MjktZTkyYy00ZWU2LThkODItNmY1YTY4YWFmZGE0NjM2ODk5MTQ4NDg3MTE3OTgy'
+
+// Load Dependencies
 const pkg = require('./package')
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const axios = require('axios')
-const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt'
-const SnipcartAPIKey = 'NDUwOWE2MjktZTkyYy00ZWU2LThkODItNmY1YTY4YWFmZGE0NjM2ODk5MTQ4NDg3MTE3OTgy'
 
 module.exports = {
   mode: 'universal',
@@ -31,8 +35,14 @@ module.exports = {
     ],
     script: [
       // Snipcart Scripts
-      { src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js' },
-      { src: 'https://cdn.snipcart.com/scripts/2.0/snipcart.js', id: 'snipcart', 'data-api-key': SnipcartAPIKey }
+      {
+        src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js'
+      },
+      {
+        src: 'https://cdn.snipcart.com/scripts/2.0/snipcart.js',
+        id: 'snipcart',
+        'data-api-key': SnipcartAPIKey
+      }
     ]
   },
 
@@ -58,7 +68,12 @@ module.exports = {
       { accessToken: StoryblokToken, cacheProvider: 'memory' }
     ],
     ['@nuxtjs/markdownit'],
-    ['@nuxtjs/pwa']
+    [
+      '@nuxtjs/pwa',
+      {
+        meta: { appleStatusBarStyle: 'default', name: SiteName }
+      }
+    ]
   ],
 
   markdownit: { injected: true },
