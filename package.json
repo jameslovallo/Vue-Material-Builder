@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-storyblok-template",
+  "name": "vuetiblok_template",
   "version": "1.0.0",
-  "description": "Nuxt.js Storyblok Boilerplate",
+  "description": "Nuxt/Vuetify/Storyblok Boilerplate",
   "author": "James Lovallo",
   "private": true,
   "scripts": {

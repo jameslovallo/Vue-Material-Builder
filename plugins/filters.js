@@ -22,3 +22,12 @@ Vue.filter('dashify', function(value) {
 
   return 'blok-' + dashified
 })
+
+Vue.filter('siteName', function siteName(str) {
+  str = str.toLowerCase().split('_')
+  let final = []
+  for (let word of str) {
+    final.push(word.charAt(0).toUpperCase() + word.slice(1))
+  }
+  return final.join(' ')
+})

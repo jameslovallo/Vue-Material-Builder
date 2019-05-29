@@ -1,8 +1,7 @@
 // Customer-Specific Settings
 const SiteName = 'VuetiBlok Template'
 const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt'
-const SnipcartAPIKey =
-  'NDUwOWE2MjktZTkyYy00ZWU2LThkODItNmY1YTY4YWFmZGE0NjM2ODk5MTQ4NDg3MTE3OTgy'
+const SnipcartAPIKey = ''
 
 // Load Dependencies
 const pkg = require('./package')
@@ -26,23 +25,23 @@ module.exports = {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Roboto+Mono'
-      },
-      // Snipcart Styles
-      {
-        rel: 'stylesheet',
-        href: 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
       }
+      // Snipcart Styles
+      // {
+      //   rel: 'stylesheet',
+      //   href: 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
+      // }
     ],
     script: [
       // Snipcart Scripts
-      {
-        src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js'
-      },
-      {
-        src: 'https://cdn.snipcart.com/scripts/2.0/snipcart.js',
-        id: 'snipcart',
-        'data-api-key': SnipcartAPIKey
-      }
+      // {
+      //   src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js'
+      // },
+      // {
+      //   src: 'https://cdn.snipcart.com/scripts/2.0/snipcart.js',
+      //   id: 'snipcart',
+      //   'data-api-key': SnipcartAPIKey
+      // }
     ]
   },
 

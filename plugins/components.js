@@ -10,7 +10,6 @@ import Column from '~/components/Column.vue'
 import CopyrightText from '~/components/CopyrightText.vue'
 import Dialog from '~/components/Dialog.vue'
 import Divider from '~/components/Divider.vue'
-import Drawer from '~/components/Drawer.vue'
 import Dropdown from '~/components/Dropdown.vue'
 import ExpansionPanel from '~/components/ExpansionPanel.vue'
 import ExpansionPanelContent from '~/components/ExpansionPanelContent.vue'
@@ -53,7 +52,6 @@ Vue.component('blok-column', Column)
 Vue.component('blok-copyrighttext', CopyrightText)
 Vue.component('blok-dialog', Dialog)
 Vue.component('blok-divider', Divider)
-Vue.component('blok-drawer', Drawer)
 Vue.component('blok-dropdown', Dropdown)
 Vue.component('blok-expansionpanel', ExpansionPanel)
 Vue.component('blok-expansionpanelcontent', ExpansionPanelContent)
