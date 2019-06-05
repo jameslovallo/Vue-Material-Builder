@@ -1,6 +1,9 @@
 // Customer-Specific Settings
 const SiteName = 'VuetiBlok Template'
+const SiteUrl = 'https://vuetiblok.netlify.com'
 const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt'
+const BingWebmasterID = ''
+const GoogleAnalyticsID = ''
 const SnipcartAPIKey = ''
 
 // Load Dependencies
@@ -11,12 +14,13 @@ const axios = require('axios')
 module.exports = {
   mode: 'universal',
 
-  // Headers of the page
+  // Page Headers
   head: {
     title: SiteName,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'msvalidate.01', content: BingWebmasterID },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
@@ -45,13 +49,13 @@ module.exports = {
     ]
   },
 
-  // Customize the progress-bar color
+  // Progress Bar
   loading: { color: '#fff' },
 
   // Global CSS
   css: ['@/assets/style/app.styl'],
 
-  // Plugins to load before mounting the App
+  // Plugins
   plugins: [
     '~/plugins/components',
     '~/plugins/filters',
@@ -60,7 +64,7 @@ module.exports = {
     { src: 'plugins/vue-typer.js', ssr: false }
   ],
 
-  // Nuxt.js modules
+  // Nuxt Modules
   modules: [
     [
       'storyblok-nuxt',
@@ -72,17 +76,31 @@ module.exports = {
       {
         meta: { appleStatusBarStyle: 'default', name: SiteName }
       }
-    ]
+    ],
+    ['@nuxtjs/sitemap']
   ],
 
+  // Sitemap Config
+  sitemap: {
+    hostname: SiteUrl,
+    gzip: true,
+    exclude: ['/global']
+  },
+
+  // Google Analytics
+  googleAnalytics: {
+    id: GoogleAnalyticsID
+  },
+
+  // Markdown-It Config
   markdownit: { injected: true },
 
-  // Router middleware
+  // Router Middleware
   router: {
     middleware: 'setCacheVersion'
   },
 
-  // Build configuration
+  // Build Configuration
   build: {
     extractCSS: true,
     transpile: ['vuetify/lib'],
@@ -97,6 +115,7 @@ module.exports = {
     extend(config, ctx) {}
   },
 
+  // Generate Routes
   generate: {
     routes: function(callback) {
       const version = 'published'

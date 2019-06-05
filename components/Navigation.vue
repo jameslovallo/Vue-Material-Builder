@@ -18,7 +18,7 @@
     </v-navigation-drawer>
     <!-- TOOLBAR -->
     <v-toolbar
-      v-if="blok.toolbar_content != false"
+      v-if="blok.toolbar_content != false && $vuetify.breakpoint.mdAndDown"
       app
       clipped-left
       :color="blok.color"

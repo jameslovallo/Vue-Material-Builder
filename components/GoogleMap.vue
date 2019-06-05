@@ -1,5 +1,4 @@
 <template>
-  <div :style="`height: ${blok.height}; max-height: ${blok.height}; overflow: hidden;`">
     <iframe
       :width="blok.width"
       :height="blok.height"
@@ -7,7 +6,6 @@
       frameborder="0"
       scrolling="no"
     ></iframe>
-  </div>
 </template>
 
 <script>

@@ -20,7 +20,7 @@
       v-editable="blok"
       v-model="valid"
       ref="form"
-      method="post"
+      method="POST"
       lazy-validation
       :action="'https://formsubmit.co/' + blok.recipient"
     >

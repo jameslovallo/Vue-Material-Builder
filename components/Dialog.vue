@@ -90,4 +90,11 @@ export default {
 .v-dialog__container {
   display: block !important;
 }
+.full-bleed {
+  padding: 0;
+}
+.v-card__title,
+.v-card__text {
+  position: relative;
+}
 </style>

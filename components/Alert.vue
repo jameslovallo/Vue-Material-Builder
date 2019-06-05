@@ -29,5 +29,6 @@ export default {
 <style>
 .page-hero .v-alert {
   margin: 0 0;
+  border: 0;
 }
 </style>
