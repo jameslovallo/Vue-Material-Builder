@@ -14,15 +14,19 @@ import Dropdown from '~/components/Dropdown.vue'
 import ExpansionPanel from '~/components/ExpansionPanel.vue'
 import ExpansionPanelContent from '~/components/ExpansionPanelContent.vue'
 import Form from '~/components/Form.vue'
+import FormDatePicker from '~/components/FormDatePicker.vue'
 import FormEmail from '~/components/FormEmail.vue'
 import FormPhone from '~/components/FormPhone.vue'
+import FormSelect from '~/components/FormSelect.vue'
 import FormText from '~/components/FormText.vue'
 import FormTextArea from '~/components/FormTextArea.vue'
+import FormTimePicker from '~/components/FormTimePicker.vue'
 import GoogleMap from '~/components/GoogleMap.vue'
 import Highlight from '~/components/Highlight.vue'
 import Icon from '~/components/Icon.vue'
 import Image from '~/components/Image.vue'
 import Link from '~/components/Link.vue'
+import LinkAnchor from '~/components/LinkAnchor.vue'
 import List from '~/components/List.vue'
 import ListSubheader from '~/components/ListSubheader.vue'
 import ListTile from '~/components/ListTile.vue'
@@ -56,15 +60,19 @@ Vue.component('blok-dropdown', Dropdown)
 Vue.component('blok-expansionpanel', ExpansionPanel)
 Vue.component('blok-expansionpanelcontent', ExpansionPanelContent)
 Vue.component('blok-form', Form)
+Vue.component('blok-formdatepicker', FormDatePicker)
 Vue.component('blok-formemail', FormEmail)
+Vue.component('blok-formselect', FormSelect)
 Vue.component('blok-formphone', FormPhone)
 Vue.component('blok-formtext', FormText)
 Vue.component('blok-formtextarea', FormTextArea)
+Vue.component('blok-formtimepicker', FormTimePicker)
 Vue.component('blok-googlemap', GoogleMap)
 Vue.component('blok-highlight', Highlight)
 Vue.component('blok-icon', Icon)
 Vue.component('blok-image', Image)
 Vue.component('blok-link', Link)
+Vue.component('blok-linkanchor', LinkAnchor)
 Vue.component('blok-list', List)
 Vue.component('blok-listsubheader', ListSubheader)
 Vue.component('blok-listtile', ListTile)
