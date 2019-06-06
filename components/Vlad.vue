@@ -93,7 +93,19 @@
 
 <script>
 export default {
-  props: ["blok"]
+  props: ["blok"],
+  computed: {
+    slideWidth() {
+      var slideWidth = 0;
+      if (this.$vuetify.breakpoint.xs === true) {
+        slideWidth = this.blok.xs_width;
+        console.log("xs");
+      } else if (this.$vuetify.breakpoint.sm === true) {
+        slideWidth = this.blok.sm_width;
+        console.log("sm");
+      }
+    }
+  }
 };
 </script>
 

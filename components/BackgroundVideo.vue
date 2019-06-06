@@ -1,5 +1,9 @@
 <template>
-  <div v-editable="blok" class="video-container" :style="`align-items: ${blok.vertical_alignment}; ${blok.style}`">
+  <div
+    v-editable="blok"
+    class="video-container"
+    :style="`align-items: ${blok.vertical_alignment}; ${blok.style}`"
+  >
     <div
       :style="`height: ${blok.height}; min-height: ${blok.min_height}; padding-top: ${aspectRatio}%;`"
     ></div>
@@ -40,6 +44,8 @@ video {
   z-index: 1;
   position: absolute;
   object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
 }
 .video-content {
   position: absolute;
