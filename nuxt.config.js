@@ -61,7 +61,8 @@ module.exports = {
     '~/plugins/filters',
     '@/plugins/vuetify',
     '~/plugins/masonry',
-    { src: 'plugins/vue-typer.js', ssr: false }
+    { src: 'plugins/vue-typer.js', ssr: false },
+    { src: 'plugins/vue-carousel-3d.js', ssr: false }
   ],
 
   // Nuxt Modules

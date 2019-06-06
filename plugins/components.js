@@ -2,6 +2,7 @@ import Vue from 'vue'
 
 // Import components from files
 import Alert from '~/components/Alert.vue'
+import BackgroundVideo from '~/components/BackgroundVideo.vue'
 import Button from '~/components/Button.vue'
 import Card from '~/components/Card.vue'
 import Carousel from '~/components/Carousel.vue'
@@ -40,10 +41,12 @@ import Stepper from '~/components/Stepper.vue'
 import StepperItem from '~/components/StepperItem.vue'
 import Text from '~/components/Text.vue'
 import Typer from '~/components/Typer.vue'
+import Vlad from '~/components/Vlad.vue'
 import YouTube from '~/components/YouTube.vue'
 
 // Attach components to storyblok
 Vue.component('blok-alert', Alert)
+Vue.component('blok-backgroundvideo', BackgroundVideo)
 Vue.component('blok-button', Button)
 Vue.component('blok-card', Card)
 Vue.component('blok-carousel', Carousel)
@@ -82,4 +85,5 @@ Vue.component('blok-stepper', Stepper)
 Vue.component('blok-stepperitem', StepperItem)
 Vue.component('blok-text', Text)
 Vue.component('blok-typer', Typer)
+Vue.component('blok-vlad', Vlad)
 Vue.component('blok-youtube', YouTube)
