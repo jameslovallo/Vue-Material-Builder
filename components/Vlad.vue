@@ -5,13 +5,13 @@
     :controlsVisible="blok.show_controls"
     :autoplayTimeout="blok.autoplay_speed"
     :autoplayHoverPause="blok.pause_on_hover"
-    :perspective="blok.perspective"
-    :display="blok.active_slides"
+    :perspective="$vuetify.breakpoint.smAndDown ? blok.perspective : mobile_perspective"
+    :display="$vuetify.breakpoint.smAndDown ? blok.mobile_active_slides : blok.active_slides"
     :animationSpeed="blok.transition_speed"
-    :width="blok.width"
-    :height="blok.height"
+    :width="$vuetify.breakpoint.smAndDown ? blok.mobile_width : blok.width"
+    :height="$vuetify.breakpoint.smAndDown ? blok.mobile_height : blok.height"
     :border="blok.border_width"
-    :space="blok.space_between_slides"
+    :space="$vuetify.breakpoint.smAndDown ? blok.mobile_space_between_slides : blok.space_between_slides"
     :clickable="blok.clickable"
     :minSwipeDistance="blok.swipe_sensitivity_in_pixels"
     :class="blok.helpers"
@@ -93,19 +93,7 @@
 
 <script>
 export default {
-  props: ["blok"],
-  computed: {
-    slideWidth() {
-      var slideWidth = 0;
-      if (this.$vuetify.breakpoint.xs === true) {
-        slideWidth = this.blok.xs_width;
-        console.log("xs");
-      } else if (this.$vuetify.breakpoint.sm === true) {
-        slideWidth = this.blok.sm_width;
-        console.log("sm");
-      }
-    }
-  }
+  props: ["blok"]
 };
 </script>
 
