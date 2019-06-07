@@ -124,14 +124,14 @@ ul {
 p,
 ol,
 ul {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 @media (min-width: 400px) and (max-width: 800px) {
   p,
   ol,
   ul {
-    font-size: calc((14px + 18 - 14) * ((100vw - 400px) / 2));
+    font-size: calc((18px + 24 - 18) * ((100vw - 400px) / 2));
   }
 }
 
@@ -139,15 +139,13 @@ ul {
   p,
   ol,
   ul {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 
 blockquote {
-  background: rgba(125, 125, 125, 0.1);
-  border-left: 5px solid rgba(125, 125, 125, 0.15);
-  border-radius: 5px;
-  padding: 10px 10px 10px 15px;
+  border-left: 5px solid var(--v-primary-base);
+  padding: 0px 10px 0px 15px;
 }
 
 code {
@@ -157,5 +155,9 @@ code {
 code:before,
 code:after {
   display: none;
+}
+
+strong {
+  color: var(--v-primary-base);
 }
 </style>

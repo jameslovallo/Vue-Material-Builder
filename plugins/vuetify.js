@@ -11,7 +11,8 @@ Vue.use(Vuetify, {
     info: colors.blue,
     warning: colors.amber,
     error: colors.red.accent2,
-    success: colors.green,
+    success: colors.green
   },
   iconfont: 'mdi',
+  options: { customProperties: true }
 })
