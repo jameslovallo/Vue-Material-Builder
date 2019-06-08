@@ -2,6 +2,7 @@ import Vue from 'vue'
 
 // Import components from files
 import Alert from '~/components/Alert.vue'
+import BackgroundVideo from '~/components/BackgroundVideo.vue'
 import Button from '~/components/Button.vue'
 import Card from '~/components/Card.vue'
 import Carousel from '~/components/Carousel.vue'
@@ -38,16 +39,18 @@ import Page from '~/components/Page.vue'
 import Parallax from '~/components/Parallax.vue'
 import Product from '~/components/Product.vue'
 import Row from '~/components/Row.vue'
-import Slider from '~/components/Slider.vue'
 import Spacer from '~/components/Spacer.vue'
 import Stepper from '~/components/Stepper.vue'
 import StepperItem from '~/components/StepperItem.vue'
 import Text from '~/components/Text.vue'
+import ThreeDCarousel from '~/components/3DCarousel.vue'
 import Typer from '~/components/Typer.vue'
 import YouTube from '~/components/YouTube.vue'
 
 // Attach components to storyblok
+Vue.component('blok-3dcarousel', ThreeDCarousel)
 Vue.component('blok-alert', Alert)
+Vue.component('blok-backgroundvideo', BackgroundVideo)
 Vue.component('blok-button', Button)
 Vue.component('blok-card', Card)
 Vue.component('blok-carousel', Carousel)
@@ -84,7 +87,6 @@ Vue.component('blok-page', Page)
 Vue.component('blok-parallax', Parallax)
 Vue.component('blok-product', Product)
 Vue.component('blok-row', Row)
-Vue.component('blok-slider', Slider)
 Vue.component('blok-spacer', Spacer)
 Vue.component('blok-stepper', Stepper)
 Vue.component('blok-stepperitem', StepperItem)
