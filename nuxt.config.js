@@ -2,9 +2,9 @@
 const SiteName = 'VuetiBlok Template'
 const SiteUrl = 'https://vuetiblok.netlify.com'
 const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt'
+const SnipcartAPIKey = ''
 const BingWebmasterID = ''
 const GoogleAnalyticsID = ''
-const SnipcartAPIKey = ''
 const ProgressBarColor = '#fff'
 
 // Load Dependencies
