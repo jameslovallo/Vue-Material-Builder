@@ -5,6 +5,7 @@ const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt'
 const BingWebmasterID = ''
 const GoogleAnalyticsID = ''
 const SnipcartAPIKey = ''
+const ProgressBarColor = '#fff'
 
 // Load Dependencies
 const pkg = require('./package')
@@ -52,7 +53,7 @@ module.exports = {
   },
 
   // Progress Bar
-  loading: { color: '#fff' },
+  loading: { color: ProgressBarColor },
 
   // Global CSS
   css: ['@/assets/style/app.styl'],
