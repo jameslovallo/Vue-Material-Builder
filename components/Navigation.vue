@@ -62,7 +62,7 @@ export default {
   props: ["blok"],
   data() {
     return {
-      drawer: false
+      drawer: null
     };
   }
 };
