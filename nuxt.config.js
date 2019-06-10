@@ -1,6 +1,6 @@
 // Customer-Specific Settings
-const SiteName = 'VuetiBlok Template'
-const SiteUrl = 'https://vuetiblok.netlify.com'
+const SiteName = 'Patrick on Parker'
+const SiteUrl = 'https://patrickonparker.com'
 const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt'
 const SnipcartAPIKey = ''
 const BingWebmasterID = ''
