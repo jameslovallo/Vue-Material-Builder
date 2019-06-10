@@ -37,6 +37,7 @@ import Masonry from '~/components/Masonry.vue'
 import Navigation from '~/components/Navigation.vue'
 import Page from '~/components/Page.vue'
 import Parallax from '~/components/Parallax.vue'
+import PieChart from '~/components/PieChart.vue'
 import Product from '~/components/Product.vue'
 import Row from '~/components/Row.vue'
 import Spacer from '~/components/Spacer.vue'
@@ -85,6 +86,7 @@ Vue.component('blok-masonry', Masonry)
 Vue.component('blok-navigation', Navigation)
 Vue.component('blok-page', Page)
 Vue.component('blok-parallax', Parallax)
+Vue.component('blok-piechart', PieChart)
 Vue.component('blok-product', Product)
 Vue.component('blok-row', Row)
 Vue.component('blok-spacer', Spacer)

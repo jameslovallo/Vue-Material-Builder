@@ -39,6 +39,7 @@ export default {
   overflow: hidden;
   display: flex;
   justify-content: center;
+	width: 100%;
 }
 video {
   z-index: 1;

@@ -31,8 +31,8 @@ export default {
   props: ["blok"],
   computed: {
     randomImage() {
-      var min = Math.ceil(600);
-      var max = Math.floor(300);
+      var min = Math.ceil(400);
+      var max = Math.floor(600);
       var randomHeight = Math.floor(Math.random() * (max - min)) + min;
       return `https://source.unsplash.com/random/${
         this.blok.width ? this.blok.width : 600
@@ -41,10 +41,17 @@ export default {
       }`;
     },
     optimizedImage() {
-      if (this.blok.src.includes("a.storyblok.com")) {
+      if (
+        this.blok.src.includes("a.storyblok.com") &&
+        (this.blok.src.includes("jpeg") ||
+          this.blok.src.includes("jpg") ||
+          this.blok.src.includes("png"))
+      ) {
         let imageService = "//img2.storyblok.com/";
         let path = this.blok.src.replace("//a.storyblok.com", "");
-        let options = `${this.blok.optiwidth}x${this.blok.height ? this.blok.height : 0}${this.blok.smart_crop ? '/smart' : ''}`;
+        let options = `${this.blok.optiwidth}x${
+          this.blok.height ? this.blok.height : 0
+        }${this.blok.smart_crop ? "/smart" : ""}`;
         return imageService + options + path;
       } else {
         return this.blok.src;

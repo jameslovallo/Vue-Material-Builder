@@ -35,6 +35,7 @@ export default {
 </script>
 
 <style>
+.layout {position: relative;}
 .layout > .flex {
   padding: 0.5rem !important;
 }

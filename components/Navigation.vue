@@ -18,7 +18,7 @@
     </v-navigation-drawer>
     <!-- TOOLBAR -->
     <v-toolbar
-      v-if="blok.toolbar_content != false && $vuetify.breakpoint.mdAndDown"
+      v-if="blok.toolbar_content"
       app
       clipped-left
       :color="blok.color"
@@ -28,7 +28,11 @@
       :class="blok.helpers"
       :style="blok.style"
     >
-      <v-toolbar-side-icon v-if="blok.sidebar_content != false" @click="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon
+        v-if="blok.sidebar_content != false"
+        @click="drawer = !drawer"
+        class="hidden-md-and-up"
+      ></v-toolbar-side-icon>
       <component
         :key="blok._uid"
         v-for="blok in blok.toolbar_content"
@@ -58,7 +62,7 @@ export default {
   props: ["blok"],
   data() {
     return {
-      drawer: null
+      drawer: false
     };
   }
 };
