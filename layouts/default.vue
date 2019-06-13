@@ -121,24 +121,24 @@ ul {
   margin-bottom: 1em;
 }
 
-p,
-ol,
-ul {
+.flow-text p,
+.flow-text ol,
+.flow-text ul {
   font-size: 18px;
 }
 
 @media (min-width: 400px) and (max-width: 800px) {
-  p,
-  ol,
-  ul {
+  .flow-text p,
+  .flow-text ol,
+  .flow-text ul {
     font-size: calc((18px + 24 - 18) * ((100vw - 400px) / 2));
   }
 }
 
 @media (min-width: 800px) {
-  p,
-  ol,
-  ul {
+  .flow-text p,
+  .flow-text ol,
+  .flow-text ul {
     font-size: 24px;
   }
 }

@@ -45,7 +45,8 @@ export default {
         this.blok.src.includes("a.storyblok.com") &&
         (this.blok.src.includes("jpeg") ||
           this.blok.src.includes("jpg") ||
-          this.blok.src.includes("png"))
+          (this.blok.src.includes("png") &&
+            this.blok.do_not_use_image_service == false))
       ) {
         let imageService = "//img2.storyblok.com/";
         let path = this.blok.src.replace("//a.storyblok.com", "");
