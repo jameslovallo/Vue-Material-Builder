@@ -4,7 +4,7 @@ const SiteUrl = 'https://patrickonparker.com'
 const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt'
 const SnipcartAPIKey = ''
 const BingWebmasterID = ''
-const GoogleAnalyticsID = ''
+const GoogleAnalyticsID = 'UA-75953315-6'
 const ProgressBarColor = '#fff'
 
 // Load Dependencies
