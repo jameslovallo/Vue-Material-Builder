@@ -7,7 +7,7 @@
     <div
       :style="`height: ${blok.height}; min-height: ${blok.min_height}; padding-top: ${aspectRatio}%;`"
     ></div>
-    <video autoplay loop>
+    <video autoplay muted loop playsinline>
       <source v-if="blok.webm" :src="blok.webm" type="video/webm">
       <source v-if="blok.mp4" :src="blok.mp4" type="video/mp4">
     </video>
