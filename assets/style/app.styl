@@ -1,2 +1,63 @@
 // Import Vuetify styling
 @require '~vuetify/src/stylus/app.styl'
+
+#resume.page-enter-active {
+  animation: slideRightIn .5s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+
+#resume.page-leave-active {
+  animation: slideRightOut .5s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+
+#home.page-leave-active {
+  animation: slideLeftOut .5s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+
+#home.page-enter-active {
+  animation: slideLeftIn .5s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+
+#home {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.25);
+}
+
+@keyframes slideRightIn {
+  0% {
+    transform: translateX(100%)
+  }
+  100% {
+    transform: translateX(0%)
+  }
+}
+
+@keyframes slideLeftOut {
+  0% {
+    transform: translateX(0%)
+  }
+  100% {
+    transform: translateX(-100%)
+  }
+}
+
+@keyframes slideLeftIn {
+  0% {
+    transform: translateX(-100%)
+  }
+  100% {
+    transform: translateX(0%)
+  }
+}
+
+@keyframes slideRightOut {
+  0% {
+    transform: translateX(0%)
+  }
+  100% {
+    transform: translateX(100%)
+  }
+}

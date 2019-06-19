@@ -6,7 +6,9 @@
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
-    <nuxt/>
+        <v-content>
+      <nuxt/>
+    </v-content>
   </v-app>
 </template>
 

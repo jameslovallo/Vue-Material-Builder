@@ -1,5 +1,5 @@
 <template>
-  <v-content v-editable="blok" :id="pageID" class="page" style="min-height: var(--vh, 100vw);">
+  <div v-editable="blok" :id="pageID ? pageID : 'home'" class="page">
     <div
       v-if="blok.use_background"
       class="page-background"
@@ -29,16 +29,15 @@
         :is="blok.component | dashify"
       ></component>
     </div>
-  </v-content>
+  </div>
 </template>
 
 <script>
 export default {
   props: ["blok"],
   computed: {
-    // a computed getter
     pageID() {
-      return "home_" + this.$route.params.pathMatch.replace("/", "_");
+      return this.$route.params.pathMatch;
     }
   }
 };
@@ -47,6 +46,7 @@ export default {
 <style>
 .page {
   position: relative;
+  height: 100%;
 }
 .page-background {
   position: fixed;
