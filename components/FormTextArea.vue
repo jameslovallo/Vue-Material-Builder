@@ -15,7 +15,6 @@
     :rules="blok.required ? [v => !!v || blok.label + ' is required'] : []"
     :class="blok.helpers"
     :style="blok.style"
-    no-resize
     auto-grow
   ></v-textarea>
 </template>
