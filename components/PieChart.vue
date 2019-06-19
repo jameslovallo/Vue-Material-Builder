@@ -2,7 +2,22 @@
   <div class="pie-chart">
     <div class="graph-wrapper">
       <svg width="100%" height="100%" viewBox="0 0 42 42" fill="transparent">
-        <circle cx="21" cy="21" r="15.91549430918954" stroke="#35495E" stroke-width=".75"></circle>
+        <circle
+          cx="21"
+          cy="21"
+          r="15.91549430918954"
+          stroke="#333"
+          stroke-width=".75"
+          style="opacity: 1"
+        ></circle>
+        <circle
+          cx="21"
+          cy="21"
+          r="15.91549430918954"
+          stroke="var(--v-primary-base)"
+          stroke-width=".75"
+          style="opacity: 0.3"
+        ></circle>
         <circle
           :style="style"
           cx="21"
@@ -30,11 +45,13 @@ export default {
   //   title: String,
   //   caption: String,
   //   value: Number
-	// },
-	props: ["blok"],
+  // },
+  props: ["blok"],
   computed: {
     style() {
-      return "stroke-dasharray: " + this.blok.value + " " + (100 - this.blok.value);
+      return (
+        "stroke-dasharray: " + this.blok.value + " " + (100 - this.blok.value)
+      );
     }
   }
 };
@@ -50,7 +67,7 @@ export default {
   align-items: center;
   justify-content: center;
   position: absolute;
-	text-align: center;
+  text-align: center;
   top: 20%;
   right: 20%;
   bottom: 20%;
