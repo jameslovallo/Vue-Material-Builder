@@ -10,7 +10,7 @@
     :color="blok.color"
     :flat="blok.flat"
     :label="blok.label"
-    :name="blok.name"
+    :name="blok.label"
     :outline="blok.outline"
     :prepend-icon="blok.prepend_icon ? 'mdi-' + blok.prepend_icon : ''"
     :prepend-inner-icon="blok.inner_icon ? 'mdi-' + blok.inner_icon : ''"

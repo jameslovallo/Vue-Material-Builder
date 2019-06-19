@@ -20,7 +20,7 @@
         readonly
         v-on="on"
         :rules="blok.required ? [v => !!v || blok.label + ' is required'] : []"
-        :name="blok.name"
+        :name="blok.label"
       ></v-text-field>
     </template>
     <v-time-picker v-if="menu" v-model="time" full-width color="primary">

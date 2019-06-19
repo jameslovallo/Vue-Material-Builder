@@ -19,7 +19,7 @@
         readonly
         v-on="on"
         :rules="blok.required ? [v => !!v || blok.label + ' is required'] : []"
-        :name="blok.name"
+        :name="blok.label"
       ></v-text-field>
     </template>
     <v-date-picker v-model="date" color="primary" scrollable>

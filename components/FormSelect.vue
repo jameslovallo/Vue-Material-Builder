@@ -12,7 +12,7 @@
     :label="blok.label"
     :mask="blok.mask"
     :multiple="blok.allow_multiple_selections"
-    :name="blok.name"
+    :name="blok.label"
     :outline="blok.outline"
     :prepend-icon="blok.prepend_icon ? 'mdi-' + blok.prepend_icon : ''"
     :prepend-inner-icon="blok.inner_icon ? 'mdi-' + blok.inner_icon : ''"
