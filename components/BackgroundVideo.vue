@@ -1,7 +1,7 @@
 <template>
   <div
     v-editable="blok"
-    class="video-container"
+    :class="['video-container', blok.helpers]"
     :style="`align-items: ${blok.vertical_alignment}; ${blok.style}`"
   >
     <div

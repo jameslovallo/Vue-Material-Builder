@@ -6,7 +6,7 @@
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
-        <v-content>
+    <v-content>
       <nuxt/>
     </v-content>
   </v-app>
@@ -37,6 +37,8 @@ if (process.client) {
 </script>
 
 <style>
+/* Document-Level */
+
 html {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
@@ -55,6 +57,8 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+
+/* Typography */
 
 h1,
 h2,
@@ -161,5 +165,17 @@ code:after {
 
 strong {
   color: var(--v-primary-base);
+}
+
+/* Shape Separators */
+
+.bottom-curve {
+  -webkit-clip-path: ellipse(100% 60% at 50% 40%);
+  clip-path: ellipse(100% 60% at 50% 40%);
+}
+
+.bottom-arrow {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 }
 </style>
