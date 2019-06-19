@@ -178,4 +178,34 @@ strong {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
   clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 }
+
+.bottom-arrow-left {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 25% 100%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 25% 100%, 0 80%);
+}
+
+.bottom-arrow-right {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 75% 100%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 75% 100%, 0 80%);
+}
+
+.bottom-lean-left {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+}
+
+.bottom-lean-right {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+}
+
+.slope-clockwise {
+  -webkit-clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
+  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
+}
+
+.slope-counter-clockwise {
+  -webkit-clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+  clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+}
 </style>
