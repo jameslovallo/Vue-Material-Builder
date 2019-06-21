@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 // Import components from files
 import Alert from '~/components/Alert.vue'
-import AudioPlayer from '~/components/custom/AudioPlayer.vue'
+import AudioPlayer from '~/components/AudioPlayer.vue'
 import BackgroundVideo from '~/components/BackgroundVideo.vue'
 import Button from '~/components/Button.vue'
 import Card from '~/components/Card.vue'
