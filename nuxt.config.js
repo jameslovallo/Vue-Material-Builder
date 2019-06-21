@@ -36,16 +36,22 @@ module.exports = {
       // Snipcart Styles
       {
         rel: 'stylesheet',
-				href: (SnipcartAPIKey ? 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css' : '')
+        href: SnipcartAPIKey
+          ? 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
+          : ''
       }
     ],
     script: [
       // Snipcart Scripts
       {
-				src: (SnipcartAPIKey ? 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js' : '')
+        src: SnipcartAPIKey
+          ? 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js'
+          : ''
       },
       {
-				src: (SnipcartAPIKey ? 'https://cdn.snipcart.com/scripts/2.0/snipcart.js' : ''),
+        src: SnipcartAPIKey
+          ? 'https://cdn.snipcart.com/scripts/2.0/snipcart.js'
+          : '',
         id: 'snipcart',
         'data-api-key': SnipcartAPIKey
       }
@@ -112,6 +118,21 @@ module.exports = {
     loaders: {
       stylus: {
         import: ['~assets/style/variables.styl']
+      }
+    },
+    // PostCSS Config
+    postcss: {
+      // Add plugin names as key and arguments as value
+      // Install them before as dependencies with npm or yarn
+      plugins: {
+        // Disable a plugin by passing false as value
+        'postcss-responsive-type': {}
+      },
+      preset: {
+        // Change the postcss-preset-env settings
+        autoprefixer: {
+          grid: true
+        }
       }
     },
 

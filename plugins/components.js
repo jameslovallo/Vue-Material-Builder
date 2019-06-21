@@ -2,6 +2,7 @@ import Vue from 'vue'
 
 // Import components from files
 import Alert from '~/components/Alert.vue'
+import AudioPlayer from '~/components/custom/AudioPlayer.vue'
 import BackgroundVideo from '~/components/BackgroundVideo.vue'
 import Button from '~/components/Button.vue'
 import Card from '~/components/Card.vue'
@@ -25,6 +26,7 @@ import FormTimePicker from '~/components/FormTimePicker.vue'
 import GoogleMap from '~/components/GoogleMap.vue'
 import Highlight from '~/components/Highlight.vue'
 import Icon from '~/components/Icon.vue'
+import iFrame from '~/components/iFrame.vue'
 import Image from '~/components/Image.vue'
 import Link from '~/components/Link.vue'
 import LinkAnchor from '~/components/LinkAnchor.vue'
@@ -51,6 +53,7 @@ import YouTube from '~/components/YouTube.vue'
 // Attach components to storyblok
 Vue.component('blok-3dcarousel', ThreeDCarousel)
 Vue.component('blok-alert', Alert)
+Vue.component('blok-audioplayer', AudioPlayer)
 Vue.component('blok-backgroundvideo', BackgroundVideo)
 Vue.component('blok-button', Button)
 Vue.component('blok-card', Card)
@@ -74,6 +77,7 @@ Vue.component('blok-formtimepicker', FormTimePicker)
 Vue.component('blok-googlemap', GoogleMap)
 Vue.component('blok-highlight', Highlight)
 Vue.component('blok-icon', Icon)
+Vue.component('blok-iframe', iFrame)
 Vue.component('blok-image', Image)
 Vue.component('blok-link', Link)
 Vue.component('blok-linkanchor', LinkAnchor)

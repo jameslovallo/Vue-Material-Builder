@@ -17,20 +17,22 @@
     "@nuxtjs/sitemap": "^1.2.0",
     "axios": "^0.18.1",
     "cross-env": "^5.2.0",
-    "highlight.js": "^9.15.8",
+    "nodemon": "^1.19.1",
     "nuxt": "^2.8.1",
-    "storyblok-nuxt": "1.0.0",
+    "storyblok-nuxt": "1.0.0"
+  },
+  "devDependencies": {
+    "@mdi/font": "^3.6.95",
+    "highlight.js": "^9.15.8",
+    "postcss": "^7.0.17",
+    "postcss-responsive-type": "^1.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-carousel-3d": "^0.2.0",
     "vue-highlight-component": "^1.0.0",
+    "vue-masonry-css": "^1.0.3",
     "vue-typer": "^1.2.0",
     "vuetify": "^1.5.14",
     "vuetify-loader": "^1.2.2"
-  },
-  "devDependencies": {
-    "@mdi/font": "^3.6.95",
-    "nodemon": "^1.19.1",
-    "vue-masonry-css": "^1.0.3"
   }
 }
