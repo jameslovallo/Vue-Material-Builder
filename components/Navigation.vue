@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" id="nav">
+  <v-app :dark="setTheme">
     <!-- DRAWERS -->
     <v-navigation-drawer
       v-if="blok.sidebar_content != false"
@@ -54,7 +54,10 @@
         :is="blok.component | dashify"
       ></component>
     </v-footer>
-  </div>
+    <v-content>
+      <nuxt/>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -64,6 +67,21 @@ export default {
     return {
       drawer: null
     };
+  },
+  computed: {
+    setTheme() {
+      if (this.blok.light_or_dark == "light") {
+        return false;
+      } else if (this.blok.light_or_dark == "dark") {
+        return true;
+      } else if (this.blok.light_or_dark == "dynamic") {
+        if (process.client) {
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return true;
+          }
+        }
+      }
+    }
   }
 };
 </script>

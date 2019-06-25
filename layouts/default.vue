@@ -1,27 +1,17 @@
 <template>
-  <v-app :dark="detectTheme">
+  <div>
     <component
       :key="blok._uid"
       v-for="blok in $store.state.settings.navigation"
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
-    <v-content>
-      <nuxt/>
-    </v-content>
-  </v-app>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ["blok"],
-  computed: {
-    detectTheme() {
-      if (process.client) {
-        return window.matchMedia("(prefers-color-scheme: dark)").matches;
-      }
-    }
-  }
+  props: ["blok"]
 };
 if (process.client) {
   document.addEventListener("DOMContentLoaded", function() {
