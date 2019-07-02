@@ -1,5 +1,11 @@
-.mtk3,
-.mtk11,
-.mtk12 {
+/* JS Styles */
+[data-mode-id='javascript'] .mtk3,
+[data-mode-id='javascript'] .mtk11,
+[data-mode-id='javascript'] .mtk12 {
+  font-style: italic;
+}
+/* CSS Styles */
+[data-mode-id='css'] .mtk9,
+[data-mode-id='css'] .mtk11 {
   font-style: italic;
 }
