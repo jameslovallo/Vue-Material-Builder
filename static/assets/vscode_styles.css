@@ -1,7 +1,10 @@
 /* JS Styles */
 [data-mode-id='javascript'] .mtk3,
 [data-mode-id='javascript'] .mtk11,
-[data-mode-id='javascript'] .mtk12 {
+[data-mode-id='javascript'] .mtk12,
+[data-mode-id='vue'] .mtk3,
+[data-mode-id='vue'] .mtk11,
+[data-mode-id='vue'] .mtk12 {
   font-style: italic;
 }
 /* CSS Styles */
