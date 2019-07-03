@@ -31,12 +31,11 @@ export default {
   props: ["blok"],
   computed: {
     randomImage() {
-      var randomHeight = Math.random() * (800 - 400) + 400;
-      return `https://source.unsplash.com/random/${
-        this.blok.width ? this.blok.width : 600
-      }x${this.blok.height ? this.blok.height : randomHeight}?${
-        this.blok.placeholder_image_search_term
-      }`;
+      var randomWidth = Math.floor(Math.random() * (800 - 600) + 600);
+      var randomHeight = Math.floor(Math.random() * (800 - 300) + 300);
+      return `https://picsum.photos/${
+        this.blok.width ? this.blok.width : randomWidth
+      }/${this.blok.height ? this.blok.height : randomHeight}`;
     },
     optimizedImage() {
       if (
