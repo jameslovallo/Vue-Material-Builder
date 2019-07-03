@@ -38,7 +38,7 @@ export default {
           this.blok.width ? this.blok.width : randomWidth
         }/${this.blok.height ? this.blok.height : randomHeight}/${
           this.blok.placeholder_image_search_term
-        }/all`;
+        }`;
       } else {
         return `https://picsum.photos/${
           this.blok.width ? this.blok.width : randomWidth
