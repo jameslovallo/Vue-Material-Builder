@@ -33,9 +33,17 @@ export default {
     randomImage() {
       var randomWidth = Math.floor(Math.random() * (800 - 600) + 600);
       var randomHeight = Math.floor(Math.random() * (800 - 300) + 300);
-      return `https://picsum.photos/${
-        this.blok.width ? this.blok.width : randomWidth
-      }/${this.blok.height ? this.blok.height : randomHeight}`;
+      if (this.blok.placeholder_image_search_term) {
+        return `https://loremflickr.com/${
+          this.blok.width ? this.blok.width : randomWidth
+        }/${this.blok.height ? this.blok.height : randomHeight}/${
+          this.blok.placeholder_image_search_term
+        }/all`;
+      } else {
+        return `https://picsum.photos/${
+          this.blok.width ? this.blok.width : randomWidth
+        }/${this.blok.height ? this.blok.height : randomHeight}`;
+      }
     },
     optimizedImage() {
       if (
