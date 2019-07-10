@@ -1,5 +1,5 @@
 <template>
-  <div class="pie-chart">
+  <div class="pie-chart" data-aos data-aos-once="true">
     <div class="graph-wrapper">
       <svg width="100%" height="100%" viewBox="0 0 42 42" fill="transparent">
         <circle
@@ -9,7 +9,7 @@
           stroke="#333"
           stroke-width=".75"
           style="opacity: 1"
-        ></circle>
+        />
         <circle
           cx="21"
           cy="21"
@@ -17,7 +17,7 @@
           stroke="var(--v-primary-base)"
           stroke-width=".75"
           style="opacity: 0.3"
-        ></circle>
+        />
         <circle
           :style="style"
           cx="21"
@@ -26,7 +26,8 @@
           stroke="var(--v-primary-base)"
           stroke-width="2"
           stroke-dashoffset="25"
-        ></circle>
+          class="swoosh-in"
+        />
       </svg>
       <div class="graph-caption">
         <div class="graph-text">
@@ -73,5 +74,15 @@ export default {
   bottom: 20%;
   left: 20%;
   border-radius: 50%;
+}
+
+.aos-animate .swoosh-in {
+  animation: swooshIn 1s;
+}
+
+@keyframes swooshIn {
+  0% {
+    stroke-dasharray: 0 100;
+  }
 }
 </style>

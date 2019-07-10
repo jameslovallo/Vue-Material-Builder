@@ -12,3 +12,5 @@ dist
 
 # PWA Service Worker
 sw.*
+
+.DS_Store

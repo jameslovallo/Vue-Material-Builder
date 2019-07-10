@@ -9,6 +9,8 @@
     :two-line="blok.twoline"
     :class="blok.helpers"
     :style="blok.style"
+    data-aos
+    data-aos-once="true"
   >
     <component
       :key="blok._uid"
@@ -28,17 +30,13 @@ export default {
 </script>
 
 // TODO: Allow dynamic animation setting
-<style>
-[role="listitem"] {
+<style scoped>
+.aos-animate * {
   animation-name: animateIn;
-  animation-duration: 350ms;
-  animation-delay: calc(var(--animation-order) * 100ms);
+  animation-duration: 300ms;
+  animation-delay: calc(var(--animation-order) * 200ms);
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
-}
-
-li + li {
-  margin-top: 16px;
 }
 
 @keyframes animateIn {

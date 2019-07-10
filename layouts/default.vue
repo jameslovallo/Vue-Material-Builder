@@ -10,10 +10,14 @@
 </template>
 
 <script>
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default {
   props: ["blok"]
 };
 if (process.client) {
+  // Dynamic viewport height correction for mobile
   document.addEventListener("DOMContentLoaded", function() {
     let vh = window.innerHeight;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -23,6 +27,8 @@ if (process.client) {
     let vh = window.innerHeight;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   });
+
+  AOS.init();
 }
 </script>
 
@@ -45,6 +51,12 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+@media only screen and (min-width: 1904px) {
+  .container {
+    max-width: 1300px;
+  }
 }
 
 /* Shape Separators */
