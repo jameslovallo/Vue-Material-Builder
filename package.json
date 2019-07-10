@@ -23,7 +23,7 @@
     "storyblok-nuxt": "1.0.0"
   },
   "devDependencies": {
-    "@mdi/font": "^3.6.95",
+    "@mdi/font": "^3.7.95",
     "highlight.js": "^9.15.8",
     "postcss": "^7.0.17",
     "postcss-responsive-type": "^1.0.0",
@@ -33,7 +33,7 @@
     "vue-highlight-component": "^1.0.0",
     "vue-masonry-css": "^1.0.3",
     "vue-typer": "^1.2.0",
-    "vuetify": "^1.5.14",
+    "vuetify": "^1.5.16",
     "vuetify-loader": "^1.2.2"
   }
 }
