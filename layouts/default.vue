@@ -10,9 +10,6 @@
 </template>
 
 <script>
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 export default {
   props: ["blok"]
 };
@@ -27,8 +24,6 @@ if (process.client) {
     let vh = window.innerHeight;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   });
-
-  AOS.init();
 }
 </script>
 
@@ -98,5 +93,9 @@ html {
 .slope-counter-clockwise {
   -webkit-clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
   clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+}
+
+[data-aos]:not(.aos-animate) {
+  visibility: hidden;
 }
 </style>

@@ -8,6 +8,9 @@
 </template>
 
 <script>
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const loadData = function({ api, cacheVersion, errorCallback, version, path }) {
   return api
     .get(`cdn/stories/${path}`, {
@@ -48,6 +51,9 @@ export default {
         window.location.reload();
       }
     });
+    if (process.client) {
+      AOS.init();
+    }
   },
   asyncData(context) {
     // Check if we are in the editing mode
