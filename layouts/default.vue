@@ -50,7 +50,7 @@ html {
 
 @media only screen and (min-width: 1904px) {
   .container {
-    max-width: 1300px;
+    max-width: 1400px;
   }
 }
 
