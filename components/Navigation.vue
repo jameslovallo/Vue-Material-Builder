@@ -40,12 +40,16 @@
         :is="blok.component | dashify"
       ></component>
     </v-toolbar>
+    <v-content>
+      <nuxt />
+    </v-content>
     <v-footer
       v-if="blok.footer_content != false"
-      app
+      :app="blok.footer_fixed"
       :inset="blok.footer_inset"
       :color="blok.footer_color"
       :dark="blok.footer_dark"
+      :height="blok.footer_height"
     >
       <component
         :key="blok._uid"
@@ -54,9 +58,11 @@
         :is="blok.component | dashify"
       ></component>
     </v-footer>
-    <v-content>
-      <nuxt/>
-    </v-content>
+    <style>
+  body {
+    background: {{blok.color}}
+  }
+    </style>
   </v-app>
 </template>
 

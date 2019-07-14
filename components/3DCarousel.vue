@@ -3,9 +3,9 @@
     v-editable="blok"
     :autoplay="blok.autoplay"
     :controlsVisible="blok.show_controls"
-    :autoplayTimeout="blok.autoplay_speed"
+    :autoplayTimeout="Number(blok.autoplay_speed)"
     :autoplayHoverPause="blok.pause_on_hover"
-    :perspective="$vuetify.breakpoint.smAndDown ? blok.perspective : mobile_perspective"
+    :perspective="$vuetify.breakpoint.smAndDown ? blok.perspective : blok.mobile_perspective"
     :display="$vuetify.breakpoint.smAndDown ? blok.mobile_active_slides : blok.active_slides"
     :animationSpeed="blok.transition_speed"
     :width="$vuetify.breakpoint.smAndDown ? blok.mobile_width : blok.width"
@@ -13,7 +13,7 @@
     :border="blok.border_width"
     :space="$vuetify.breakpoint.smAndDown ? blok.mobile_space_between_slides : blok.space_between_slides"
     :clickable="blok.clickable"
-    :minSwipeDistance="blok.swipe_sensitivity_in_pixels"
+    :minSwipeDistance="Number(blok.swipe_sensitivity_in_pixels)"
     :class="blok.helpers"
   >
     <slide v-if="blok.slide_1 != false" :index="0">

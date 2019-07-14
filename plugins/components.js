@@ -40,6 +40,9 @@ Vue.component('blok-expansionpanel', ExpansionPanel)
 import ExpansionPanelContent from '~/components/ExpansionPanelContent.vue'
 Vue.component('blok-expansionpanelcontent', ExpansionPanelContent)
 
+import FeatureTiles from '~/components/FeatureTiles.vue'
+Vue.component('blok-featuretiles', FeatureTiles)
+
 import Form from '~/components/Form.vue'
 Vue.component('blok-form', Form)
 

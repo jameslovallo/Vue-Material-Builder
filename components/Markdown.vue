@@ -3,7 +3,7 @@
     v-editable="blok"
     v-html="$md.render(blok.md)"
     :style="blok.style"
-    :class="['markdown', blok.disable_responsive_copy ? 'static-p' : '', blok.helpers]"
+    :class="['markdown', blok.disable_responsive_copy ? 'not-responsive' : '', blok.helpers]"
   ></div>
 </template>
 
@@ -79,9 +79,9 @@ ul {
   margin-bottom: 1em;
 }
 
-.markdown:not(.static-p) p,
-.markdown:not(.static-p) ol,
-.markdown:not(.static-p) ul {
+.markdown:not(.not-responsive) p,
+.markdown:not(.not-responsive) ol,
+.markdown:not(.not-responsive) ul {
   font-size: responsive 16px 20px;
 }
 

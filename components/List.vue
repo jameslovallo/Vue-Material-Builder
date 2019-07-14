@@ -7,8 +7,8 @@
     :subheader="blok.subheader"
     :three-line="blok.threeline"
     :two-line="blok.twoline"
-    :class="blok.helpers"
-    :style="blok.style"
+    :class="[blok.helpers, blok.grid_list ? 'grid-list' : '']"
+    :style="blok.style + gridStyles"
     data-aos
     data-aos-once="true"
   >
@@ -25,12 +25,22 @@
 
 <script>
 export default {
-  props: ["blok"]
+  props: ["blok"],
+  computed: {
+    gridStyles() {
+      return `grid-template-columns: repeat(auto-fit, minmax(${this.blok.grid_column_width}px, 1fr)); gap: ${this.blok.grid_gap} ${this.blok.grid_gap};`;
+    }
+  }
 };
 </script>
 
 // TODO: Allow dynamic animation setting
 <style scoped>
+.grid-list {
+  display: grid;
+  width: 100%;
+}
+
 .aos-animate * {
   animation-name: animateIn;
   animation-duration: 300ms;
