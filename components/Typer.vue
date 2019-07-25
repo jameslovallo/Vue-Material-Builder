@@ -37,5 +37,6 @@ export default {
 }
 .vue-typer {
   display: inline-block;
+  min-width: 10em;
 }
 </style>
