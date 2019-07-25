@@ -31,36 +31,29 @@ export default {
   props: ["blok"],
   computed: {
     randomImage() {
-      var randomWidth = Math.floor(Math.random() * (800 - 600) + 600);
-      var randomHeight = Math.floor(Math.random() * (800 - 300) + 300);
-      if (this.blok.placeholder_image_search_term) {
-        return `https://loremflickr.com/${
-          this.blok.width ? this.blok.width : randomWidth
-        }/${this.blok.height ? this.blok.height : randomHeight}/${
-          this.blok.placeholder_image_search_term
-        }`;
-      } else {
-        return `https://picsum.photos/${
-          this.blok.width ? this.blok.width : randomWidth
-        }/${this.blok.height ? this.blok.height : randomHeight}`;
-      }
+      let width = this.blok.width
+        ? this.blok.width
+        : Math.floor(Math.random() * (800 - 600) + 600);
+      let height = this.blok.height
+        ? this.blok.height
+        : Math.floor(Math.random() * (800 - 400) + 300);
+      let searchTerm = this.blok.placeholder_image_search_term;
+      let service = searchTerm ? "loremflickr.com" : "picsum.photos";
+      return `https://${service}/${width}/${height}/${searchTerm}`;
     },
     optimizedImage() {
-      if (
-        this.blok.src.includes("a.storyblok.com") &&
-        (this.blok.src.includes("jpeg") ||
-          this.blok.src.includes("jpg") ||
-          (this.blok.src.includes("png") &&
-            this.blok.do_not_use_image_service == false))
-      ) {
+      let img = this.blok.src;
+      let valid =
+        img.includes("jpeg") || img.includes("jpg") || img.includes("png");
+      if (valid) {
         let imageService = "//img2.storyblok.com/";
-        let path = this.blok.src.replace("//a.storyblok.com", "");
+        let path = img.replace("//a.storyblok.com", "");
         let options = `${this.blok.optiwidth}x${
           this.blok.height ? this.blok.height : 0
         }${this.blok.smart_crop ? "/smart" : ""}`;
         return imageService + options + path;
       } else {
-        return this.blok.src;
+        return img;
       }
     }
   }
