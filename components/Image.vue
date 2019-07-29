@@ -42,18 +42,21 @@ export default {
       return `https://${service}/${width}/${height}/${searchTerm}`;
     },
     optimizedImage() {
-      let img = this.blok.src;
-      let valid =
-        img.includes("jpeg") || img.includes("jpg") || img.includes("png");
-      if (valid) {
+      if (
+        this.blok.src.includes("a.storyblok.com") &&
+        (this.blok.src.includes("jpeg") ||
+          this.blok.src.includes("jpg") ||
+          (this.blok.src.includes("png") &&
+            this.blok.do_not_use_image_service == false))
+      ) {
         let imageService = "//img2.storyblok.com/";
-        let path = img.replace("//a.storyblok.com", "");
+        let path = this.blok.src.replace("//a.storyblok.com", "");
         let options = `${this.blok.optiwidth}x${
           this.blok.height ? this.blok.height : 0
         }${this.blok.smart_crop ? "/smart" : ""}`;
         return imageService + options + path;
       } else {
-        return img;
+        return this.blok.src;
       }
     }
   }
