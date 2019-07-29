@@ -42,18 +42,18 @@ export default {
       return `https://${service}/${width}/${height}/${searchTerm}`;
     },
     optimizedImage() {
-      if (
-        this.blok.src.includes("a.storyblok.com") &&
-        (this.blok.src.includes("jpeg") ||
-          this.blok.src.includes("jpg") ||
-          (this.blok.src.includes("png") &&
-            this.blok.do_not_use_image_service == false))
-      ) {
+      let isStoryblok = this.blok.src.includes("a.storyblok.com");
+      let validType =
+        this.blok.src.includes("jpeg") ||
+        this.blok.src.includes("jpg") ||
+        this.blok.src.includes("png");
+      let noOverride = this.blok.do_not_use_image_service == false;
+      if (isStoryblok && validType && noOverride) {
         let imageService = "//img2.storyblok.com/";
-        let path = this.blok.src.replace("//a.storyblok.com", "");
         let options = `${this.blok.optiwidth}x${
           this.blok.height ? this.blok.height : 0
         }${this.blok.smart_crop ? "/smart" : ""}`;
+        let path = this.blok.src.replace("//a.storyblok.com", "");
         return imageService + options + path;
       } else {
         return this.blok.src;
