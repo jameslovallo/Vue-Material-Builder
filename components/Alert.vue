@@ -7,7 +7,7 @@
     :icon="'mdi-' + blok.icon"
     :mode="blok.mode"
     :origin="blok.origin"
-    :outline="blok.outline"
+    :outlined="blok.outline"
     :transition="blok.transition"
     :type="blok.type"
     :class="blok.helpers"

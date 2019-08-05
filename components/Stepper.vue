@@ -9,8 +9,8 @@
     <div class="pa-3">
       <v-btn
         :color="blok.color"
-        :outline="blok.outline"
-        :round="blok.round"
+        :outlined="blok.outline"
+        :rounded="blok.round"
         :dark="blok.dark"
         @click="currentStep = currentStep + 1"
         v-if="currentStep < blok.steps"
@@ -25,10 +25,10 @@
       </template>
       <v-btn
         :color="blok.color"
-        :outline="blok.outline"
-        :round="blok.round"
+        :outlined="blok.outline"
+        :rounded="blok.round"
         :dark="blok.dark"
-        flat
+        text
         @click="currentStep = currentStep - 1"
         v-if="currentStep > 1"
       >Back</v-btn>

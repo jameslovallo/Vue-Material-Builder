@@ -23,9 +23,9 @@
       ></v-text-field>
     </template>
     <v-date-picker v-model="date" color="primary" scrollable>
-      <v-btn color="primary" round @click="$refs.menu.save(date)">OK</v-btn>
+      <v-btn color="primary" rounded @click="$refs.menu.save(date)">OK</v-btn>
       <v-spacer></v-spacer>
-      <v-btn flat color="red" round @click="menu = false">Cancel</v-btn>
+      <v-btn text color="red" rounded @click="menu = false">Cancel</v-btn>
     </v-date-picker>
   </v-menu>
 </template>

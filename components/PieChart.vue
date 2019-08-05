@@ -14,7 +14,7 @@
           cx="21"
           cy="21"
           r="15.91549430918954"
-          stroke="var(--v-primary-base)"
+          :stroke="blok.color"
           stroke-width=".75"
           style="opacity: 0.3"
         />
@@ -23,7 +23,7 @@
           cx="21"
           cy="21"
           r="15.91549430918954"
-          stroke="var(--v-primary-base)"
+          :stroke="blok.color"
           stroke-width="2"
           stroke-dashoffset="25"
           class="swoosh-in"

@@ -4,7 +4,7 @@
     v-model="phone"
     :rules="phoneRules"
     :autofocus="blok.auto_focus"
-    :box="blok.box"
+    :filled="blok.box"
     :clear-icon="blok.clear_icon ? 'mdi-' + blok.clear_icon : ''"
     :clearable="blok.clearable"
     :color="blok.color"

@@ -1,16 +1,17 @@
+import colors from 'vuetify/es5/util/colors';
+
 // Customer-Specific Settings
-const SiteName = 'Patrick on Parker'
-const SiteUrl = 'https://patrickonparker.com'
-const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt'
-const SnipcartAPIKey = ''
-const BingWebmasterID = ''
-const GoogleAnalyticsID = 'UA-75953315-6'
-const ProgressBarColor = '#fff'
+const SiteName = 'Patrick on Parker';
+const SiteUrl = 'https://patrickonparker.com';
+const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt';
+const SnipcartAPIKey = '';
+const BingWebmasterID = '';
+const GoogleAnalyticsID = 'UA-75953315-6';
+const ProgressBarColor = '#fff';
 
 // Load Dependencies
-const pkg = require('./package')
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-const axios = require('axios')
+const pkg = require('./package');
+const axios = require('axios');
 
 module.exports = {
   mode: 'universal',
@@ -27,12 +28,6 @@ module.exports = {
     link: [
       // Favicon
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      // Fonts
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Roboto+Mono'
-      },
       // Snipcart Styles
       {
         rel: 'stylesheet',
@@ -61,14 +56,10 @@ module.exports = {
   // Progress Bar
   loading: { color: ProgressBarColor },
 
-  // Global CSS
-  css: ['@/assets/style/app.styl'],
-
   // Plugins
   plugins: [
     '~/plugins/components',
     '~/plugins/filters',
-    '@/plugins/vuetify',
     '~/plugins/masonry',
     { src: 'plugins/vue-typer.js', ssr: false },
     { src: 'plugins/vue-carousel-3d.js', ssr: false }
@@ -89,6 +80,25 @@ module.exports = {
     ],
     ['@nuxtjs/sitemap']
   ],
+
+  devModules: ['@nuxtjs/vuetify'],
+
+  vuetify: {
+    customProperties: true,
+    defaultAssets: {
+      font: true,
+      icons: 'mdi'
+    },
+    theme: {
+      dark: false,
+      themes: {
+        light: {
+          primary: colors.blue.accent3,
+          michou: colors.blue
+        }
+      }
+    }
+  },
 
   // Sitemap Config
   sitemap: {
@@ -113,13 +123,6 @@ module.exports = {
   // Build Configuration
   build: {
     extractCSS: true,
-    transpile: ['vuetify/lib'],
-    plugins: [new VuetifyLoaderPlugin()],
-    loaders: {
-      stylus: {
-        import: ['~assets/style/variables.styl']
-      }
-    },
     // PostCSS Config
     postcss: {
       // Add plugin names as key and arguments as value
@@ -143,11 +146,11 @@ module.exports = {
   // Generate Routes
   generate: {
     routes: function(callback) {
-      const version = 'published'
-      let cache_version = 0
+      const version = 'published';
+      let cache_version = 0;
 
       // Other routes that are not in Storyblok with their slug.
-      let routes = ['/', '/home']
+      let routes = ['/', '/home'];
 
       // Load space and receive latest cache version key to improve performance
       axios
@@ -156,7 +159,7 @@ module.exports = {
         )
         .then(space_res => {
           // timestamp of latest publish
-          cache_version = space_res.data.space.version
+          cache_version = space_res.data.space.version;
 
           // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
           axios
@@ -166,13 +169,13 @@ module.exports = {
             .then(res => {
               Object.keys(res.data.links).forEach(key => {
                 if (res.data.links[key].slug != 'home') {
-                  routes.push('/' + res.data.links[key].slug)
+                  routes.push('/' + res.data.links[key].slug);
                 }
-              })
+              });
 
-              callback(null, routes)
-            })
-        })
+              callback(null, routes);
+            });
+        });
     }
   }
-}
+};

@@ -17,7 +17,7 @@
       ></component>
     </v-navigation-drawer>
     <!-- TOOLBAR -->
-    <v-toolbar
+    <v-app-bar
       v-if="blok.toolbar_content"
       app
       clipped-left
@@ -39,7 +39,7 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
-    </v-toolbar>
+    </v-app-bar>
     <v-content>
       <nuxt />
     </v-content>

@@ -45,9 +45,9 @@
           :blok="blok"
           :is="blok.component | dashify"
         ></component>
-        <input type="hidden" name="_subject" value="New form submission!">
-        <input type="hidden" name="_next" :value="blok.redirect_to">
-        <input type="hidden" name="_replyto">
+        <input type="hidden" name="_subject" value="New form submission!" />
+        <input type="hidden" name="_next" :value="blok.redirect_to" />
+        <input type="hidden" name="_replyto" />
       </v-card-text>
       <v-divider></v-divider>
       <v-card-actions class="pa-3">
@@ -56,8 +56,10 @@
           :disabled="!valid"
           :color="blok.button_color"
           :dark="blok.button_dark"
-          :outline="blok.button_outline"
-          :round="blok.button_round"
+          :outlined="blok.button_outline"
+          :rounded="blok.button_round"
+          large
+          class="px-8"
           type="submit"
         >
           <component
@@ -69,7 +71,7 @@
           {{blok.button_text}}
         </v-btn>
         <v-spacer></v-spacer>
-        <v-btn @click="clear" flat color="red">clear</v-btn>
+        <v-btn @click="clear" text color="red">clear</v-btn>
       </v-card-actions>
     </v-form>
   </v-card>

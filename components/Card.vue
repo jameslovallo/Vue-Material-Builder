@@ -39,7 +39,7 @@
       ></component>
     </v-card-text>
     <v-divider v-if="blok.cardactions != false"></v-divider>
-    <v-card-actions v-if="blok.cardactions != false" class="pa-3">
+    <v-card-actions v-if="blok.cardactions != false">
       <component
         :key="blok._uid"
         v-for="blok in blok.cardactions"

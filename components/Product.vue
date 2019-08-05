@@ -11,7 +11,7 @@
       {{blok.item_name}}
       <v-btn
         :color="blok.button_color"
-        :round="blok.button_round"
+        :rounded="blok.button_round"
         absolute
         class="mt-2 snipcart-add-item"
         href="#"

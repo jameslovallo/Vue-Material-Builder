@@ -6,11 +6,11 @@
         v-on="on"
         :color="blok.button_color"
         :dark="blok.button_dark"
-        :flat="blok.button_flat"
+        :text="blok.button_flat"
         :icon="blok.button_icon"
         :large="blok.button_large"
-        :outline="blok.button_outline"
-        :round="blok.button_round"
+        :outlined="blok.button_outline"
+        :rounded="blok.button_round"
         :small="blok.button_small"
       >
         <component
@@ -18,9 +18,9 @@
           v-for="blok in blok.icon"
           :blok="blok"
           :is="blok.component | dashify"
-        ></component
-        >{{blok.button_text}}</v-btn
-      >
+        ></component>
+        {{blok.button_text}}
+      </v-btn>
     </template>
     <v-list>
       <component
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-  export default {
-    props: ["blok"]
-  };
+export default {
+  props: ["blok"]
+};
 </script>
