@@ -3,3 +3,7 @@
 iframe {
   display: block;
 }
+
+[data-aos]:not(.aos-animate) {
+  visibility: hidden;
+}
