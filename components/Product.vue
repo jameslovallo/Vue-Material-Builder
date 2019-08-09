@@ -42,14 +42,3 @@ export default {
   props: ["blok"]
 };
 </script>
-
-<style>
-.markdown *:first-child,
-.markdown blockquote * {
-  margin-top: 0;
-}
-.markdown *:last-child,
-.markdown blockquote * {
-  margin-bottom: 0;
-}
-</style>
