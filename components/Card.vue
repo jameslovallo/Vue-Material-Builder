@@ -38,14 +38,13 @@
         :is="blok.component | dashify"
       ></component>
     </v-card-text>
-    <v-divider v-if="blok.cardactions != false"></v-divider>
-    <v-card-actions v-if="blok.cardactions != false">
+    <v-divider v-if="blok.cardactions != false && blok.color!='transparent'"></v-divider>
+    <v-card-actions v-if="blok.cardactions != false" class="px-4">
       <component
         :key="blok._uid"
         v-for="blok in blok.cardactions"
         :blok="blok"
         :is="blok.component | dashify"
-        style="width: 100%;"
       ></component>
     </v-card-actions>
   </v-card>
@@ -64,5 +63,11 @@ export default {
 .v-card__title,
 .v-card__text {
   position: relative;
+}
+.theme--dark.v-card .v-card__text {
+  color: white;
+}
+.theme--light.v-card .v-card__text {
+  color: black;
 }
 </style>

@@ -22,6 +22,9 @@ Vue.component('blok-carouselitem', CarouselItem)
 import Column from '~/components/Column.vue'
 Vue.component('blok-column', Column)
 
+import Container from '~/components/Container.vue'
+Vue.component('blok-container', Container)
+
 import CopyrightText from '~/components/CopyrightText.vue'
 Vue.component('blok-copyrighttext', CopyrightText)
 
@@ -118,8 +121,8 @@ Vue.component('blok-piechart', PieChart)
 import Product from '~/components/Product.vue'
 Vue.component('blok-product', Product)
 
-import Row from '~/components/Row.vue'
-Vue.component('blok-row', Row)
+import Layout from '~/components/Layout.vue'
+Vue.component('blok-row', Layout)
 
 import Spacer from '~/components/Spacer.vue'
 Vue.component('blok-spacer', Spacer)

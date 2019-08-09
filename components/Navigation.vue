@@ -23,6 +23,7 @@
       clipped-left
       :color="blok.color"
       :dark="blok.dark"
+      :height="blok.height"
       :flat="blok.flat"
       :dense="blok.dense"
       :class="blok.helpers"

@@ -14,16 +14,16 @@
           cx="21"
           cy="21"
           r="15.91549430918954"
-          :stroke="blok.color"
+          :stroke="this.$vuetify.theme.themes.light.primary"
           stroke-width=".75"
           style="opacity: 0.3"
         />
         <circle
-          :style="style"
+          :style="dashArray"
           cx="21"
           cy="21"
           r="15.91549430918954"
-          :stroke="blok.color"
+          :stroke="this.$vuetify.theme.themes.light.primary"
           stroke-width="2"
           stroke-dashoffset="25"
           class="swoosh-in"
@@ -49,31 +49,31 @@ export default {
   // },
   props: ["blok"],
   computed: {
-    style() {
-      return (
-        "stroke-dasharray: " + this.blok.value + " " + (100 - this.blok.value)
-      );
+    dashArray() {
+      return `stroke-dasharray: ${this.blok.value} ${100 - this.blok.value}`;
     }
   }
 };
 </script>
 
-<style scoped>
-.graph-wrapper {
-  position: relative;
-}
+<style lang="scss" scoped>
+.graph {
+  &-wrapper {
+    position: relative;
+  }
 
-.graph-caption {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  text-align: center;
-  top: 20%;
-  right: 20%;
-  bottom: 20%;
-  left: 20%;
-  border-radius: 50%;
+  &-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+    border-radius: 50%;
+  }
 }
 
 .aos-animate .swoosh-in {

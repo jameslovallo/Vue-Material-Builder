@@ -54,7 +54,7 @@
         ></component>
       </v-card-text>
       <v-divider v-if="blok.cardactions != false"></v-divider>
-      <v-card-actions v-if="blok.cardactions != false || blok.close_dialog != false" class="pa-3">
+      <v-card-actions v-if="blok.cardactions != false || blok.close_dialog != false" class="py-4">
         <component
           :key="blok._uid"
           v-for="blok in blok.cardactions"

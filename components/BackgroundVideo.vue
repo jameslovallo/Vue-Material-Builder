@@ -8,8 +8,8 @@
       :style="`height: ${blok.height}; min-height: ${blok.min_height}; padding-top: ${aspectRatio}%;`"
     ></div>
     <video autoplay muted loop playsinline>
-      <source v-if="blok.webm" :src="blok.webm" type="video/webm">
-      <source v-if="blok.mp4" :src="blok.mp4" type="video/mp4">
+      <source v-if="blok.webm" :src="blok.webm" type="video/webm" />
+      <source v-if="blok.mp4" :src="blok.mp4" type="video/mp4" />
     </video>
     <div class="video-content">
       <component
@@ -33,26 +33,29 @@ export default {
 };
 </script>
 
-<style>
-.video-container {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-	width: 100%;
+<style lang="scss">
+.video {
+  &-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  &-content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
 }
+
 video {
   z-index: 1;
   position: absolute;
   object-fit: cover;
   min-width: 100%;
   min-height: 100%;
-}
-.video-content {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 2;
 }
 </style>
 

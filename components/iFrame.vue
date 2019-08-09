@@ -16,10 +16,3 @@ export default {
   props: ["blok"]
 };
 </script>
-
-<style>
-iframe {
-  display: block;
-}
-</style>
-

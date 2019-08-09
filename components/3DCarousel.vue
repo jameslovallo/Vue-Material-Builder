@@ -97,12 +97,14 @@ export default {
 };
 </script>
 
-<style>
-.carousel-3d-container {
-  overflow: visible !important;
-}
-.carousel-3d-slide {
-  border-radius: 10px !important;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.8), 0px 12px 24px rgba(0, 0, 0, 0.4);
+<style lang="scss">
+.carousel-3d {
+  &-container {
+    overflow: visible !important;
+  }
+  &-slide {
+    border-radius: 10px !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.8), 0px 12px 24px rgba(0, 0, 0, 0.4);
+  }
 }
 </style>

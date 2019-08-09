@@ -1,0 +1,11 @@
+@import 'base/shape_separators.scss';
+@import 'base/page_transitions.scss';
+@import 'base/typography.scss';
+
+.paper {
+  margin: 0 auto;
+  padding: 1cm;
+  @media (max-width: 500px) {
+    padding: 10px;
+  }
+}
