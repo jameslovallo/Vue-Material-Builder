@@ -1,9 +1,10 @@
 <template>
-  <div
+  <component
+    :is="tag || blok.tag"
     v-editable="blok"
     :class="[blok.size, blok.weight, blok.transform, blok.italic, blok.truncate, blok.helpers, blok.shadow, blok.text_background_image ? 'clip-text' : '']"
     :style="`${color} ${blok.style} ${backgroundImage} ${longShadow}`"
-  >{{blok.text}}</div>
+  >{{blok.text}}</component>
 </template>
 
 <script>
