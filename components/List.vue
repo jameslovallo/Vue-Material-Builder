@@ -2,6 +2,8 @@
   <v-list
     v-editable="blok"
     :dark="blok.dark"
+    :data-aos="blok.animate_list"
+    data-aos-once="true"
     :dense="blok.dense"
     :expand="blok.expand"
     :subheader="blok.subheader"
@@ -9,8 +11,6 @@
     :two-line="blok.twoline"
     :class="[blok.helpers, blok.grid_list ? 'grid-list' : '']"
     :style="blok.style + gridStyles"
-    data-aos
-    data-aos-once="true"
   >
     <component
       :key="blok._uid"

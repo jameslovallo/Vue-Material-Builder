@@ -23,8 +23,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .container {
   margin: 0 auto;
+
+  @media (min-width: 1904px) {
+    max-width: 1440px;
+  }
 }
 </style>

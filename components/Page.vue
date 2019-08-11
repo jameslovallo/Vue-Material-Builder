@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" :id="pageID ? pageID : 'home'" class="page">
+  <article v-editable="blok" :id="pageID ? pageID : 'home'" class="page">
     <div
       v-if="blok.use_background"
       class="page-background"
@@ -29,7 +29,7 @@
         :is="blok.component | dashify"
       ></component>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
