@@ -48,11 +48,17 @@ h6 {
   letter-spacing: 0.15;
 }
 
-p,
-ol,
-ul {
-  line-height: 1.5em;
-  margin-bottom: 1em;
+:not(.not-responsive) {
+  p {
+    font-size: responsive 16px 20px;
+  }
+  li {
+    font-size: 16px;
+  }
+  ol,
+  ul {
+    margin-bottom: 1em;
+  }
 }
 
 em {
@@ -94,14 +100,6 @@ code {
 
   * {
     max-width: 100%;
-  }
-
-  &:not(.not-responsive) {
-    p,
-    ol,
-    ul {
-      font-size: responsive 16px 20px;
-    }
   }
 
   a {

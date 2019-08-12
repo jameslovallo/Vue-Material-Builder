@@ -1,5 +1,5 @@
 <template>
-  <v-spacer :class="blok.use_as_dot_leader"></v-spacer>
+  <v-spacer :class="[blok.use_as_dot_leader, 'hidden-sm-and-down']"></v-spacer>
 </template>
 
 <script>
@@ -9,11 +9,9 @@ export default {
 </script>
 
 <style>
-.theme--dark .dot-leader {
-  border-bottom: 4px dotted white;
+.dot-leader {
+  border-bottom: 1px dotted;
   height: 1em;
-  position: relative;
-  top: -3px;
-  margin: 0 .5em;
+  margin: 0 0.25em;
 }
 </style>
