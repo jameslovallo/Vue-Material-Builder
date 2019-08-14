@@ -2,8 +2,6 @@
   <v-list
     v-editable="blok"
     :dark="blok.dark"
-    :data-aos="blok.animate_list"
-    data-aos-once="true"
     :dense="blok.dense"
     :expand="blok.expand"
     :nav="blok.list_style==='nav'"
@@ -12,11 +10,18 @@
     :subheader="blok.subheader.length > 0"
     :three-line="blok.threeline"
     :two-line="blok.twoline"
-    :class="[blok.helpers, blok.grid_list ? 'grid-list' : '']"
-    :style="blok.style + gridStyles"
+    :class="blok.helpers"
+    :style="blok.style"
   >
     <v-subheader v-if="blok.subheader">{{blok.subheader}}</v-subheader>
-    <v-list-item-group v-model="item" :color="blok.color">
+    <v-list-item-group
+      v-model="item"
+      :color="blok.color"
+      :class="blok.grid_list ? 'grid-list' : ''"
+      :style="gridStyles"
+      :data-aos="blok.animate_list"
+      data-aos-once="true"
+    >
       <component
         :key="blok._uid"
         v-for="(blok, n) in blok.listcontent"
