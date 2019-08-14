@@ -3,6 +3,7 @@
     v-editable="blok"
     :dark="blok.dark"
     :dense="blok.dense"
+    :disabled="blok.disabled"
     :expand="blok.expand"
     :nav="blok.list_style==='nav'"
     :rounded="blok.list_style==='rounded'"
