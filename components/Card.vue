@@ -46,7 +46,7 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
-    </v-card-actions>z
+    </v-card-actions>
   </v-card>
 </template>
 
