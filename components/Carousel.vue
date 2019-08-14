@@ -1,12 +1,15 @@
 <template>
   <v-carousel
+    v-editable="blok"
     :active-class="blok.active_class"
+    continuous
     :cycle="blok.cycle"
     :dark="blok.dark"
     :delimeter-icon="'mdi-' + blok.delimeter_icon"
     :height="blok.height"
-    :hide-controls="blok.hide_controls"
+    :show-arrows="!blok.hide_controls"
     :hide-delimiters="blok.hide_delimiters"
+    :hide-delimiter-background="blok.hide_delimiter_background"
     :interval="blok.interval * 1000"
     :light="blok.light"
     :mandatory="blok.mandatory"

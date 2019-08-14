@@ -28,6 +28,7 @@
     "storyblok-nuxt": "^1.0.1",
     "vue-carousel-3d": "^0.2.0",
     "vue-highlight-component": "^1.0.0",
+    "vue-magic-grid": "0.0.4",
     "vue-masonry-css": "^1.0.3",
     "vue-typer": "^1.2.0"
   },

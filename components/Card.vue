@@ -46,7 +46,7 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
-    </v-card-actions>
+    </v-card-actions>z
   </v-card>
 </template>
 
@@ -56,7 +56,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .full-bleed {
   padding: 0;
 }

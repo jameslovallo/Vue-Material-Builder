@@ -6,26 +6,37 @@
     data-aos-once="true"
     :dense="blok.dense"
     :expand="blok.expand"
-    :subheader="blok.subheader"
+    :nav="blok.list_style==='nav'"
+    :rounded="blok.list_style==='rounded'"
+    :shaped="blok.list_style==='shaped'"
+    :subheader="blok.subheader.length > 0"
     :three-line="blok.threeline"
     :two-line="blok.twoline"
     :class="[blok.helpers, blok.grid_list ? 'grid-list' : '']"
     :style="blok.style + gridStyles"
   >
-    <component
-      :key="blok._uid"
-      v-for="(blok, n) in blok.listcontent"
-      :blok="blok"
-      :is="blok.component | dashify"
-      :style="`--animation-order: ${n};`"
-    ></component>
-    {{blok.text}}
+    <v-subheader v-if="blok.subheader">{{blok.subheader}}</v-subheader>
+    <v-list-item-group v-model="item" :color="blok.color">
+      <component
+        :key="blok._uid"
+        v-for="(blok, n) in blok.listcontent"
+        :blok="blok"
+        :is="blok.component | dashify"
+        :style="`--animation-order: ${n};`"
+      ></component>
+      {{blok.text}}
+    </v-list-item-group>
   </v-list>
 </template>
 
 <script>
 export default {
   props: ["blok"],
+  data() {
+    return {
+      item: null
+    };
+  },
   computed: {
     gridStyles() {
       return `grid-template-columns: repeat(auto-fit, minmax(${this.blok.grid_column_width}px, 1fr)); gap: ${this.blok.grid_gap} ${this.blok.grid_gap};`;

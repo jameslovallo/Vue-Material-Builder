@@ -1,5 +1,5 @@
 <template>
-  <v-menu offset-y :left="blok.right" :right="blok.left">
+  <v-menu offset-y :left="blok.right">
     <template v-slot:activator="{ on }">
       <v-btn
         v-editable="blok"
@@ -12,6 +12,8 @@
         :outlined="blok.button_outline"
         :rounded="blok.button_round"
         :small="blok.button_small"
+        :class="blok.helpers"
+        :style="blok.style"
       >
         <component
           :key="blok._uid"

@@ -15,6 +15,7 @@
     :clickable="blok.clickable"
     :minSwipeDistance="Number(blok.swipe_sensitivity_in_pixels)"
     :class="blok.helpers"
+    :style="blok.style"
   >
     <slide v-if="blok.slide_1 != false" :index="0">
       <component

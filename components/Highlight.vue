@@ -7,7 +7,7 @@
         <i
           v-if="blok.language == 'html' && blok.show_html_as_vue == false"
           class="mdi mdi-language-html5"
-          style="color: #F47A31;"
+          style="color: #1890CF;"
         ></i>
         <i
           v-if="blok.language == 'html' && blok.show_html_as_vue == true"
@@ -16,7 +16,7 @@
         ></i>
         <i v-if="blok.language == 'css'" class="mdi mdi-language-css3" style="color: #1890CF"></i>
         <i v-if="blok.language == 'json'" class="mdi mdi-json" style="color: limegreen"></i>
-        <i v-if="blok.language == 'md'" class="mdi mdi-markdown" style="color: #3498DB"></i>
+        <i v-if="blok.language == 'md'" class="mdi mdi-markdown" style="color: #1890CF"></i>
       </span>
       <small class="description" v-if="blok.description != false">{{blok.description}}</small>
     </div>
@@ -73,5 +73,19 @@ small {
 }
 .css .hljs-built_in {
   color: #56b6c2;
+}
+.v-application code {
+  background-color: #282c34;
+  color: #abb2bf;
+  box-shadow: unset;
+}
+
+.v-application code,
+.v-application kbd {
+  display: block;
+  border-radius: unset;
+  white-space: unset;
+  font-size: unset;
+  font-weight: normal;
 }
 </style>

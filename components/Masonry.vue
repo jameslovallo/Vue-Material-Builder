@@ -1,32 +1,29 @@
 <template>
-  <masonry
-    v-editable="blok"
-    :cols="{default: blok.default_rows, 599: blok.xs_rows, 959: blok.sm_rows, 1263: blok.md_rows, 1903: blok.lg_rows}"
-    :class="[blok.helpers, 'masonry']"
-    gutter="10"
-    :style="blok.style"
-  >
-    <component
-      :key="blok._uid"
-      v-for="blok in blok.content"
-      :blok="blok"
-      :is="blok.component | dashify"
-      class="masonry-content"
-    ></component>
-  </masonry>
+  <no-ssr>
+    <magic-grid
+      :maxCols="blok.maximum_columns"
+      :maxColWidth="blok.maximum_item_width"
+      animate="true"
+      :class="blok.helpers"
+      :style="['width: 100%;', blok.style]"
+    >
+      <component
+        :key="blok._uid"
+        v-for="blok in blok.content"
+        :blok="blok"
+        :is="blok.component | dashify"
+      ></component>
+    </magic-grid>
+  </no-ssr>
 </template>
 
 <script>
+import NoSSR from "vue-no-ssr";
+
 export default {
-  props: ["blok"]
+  props: ["blok"],
+  components: {
+    "no-ssr": NoSSR
+  }
 };
 </script>
-
-<style>
-.masonry-content {
-  margin-bottom: 10px;
-}
-.masonry {
-  margin-bottom: -10px;
-}
-</style>

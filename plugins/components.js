@@ -1,146 +1,143 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
 // Import components from files and attach them to Storyblok
-import Alert from '~/components/Alert.vue'
-Vue.component('blok-alert', Alert)
+import Alert from '~/components/Alert.vue';
+Vue.component('blok-alert', Alert);
 
-import BackgroundVideo from '~/components/BackgroundVideo.vue'
-Vue.component('blok-backgroundvideo', BackgroundVideo)
+import BackgroundVideo from '~/components/BackgroundVideo.vue';
+Vue.component('blok-backgroundvideo', BackgroundVideo);
 
-import Button from '~/components/Button.vue'
-Vue.component('blok-button', Button)
+import Button from '~/components/Button.vue';
+Vue.component('blok-button', Button);
 
-import Card from '~/components/Card.vue'
-Vue.component('blok-card', Card)
+import Card from '~/components/Card.vue';
+Vue.component('blok-card', Card);
 
-import Carousel from '~/components/Carousel.vue'
-Vue.component('blok-carousel', Carousel)
+import Carousel from '~/components/Carousel.vue';
+Vue.component('blok-carousel', Carousel);
 
-import CarouselItem from '~/components/CarouselItem.vue'
-Vue.component('blok-carouselitem', CarouselItem)
+import CarouselItem from '~/components/CarouselItem.vue';
+Vue.component('blok-carouselitem', CarouselItem);
 
-import Column from '~/components/Column.vue'
-Vue.component('blok-column', Column)
+import Column from '~/components/Column.vue';
+Vue.component('blok-column', Column);
 
-import Container from '~/components/Container.vue'
-Vue.component('blok-container', Container)
+import Container from '~/components/Container.vue';
+Vue.component('blok-container', Container);
 
-import CopyrightText from '~/components/CopyrightText.vue'
-Vue.component('blok-copyrighttext', CopyrightText)
+import CopyrightText from '~/components/CopyrightText.vue';
+Vue.component('blok-copyrighttext', CopyrightText);
 
-import Dialog from '~/components/Dialog.vue'
-Vue.component('blok-dialog', Dialog)
+import Dialog from '~/components/Dialog.vue';
+Vue.component('blok-dialog', Dialog);
 
-import Divider from '~/components/Divider.vue'
-Vue.component('blok-divider', Divider)
+import Divider from '~/components/Divider.vue';
+Vue.component('blok-divider', Divider);
 
-import Dropdown from '~/components/Dropdown.vue'
-Vue.component('blok-dropdown', Dropdown)
+import Dropdown from '~/components/Dropdown.vue';
+Vue.component('blok-dropdown', Dropdown);
 
-import ExpansionPanel from '~/components/ExpansionPanel.vue'
-Vue.component('blok-expansionpanel', ExpansionPanel)
+import ExpansionPanel from '~/components/ExpansionPanel.vue';
+Vue.component('blok-expansionpanel', ExpansionPanel);
 
-import ExpansionPanelContent from '~/components/ExpansionPanelContent.vue'
-Vue.component('blok-expansionpanelcontent', ExpansionPanelContent)
+import ExpansionPanelContent from '~/components/ExpansionPanelContent.vue';
+Vue.component('blok-expansionpanelcontent', ExpansionPanelContent);
 
-import FeatureTiles from '~/components/FeatureTiles.vue'
-Vue.component('blok-featuretiles', FeatureTiles)
+import FeatureTiles from '~/components/FeatureTiles.vue';
+Vue.component('blok-featuretiles', FeatureTiles);
 
-import Form from '~/components/Form.vue'
-Vue.component('blok-form', Form)
+import Form from '~/components/Form.vue';
+Vue.component('blok-form', Form);
 
-import FormDatePicker from '~/components/FormDatePicker.vue'
-Vue.component('blok-formdatepicker', FormDatePicker)
+import FormDatePicker from '~/components/FormDatePicker.vue';
+Vue.component('blok-formdatepicker', FormDatePicker);
 
-import FormEmail from '~/components/FormEmail.vue'
-Vue.component('blok-formemail', FormEmail)
+import FormEmail from '~/components/FormEmail.vue';
+Vue.component('blok-formemail', FormEmail);
 
-import FormPhone from '~/components/FormPhone.vue'
-Vue.component('blok-formphone', FormPhone)
+import FormPhone from '~/components/FormPhone.vue';
+Vue.component('blok-formphone', FormPhone);
 
-import FormSelect from '~/components/FormSelect.vue'
-Vue.component('blok-formselect', FormSelect)
+import FormSelect from '~/components/FormSelect.vue';
+Vue.component('blok-formselect', FormSelect);
 
-import FormText from '~/components/FormText.vue'
-Vue.component('blok-formtext', FormText)
+import FormText from '~/components/FormText.vue';
+Vue.component('blok-formtext', FormText);
 
-import FormTextArea from '~/components/FormTextArea.vue'
-Vue.component('blok-formtextarea', FormTextArea)
+import FormTextArea from '~/components/FormTextArea.vue';
+Vue.component('blok-formtextarea', FormTextArea);
 
-import FormTimePicker from '~/components/FormTimePicker.vue'
-Vue.component('blok-formtimepicker', FormTimePicker)
+import FormTimePicker from '~/components/FormTimePicker.vue';
+Vue.component('blok-formtimepicker', FormTimePicker);
 
-import GoogleMap from '~/components/GoogleMap.vue'
-Vue.component('blok-googlemap', GoogleMap)
+import GoogleMap from '~/components/GoogleMap.vue';
+Vue.component('blok-googlemap', GoogleMap);
 
-import Highlight from '~/components/Highlight.vue'
-Vue.component('blok-highlight', Highlight)
+import Highlight from '~/components/Highlight.vue';
+Vue.component('blok-highlight', Highlight);
 
-import Icon from '~/components/Icon.vue'
-Vue.component('blok-icon', Icon)
+import Icon from '~/components/Icon.vue';
+Vue.component('blok-icon', Icon);
 
-import Image from '~/components/Image.vue'
-Vue.component('blok-image', Image)
+import Image from '~/components/Image.vue';
+Vue.component('blok-image', Image);
 
-import Link from '~/components/Link.vue'
-Vue.component('blok-link', Link)
+import Link from '~/components/Link.vue';
+Vue.component('blok-link', Link);
 
-import LinkAnchor from '~/components/LinkAnchor.vue'
-Vue.component('blok-linkanchor', LinkAnchor)
+import LinkAnchor from '~/components/LinkAnchor.vue';
+Vue.component('blok-linkanchor', LinkAnchor);
 
-import List from '~/components/List.vue'
-Vue.component('blok-list', List)
+import List from '~/components/List.vue';
+Vue.component('blok-list', List);
 
-import ListSubheader from '~/components/ListSubheader.vue'
-Vue.component('blok-listsubheader', ListSubheader)
+import ListTile from '~/components/ListTile.vue';
+Vue.component('blok-listtile', ListTile);
 
-import ListTile from '~/components/ListTile.vue'
-Vue.component('blok-listtile', ListTile)
+import MagicGrid from '~/components/MagicGrid.vue';
+Vue.component('blok-magicgrid', MagicGrid);
 
-import MagicGrid from '~/components/MagicGrid.vue'
-Vue.component('blok-magicgrid', MagicGrid)
+import Markdown from '~/components/Markdown.vue';
+Vue.component('blok-markdown', Markdown);
 
-import Markdown from '~/components/Markdown.vue'
-Vue.component('blok-markdown', Markdown)
+import Masonry from '~/components/Masonry.vue';
+Vue.component('blok-masonry', Masonry);
 
-import Masonry from '~/components/Masonry.vue'
-Vue.component('blok-masonry', Masonry)
+import Navigation from '~/components/Navigation.vue';
+Vue.component('blok-navigation', Navigation);
 
-import Navigation from '~/components/Navigation.vue'
-Vue.component('blok-navigation', Navigation)
+import Page from '~/components/Page.vue';
+Vue.component('blok-page', Page);
 
-import Page from '~/components/Page.vue'
-Vue.component('blok-page', Page)
+import Parallax from '~/components/Parallax.vue';
+Vue.component('blok-parallax', Parallax);
 
-import Parallax from '~/components/Parallax.vue'
-Vue.component('blok-parallax', Parallax)
+import PieChart from '~/components/PieChart.vue';
+Vue.component('blok-piechart', PieChart);
 
-import PieChart from '~/components/PieChart.vue'
-Vue.component('blok-piechart', PieChart)
+import Product from '~/components/Product.vue';
+Vue.component('blok-product', Product);
 
-import Product from '~/components/Product.vue'
-Vue.component('blok-product', Product)
+import Layout from '~/components/Layout.vue';
+Vue.component('blok-row', Layout);
 
-import Layout from '~/components/Layout.vue'
-Vue.component('blok-row', Layout)
+import Spacer from '~/components/Spacer.vue';
+Vue.component('blok-spacer', Spacer);
 
-import Spacer from '~/components/Spacer.vue'
-Vue.component('blok-spacer', Spacer)
+import Stepper from '~/components/Stepper.vue';
+Vue.component('blok-stepper', Stepper);
 
-import Stepper from '~/components/Stepper.vue'
-Vue.component('blok-stepper', Stepper)
+import StepperItem from '~/components/StepperItem.vue';
+Vue.component('blok-stepperitem', StepperItem);
 
-import StepperItem from '~/components/StepperItem.vue'
-Vue.component('blok-stepperitem', StepperItem)
+import Text from '~/components/Text.vue';
+Vue.component('blok-text', Text);
 
-import Text from '~/components/Text.vue'
-Vue.component('blok-text', Text)
+import ThreeDCarousel from '~/components/3DCarousel.vue';
+Vue.component('blok-3dcarousel', ThreeDCarousel);
 
-import ThreeDCarousel from '~/components/3DCarousel.vue'
-Vue.component('blok-3dcarousel', ThreeDCarousel)
+import Typer from '~/components/Typer.vue';
+Vue.component('blok-typer', Typer);
 
-import Typer from '~/components/Typer.vue'
-Vue.component('blok-typer', Typer)
-
-import YouTube from '~/components/YouTube.vue'
-Vue.component('blok-youtube', YouTube)
+import YouTube from '~/components/YouTube.vue';
+Vue.component('blok-youtube', YouTube);

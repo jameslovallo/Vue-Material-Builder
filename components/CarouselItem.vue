@@ -1,8 +1,5 @@
 <template>
-  <v-carousel-item
-    :lazy="blok.lazy_load"
-    :disabled="blok.disabled"
-  >
+  <v-carousel-item v-editable="blok" :disabled="blok.disabled">
     <component
       :key="blok._uid"
       v-for="blok in blok.content"

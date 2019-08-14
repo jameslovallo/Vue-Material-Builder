@@ -15,9 +15,13 @@
     :to="blok.to"
   >
     <v-list-item-avatar v-if="blok.image != false" class="image-avatar">
-      <img :src="blok.image" />
+      <v-img :src="blok.image" />
     </v-list-item-avatar>
-    <v-list-item-avatar :color="blok.iconbg" v-if="blok.icon != false" class="icon-avatar">
+    <v-list-item-avatar
+      :color="blok.iconbg"
+      v-if="blok.icon != false && !blok.image"
+      class="icon-avatar"
+    >
       <component
         :key="blok._uid"
         v-for="blok in blok.icon"
@@ -27,7 +31,7 @@
     </v-list-item-avatar>
     <v-list-item-content>
       <v-list-item-title v-if="blok.title">{{blok.title}}</v-list-item-title>
-      <v-list-item-sub-title v-if="blok.subtitle">{{blok.subtitle}}</v-list-item-sub-title>
+      <v-list-item-subtitle v-if="blok.subtitle">{{blok.subtitle}}</v-list-item-subtitle>
     </v-list-item-content>
   </v-list-item>
 </template>

@@ -1,12 +1,9 @@
 <template>
-  <v-expansion-panel
+  <v-expansion-panels
     v-editable="blok"
+    :accordion="blok.accordion"
     :dark="blok.dark"
-    :expand="blok.expand"
-    :focusable="blok.focusable"
-    :inset="blok.inset"
-    :popout="blok.popout"
-    :readonly="blok.readonly"
+    :multiple="blok.multiple"
     :class="blok.helpers"
     :style="blok.style"
   >
@@ -16,7 +13,7 @@
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
-  </v-expansion-panel>
+  </v-expansion-panels>
 </template>
 
 <script>
