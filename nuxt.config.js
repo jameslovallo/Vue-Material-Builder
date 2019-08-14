@@ -1,17 +1,17 @@
-import colors from 'vuetify/es5/util/colors';
+import colors from 'vuetify/es5/util/colors'
 
 // Customer-Specific Settings
-const SiteName = 'Patrick on Parker';
-const SiteUrl = 'https://patrickonparker.com';
-const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt';
-const SnipcartAPIKey = '';
-const BingWebmasterID = '';
-const GoogleAnalyticsID = 'UA-75953315-6';
-const ProgressBarColor = '#fff';
+const SiteName = 'Illegal Foreclosures'
+const SiteUrl = 'https://illegalforeclosures.org'
+const StoryblokToken = 'FzsQZm0VvUrIH83RGeXvMQtt'
+const SnipcartAPIKey = ''
+const BingWebmasterID = ''
+const GoogleAnalyticsID = ''
+const ProgressBarColor = '#fff'
 
 // Load Dependencies
-const pkg = require('./package');
-const axios = require('axios');
+const pkg = require('./package')
+const axios = require('axios')
 
 module.exports = {
   mode: 'universal',
@@ -94,7 +94,7 @@ module.exports = {
       dark: false,
       themes: {
         light: {
-          primary: colors.blue.accent3
+          primary: colors.deepPurple.darken4
         }
       },
       options: {
@@ -151,11 +151,11 @@ module.exports = {
   // Generate Routes
   generate: {
     routes: function(callback) {
-      const version = 'published';
-      let cache_version = 0;
+      const version = 'published'
+      let cache_version = 0
 
       // Other routes that are not in Storyblok with their slug.
-      let routes = ['/', '/home'];
+      let routes = ['/', '/home']
 
       // Load space and receive latest cache version key to improve performance
       axios
@@ -164,7 +164,7 @@ module.exports = {
         )
         .then(space_res => {
           // timestamp of latest publish
-          cache_version = space_res.data.space.version;
+          cache_version = space_res.data.space.version
 
           // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
           axios
@@ -174,13 +174,13 @@ module.exports = {
             .then(res => {
               Object.keys(res.data.links).forEach(key => {
                 if (res.data.links[key].slug != 'home') {
-                  routes.push('/' + res.data.links[key].slug);
+                  routes.push('/' + res.data.links[key].slug)
                 }
-              });
+              })
 
-              callback(null, routes);
-            });
-        });
+              callback(null, routes)
+            })
+        })
     }
   }
-};
+}
