@@ -79,6 +79,9 @@ Vue.component('blok-highlight', Highlight);
 import Icon from '~/components/Icon.vue';
 Vue.component('blok-icon', Icon);
 
+import iFrame from '~/components/iFrame.vue';
+Vue.component('blok-iframe', iFrame);
+
 import Image from '~/components/Image.vue';
 Vue.component('blok-image', Image);
 
