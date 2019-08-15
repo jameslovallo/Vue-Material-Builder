@@ -9,9 +9,9 @@ const StoryblokToken = process.env.STORYBLOK_TOKEN;
 const GoogleAnalyticsID = process.env.GOOGLE_ANALYTICS;
 const BingWebmasterID = process.env.BING_WEBMASTER;
 const ProgressBarColor = process.env.PROGRESS_BAR_COLOR;
+const Favicon = process.env.FAVICON;
 
 // Load Dependencies
-const pkg = require('./package');
 const axios = require('axios');
 
 module.exports = {
@@ -27,14 +27,7 @@ module.exports = {
     ],
     link: [
       // Favicon
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      // Snipcart Styles
-      {
-        rel: 'stylesheet',
-        href: SnipcartAPIKey
-          ? 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css'
-          : ''
-      }
+      { rel: 'icon', type: 'image/x-icon', href: Favicon }
     ],
 
     // Progress Bar
