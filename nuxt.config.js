@@ -1,6 +1,7 @@
 import colors from 'vuetify/es5/util/colors';
 
-// Customer-Specific Settings
+// Site-Specific Settings
+
 const SiteName = 'Patrick on Parker';
 const SiteUrl = 'https://patrickonparker.com';
 const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt';
