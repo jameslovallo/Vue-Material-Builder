@@ -79,13 +79,15 @@ export default {
     h5,
     h6 {
       margin-bottom: 0;
-      margin-top: 0;
     }
   }
-}
 
-.theme--light.v-card .v-card__text {
-  color: black;
+  .theme--dark & &-text {
+    color: white;
+  }
+  .theme--light & &-text {
+    color: black;
+  }
 }
 
 .theme--dark.v-card .v-card__text {
