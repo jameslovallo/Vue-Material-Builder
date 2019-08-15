@@ -1,10 +1,11 @@
+require('dotenv').config();
 import colors from 'vuetify/es5/util/colors';
 
 // Site-Specific Settings
 
-const SiteName = 'Patrick on Parker';
+const SiteName = process.env.SITE_NAME;
 const SiteUrl = 'https://patrickonparker.com';
-const StoryblokToken = 'lQVIeSpv6rmkjm63jCBqVwtt';
+const StoryblokToken = process.env.STORYBLOK_TOKEN;
 const SnipcartAPIKey = '';
 const BingWebmasterID = '';
 const GoogleAnalyticsID = 'UA-75953315-6';
