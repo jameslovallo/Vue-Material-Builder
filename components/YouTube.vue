@@ -17,7 +17,7 @@ export default {
 <style>
 .embed-container {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.2%;
   height: 0;
   overflow: hidden;
   max-width: 100%;
