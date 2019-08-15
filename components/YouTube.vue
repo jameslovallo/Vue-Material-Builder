@@ -1,6 +1,10 @@
 <template>
-  <div class="embed-container">
-    <iframe :src="`https://www.youtube.com/embed/${blok.youtube_id}?rel=0${blok.hide_controls}`" frameborder="0" allowfullscreen></iframe>
+  <div class="embed-container" v-editable="blok">
+    <iframe
+      :src="`https://www.youtube.com/embed/${blok.youtube_id}?rel=0${blok.hide_controls}`"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
   </div>
 </template>
 

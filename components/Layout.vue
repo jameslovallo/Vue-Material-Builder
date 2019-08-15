@@ -1,7 +1,7 @@
 <template>
   <v-layout
     v-editable="blok"
-    :class="[blok.helpers, blok.remove_gutter, `align-${blok.align}`, `justify-${blok.justify}`, blok.row_or_column]"
+    :class="[blok.helpers, `align-${blok.align}`, `justify-${blok.justify}`, blok.row_or_column]"
     :column="blok.column"
     :fill-height="blok.fill_height"
     :row="blok.row"

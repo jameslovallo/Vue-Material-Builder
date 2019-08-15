@@ -12,7 +12,7 @@ export default {
   props: ["blok"],
   computed: {
     color() {
-      return `color: ${this.blok.color.color};`;
+      return `color: ${this.blok.color};`;
     },
     backgroundImage() {
       if (this.blok.text_background_image) {

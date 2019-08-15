@@ -11,7 +11,9 @@
     :max-width="blok.max_width"
     :min-height="blok.min_height"
     :min-width="blok.min_width"
+    :outlined="blok.outline"
     :raised="blok.raised"
+    :tile="blok.tile"
     :width="blok.width"
     :class="blok.helpers"
     :style="blok.style"
@@ -56,18 +58,35 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .full-bleed {
   padding: 0;
 }
-.v-card__title,
-.v-card__text {
-  position: relative;
-}
-.theme--dark.v-card .v-card__text {
-  color: white;
-}
-.theme--light.v-card .v-card__text {
-  color: black;
+
+.v-card {
+  &__title,
+  &__text,
+  &__actions {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__title {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 0;
+    }
+  }
+
+  .theme--dark & &-text {
+    color: white;
+  }
+  .theme--light & &-text {
+    color: black;
+  }
 }
 </style>
