@@ -13,6 +13,8 @@ dist
 # PWA Service Worker
 sw.*
 
+# Mac Crap
 .DS_Store
 
+# Environment Variables
 .env
