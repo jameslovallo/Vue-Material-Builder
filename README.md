@@ -1,4 +1,4 @@
-# Coalition to End Unconstitutional Tax Foreclosures
+# Patrick on Parker Private Starter Template
 
 ## Build Setup
 

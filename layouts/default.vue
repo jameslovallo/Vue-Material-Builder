@@ -14,15 +14,17 @@ export default {
   props: ["blok"]
 };
 if (process.client) {
-  // Dynamic viewport height correction for mobile
-  document.addEventListener("DOMContentLoaded", function() {
+  const dynamicHeight = () => {
     let vh = window.innerHeight;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
+  };
+
+  document.addEventListener("DOMContentLoaded", evt => {
+    dynamicHeight();
   });
 
   window.addEventListener("resize", evt => {
-    let vh = window.innerHeight;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    dynamicHeight();
   });
 }
 </script>
