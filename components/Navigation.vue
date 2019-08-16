@@ -1,5 +1,5 @@
 <template>
-  <v-app :dark="setTheme">
+  <v-app>
     <!-- DRAWERS -->
     <v-navigation-drawer
       v-if="blok.sidebar_content != false"
