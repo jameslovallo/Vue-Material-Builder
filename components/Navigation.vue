@@ -59,11 +59,6 @@
         :is="blok.component | dashify"
       ></component>
     </v-footer>
-    <style>
-  body {
-    background: {{blok.color}}
-  }
-    </style>
   </v-app>
 </template>
 

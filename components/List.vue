@@ -53,6 +53,10 @@ export default {
 
 // TODO: Allow dynamic animation setting
 <style scoped>
+.v-list {
+  width: 100%;
+}
+
 .grid-list {
   display: grid;
   width: 100%;

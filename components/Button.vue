@@ -33,6 +33,7 @@
         :target="blok.target"
         :to="blok.to"
         :top="blok.vertical_position === 'top'"
+        :x-large="blok.button_size === 'x-large'"
       >
         <component
           :key="blok._uid"

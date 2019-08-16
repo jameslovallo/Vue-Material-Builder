@@ -1,8 +1,7 @@
 import Vue from 'vue';
 
-export default function({ app, route, store, isDev }) {
+export default function({ route, store, isDev }) {
   let version = route.query._storyblok || isDev ? 'draft' : 'published';
-  let language = route.params.language || 'en';
 
   if (typeof window !== 'undefined' && window.StoryblokToken) {
     Vue.prototype.$storyapi.accessToken = window.StoryblokToken;
