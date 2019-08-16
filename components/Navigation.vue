@@ -70,20 +70,34 @@ export default {
       drawer: null
     };
   },
-  computed: {
-    setTheme() {
-      if (this.blok.light_or_dark == "light") {
-        return false;
-      } else if (this.blok.light_or_dark == "dark") {
-        return true;
-      } else if (this.blok.light_or_dark == "dynamic") {
-        if (process.client) {
-          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            return true;
-          }
+  head() {
+    return {
+      title: this.blok.site_name,
+      description: this.blok.site_description,
+      link: [
+        // Favicon
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: this.blok.favicon ? this.blok.favicon : "/favicon.ico"
         }
-      }
-    }
+      ]
+    };
   }
+  // computed: {
+  //   setTheme() {
+  //     if (this.blok.light_or_dark == "light") {
+  //       return false;
+  //     } else if (this.blok.light_or_dark == "dark") {
+  //       return true;
+  //     } else if (this.blok.light_or_dark == "dynamic") {
+  //       if (process.client) {
+  //         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  //           return true;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 };
 </script>

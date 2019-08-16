@@ -20,15 +20,10 @@ module.exports = {
 
   // Page Headers
   head: {
-    title: SiteName,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'msvalidate.01', content: BingWebmasterID }
-    ],
-    link: [
-      // Favicon
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
