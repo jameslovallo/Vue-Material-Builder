@@ -22,7 +22,7 @@
     </template>
     <v-card
       v-editable="blok"
-      :color="blok.color"
+      :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
       :dark="blok.dark"
       :elevation="blok.elevation"
       :flat="blok.flat"

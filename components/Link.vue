@@ -7,7 +7,7 @@
       :left="blok.tooltip_direction === 'left'"
       :right="blok.tooltip_direction === 'right'"
       :top="blok.tooltip_direction === 'top'"
-      :color="blok.tooltip_color"
+      :color="blok.tooltip_color | lightOrDark(this.$vuetify.theme.dark)"
       :helpers="blok.helpers"
       :style="blok.style"
     >

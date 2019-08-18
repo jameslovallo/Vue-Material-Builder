@@ -1,5 +1,8 @@
 <template>
-  <v-spacer :class="[blok.use_as_dot_leader, 'hidden-sm-and-down']"></v-spacer>
+  <v-spacer
+    v-editable="blok"
+    :class="['py-' + blok.height,blok.use_as_dot_leader ? 'dot-leader' : '']"
+  ></v-spacer>
 </template>
 
 <script>

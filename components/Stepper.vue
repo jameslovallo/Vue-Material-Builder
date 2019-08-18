@@ -8,7 +8,7 @@
     ></component>
     <div class="pa-3">
       <v-btn
-        :color="blok.color"
+        :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
         :outlined="blok.outline"
         :rounded="blok.round"
         :dark="blok.dark"
@@ -24,7 +24,7 @@
         ></component>
       </template>
       <v-btn
-        :color="blok.color"
+        :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
         :outlined="blok.outline"
         :rounded="blok.round"
         :dark="blok.dark"

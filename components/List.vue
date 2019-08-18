@@ -17,7 +17,7 @@
     <v-subheader v-if="blok.subheader">{{blok.subheader}}</v-subheader>
     <v-list-item-group
       v-model="item"
-      :color="blok.color"
+      :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
       :class="blok.grid_list ? 'grid-list' : ''"
       :style="gridStyles"
       :data-aos="blok.animate_list"

@@ -27,11 +27,4 @@ export default {
 .layout {
   position: relative;
 }
-.layout > .flex {
-  padding: 0.5rem !important;
-}
-
-.remove-gutter {
-  margin: -0.5rem;
-}
 </style>

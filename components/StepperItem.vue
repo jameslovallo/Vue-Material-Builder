@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok">
-    <v-stepper-step :step="blok.step" :color="blok.color">
+    <v-stepper-step :step="blok.step" :color="blok.color | lightOrDark(this.$vuetify.theme.dark)">
       {{blok.label}}
       <small>{{blok.description}}</small>
     </v-stepper-step>

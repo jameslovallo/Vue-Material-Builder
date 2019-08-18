@@ -1,7 +1,7 @@
 <template>
   <v-card
     v-editable="blok"
-    :color="blok.color"
+    :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
     :dark="blok.dark"
     :elevation="blok.elevation"
     :flat="blok.flat"
@@ -32,7 +32,10 @@
         :is="blok.component | dashify"
       ></component>
     </v-card-title>
-    <v-card-text v-if="blok.cardcontent != false" :class="blok.full_bleed_content">
+    <v-card-text
+      v-if="blok.cardcontent != false"
+      :class="blok.full_bleed_content ? 'full-bleed' : ''"
+    >
       <component
         :key="blok._uid"
         v-for="blok in blok.cardcontent"
@@ -41,7 +44,7 @@
       ></component>
     </v-card-text>
     <v-divider v-if="blok.cardactions != false && blok.color!='transparent'"></v-divider>
-    <v-card-actions v-if="blok.cardactions != false" class="px-4">
+    <v-card-actions v-if="blok.cardactions != false">
       <component
         :key="blok._uid"
         v-for="blok in blok.cardactions"
@@ -69,6 +72,13 @@ export default {
   &__actions {
     position: relative;
     overflow: hidden;
+
+    .v-btn.v-btn:not(.v-btn--flat) {
+      padding: 0 16px;
+      &:not(:last-of-type) {
+        margin-right: 8px;
+      }
+    }
   }
 
   &__title {
@@ -86,10 +96,6 @@ export default {
 
 .theme--light.v-card .v-card__text {
   color: black;
-}
-
-.theme--dark.v-card .v-card__text {
-  color: white;
 }
 
 .theme--dark.v-card .v-card__text {

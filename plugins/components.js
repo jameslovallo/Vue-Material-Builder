@@ -121,8 +121,8 @@ Vue.component('blok-piechart', PieChart);
 import Product from '~/components/Product.vue';
 Vue.component('blok-product', Product);
 
-import Layout from '~/components/Layout.vue';
-Vue.component('blok-row', Layout);
+import Row from '~/components/Row.vue';
+Vue.component('blok-row', Row);
 
 import Spacer from '~/components/Spacer.vue';
 Vue.component('blok-spacer', Spacer);

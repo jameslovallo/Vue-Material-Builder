@@ -1,5 +1,10 @@
 <template>
-  <v-card :color="blok.color" :dark="blok.dark" :flat="blok.flat" v-editable="blok">
+  <v-card
+    :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
+    :dark="blok.dark"
+    :flat="blok.flat"
+    v-editable="blok"
+  >
     <v-img
       :alt="blok.item_image_alt_text"
       :aspect-ratio="blok.item_image_aspect_ratio"
@@ -10,7 +15,7 @@
     <v-card-title class="title" style="position: relative;">
       {{blok.item_name}}
       <v-btn
-        :color="blok.button_color"
+        :color="blok.button_color | lightOrDark(this.$vuetify.theme.dark)"
         :rounded="blok.button_round"
         absolute
         class="mt-2 snipcart-add-item"

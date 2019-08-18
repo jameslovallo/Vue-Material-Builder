@@ -2,7 +2,7 @@
   <v-alert
     v-editable="blok"
     v-model="alert"
-    :color="blok.color"
+    :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
     :dismissible="blok.dismissable"
     :icon="'mdi-' + blok.icon"
     :mode="blok.mode"

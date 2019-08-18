@@ -15,7 +15,7 @@
         :block="blok.block"
         :bottom="blok.vertical_position === 'bottom'"
         :class="blok.helpers"
-        :color="blok.color"
+        :color="blok.color | lightOrDark($vuetify.theme.dark)"
         :dark="blok.dark"
         :exact="blok.exact"
         :fab="blok.floating_action_button"

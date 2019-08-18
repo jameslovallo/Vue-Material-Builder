@@ -2,7 +2,7 @@
   <v-list-item
     v-editable="blok"
     :active-class="blok.activeclass"
-    :color="blok.color"
+    :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
     :class="blok.helpers"
     :dark="blok.dark"
     :exact="blok.exact"
@@ -18,7 +18,7 @@
       <v-img :src="blok.image" />
     </v-list-item-avatar>
     <v-list-item-avatar
-      :color="blok.iconbg"
+      :color="blok.iconbg | lightOrDark(this.$vuetify.theme.dark)"
       v-if="blok.icon != false && !blok.image"
       class="icon-avatar"
     >

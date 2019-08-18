@@ -1,7 +1,7 @@
 <template>
   <v-card
     v-editable="blok"
-    :color="blok.color"
+    :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
     :dark="blok.dark"
     :elevation="blok.elevation"
     :flat="blok.flat"
@@ -54,7 +54,7 @@
         <v-btn
           @click="submit"
           :disabled="!valid"
-          :color="blok.button_color"
+          :color="blok.button_color | lightOrDark(this.$vuetify.theme.dark)"
           :dark="blok.button_dark"
           :outlined="blok.button_outline"
           :rounded="blok.button_round"

@@ -12,7 +12,16 @@ export default {
   props: ["blok"],
   computed: {
     color() {
-      return `color: ${this.blok.color};`;
+      if (this.blok.color.includes("/")) {
+        let colors = this.blok.color.split("/");
+        if (this.$vuetify.theme.dark === true) {
+          return `color: ${colors[1]};`;
+        } else {
+          return `color: ${colors[0]};`;
+        }
+      } else {
+        return `color: ${this.blok.color};`;
+      }
     },
     backgroundImage() {
       if (this.blok.text_background_image) {
@@ -22,10 +31,21 @@ export default {
       }
     },
     longShadow() {
+      let color = "";
+      if (this.blok.shadow_color.includes("/")) {
+        let colors = this.blok.shadow_color.split("/");
+        if (this.$vuetify.theme.dark === true) {
+          color = colors[1];
+        } else {
+          color = colors[0];
+        }
+      } else {
+        color = this.blok.shadow_color;
+      }
       var shadow = "";
       var i;
       for (i = 1; i < this.blok.shadow_length; i++) {
-        shadow += `${i}px ${i}px 0 ${this.blok.shadow_color},`;
+        shadow += `${i}px ${i}px 0 ${color},`;
       }
       shadow = `text-shadow: ${shadow};`;
       return shadow.replace(",;", ";");

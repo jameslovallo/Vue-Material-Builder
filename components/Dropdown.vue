@@ -4,7 +4,7 @@
       <v-btn
         v-editable="blok"
         v-on="on"
-        :color="blok.button_color"
+        :color="blok.button_color | lightOrDark(this.$vuetify.theme.dark)"
         :dark="blok.button_dark"
         :text="blok.button_flat"
         :icon="blok.button_icon"

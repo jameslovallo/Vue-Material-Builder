@@ -2,6 +2,7 @@
   <v-app>
     <!-- DRAWERS -->
     <v-navigation-drawer
+      v-editable="blok"
       v-if="blok.sidebar_content != false"
       v-model="drawer"
       clipped
@@ -18,10 +19,11 @@
     </v-navigation-drawer>
     <!-- TOOLBAR -->
     <v-app-bar
+      v-editable="blok"
       v-if="blok.toolbar_content"
       app
       clipped-left
-      :color="blok.color"
+      :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
       :dark="blok.dark"
       :height="blok.height"
       :flat="blok.flat"
@@ -45,10 +47,11 @@
       <nuxt />
     </v-content>
     <v-footer
+      v-editable="blok"
       v-if="blok.footer_content != false"
       :app="blok.footer_fixed"
       :inset="blok.footer_inset"
-      :color="blok.footer_color"
+      :color="blok.footer_color | lightOrDark(this.$vuetify.theme.dark)"
       :dark="blok.footer_dark"
       :height="blok.footer_height"
     >
@@ -83,21 +86,31 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    switch (this.blok.theme) {
+      case "light":
+        break;
+      case "dark":
+        this.$vuetify.theme.dark = true;
+      case "auto":
+        this.$vuetify.theme.dark = this.detectTheme;
+        break;
+      default:
+        break;
+    }
+    this.blok.primary.length > 0
+      ? (this.$vuetify.theme.themes.light.primary = this.blok.primary)
+      : "";
+  },
+  computed: {
+    detectTheme() {
+      if (process.client) {
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? true
+          : false;
+      }
+    }
   }
-  // computed: {
-  //   setTheme() {
-  //     if (this.blok.light_or_dark == "light") {
-  //       return false;
-  //     } else if (this.blok.light_or_dark == "dark") {
-  //       return true;
-  //     } else if (this.blok.light_or_dark == "dynamic") {
-  //       if (process.client) {
-  //         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  //           return true;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 };
 </script>

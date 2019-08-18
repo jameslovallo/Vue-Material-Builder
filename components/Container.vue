@@ -1,13 +1,5 @@
 <template>
-  <v-container
-    v-editable="blok"
-    :class="[blok.helpers, blok.remove_gutter, `align-${blok.align}`, `justify-${blok.justify}`, blok.row_or_column]"
-    :column="blok.column"
-    :fill-height="blok.fill_height"
-    :row="blok.row"
-    :style="blok.style"
-    :wrap="blok.wrap"
-  >
+  <v-container v-editable="blok" :class="[blok.helpers, blok.fill_height ? 'fill-height': '']">
     <component
       :key="blok._uid"
       v-for="blok in blok.rowcontent"
@@ -23,12 +15,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.container {
-  margin: 0 auto;
-
-  @media (min-width: 1904px) {
-    max-width: 1440px;
+<style>
+@media (min-width: 1904px) {
+  .container {
+    max-width: 1400px;
   }
 }
 </style>

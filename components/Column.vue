@@ -1,7 +1,12 @@
 <template>
-  <v-flex
+  <v-col
     v-editable="blok"
-    :class="[blok.xscol, blok.smcol, blok.mdcol, blok.lgcol, blok.xlcol, blok.helpers]"
+    :cols="this.blok.size['xsmall']"
+    :sm="this.blok.size['small']"
+    :md="this.blok.size['medium']"
+    :lg="this.blok.size['large']"
+    :xl="this.blok.size['xlarge']"
+    :class="blok.helpers"
     :style="blok.style"
   >
     <component
@@ -10,7 +15,7 @@
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
-  </v-flex>
+  </v-col>
 </template>
 
 <script>

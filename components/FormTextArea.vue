@@ -5,7 +5,7 @@
     :filled="blok.box"
     :clear-icon="blok.clear_icon ? 'mdi-' + blok.clear_icon : ''"
     :clearable="blok.clearable"
-    :color="blok.color"
+    :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
     :flat="blok.flat"
     :label="blok.label"
     :name="blok.label"
