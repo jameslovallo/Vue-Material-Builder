@@ -12,8 +12,9 @@ export default {
   props: ["blok"],
   computed: {
     color() {
-      if (this.blok.color.includes("/")) {
-        let colors = this.blok.color.split("/");
+      let color = this.blok.color;
+      if (color.toString().includes("/")) {
+        let colors = color.split("/");
         if (this.$vuetify.theme.dark === true) {
           return `color: ${colors[1]};`;
         } else {

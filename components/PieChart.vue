@@ -1,5 +1,5 @@
 <template>
-  <div class="pie-chart" data-aos data-aos-once="true">
+  <div v-editable="blok" class="pie-chart" data-aos data-aos-once="true">
     <div class="graph-wrapper">
       <svg width="100%" height="100%" viewBox="0 0 42 42" fill="transparent">
         <circle

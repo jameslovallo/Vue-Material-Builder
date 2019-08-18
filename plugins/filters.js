@@ -33,14 +33,17 @@ Vue.filter('siteName', function siteName(str) {
 });
 
 Vue.filter('lightOrDark', function lightOrDark(input, variant) {
-  if (input.includes('/')) {
-    let colors = input.split('/');
-    if (variant === true) {
-      return colors[1];
+  if (input) {
+    let color = input.toString();
+    if (color.includes('/')) {
+      let colors = color.split('/');
+      if (variant === true) {
+        return colors[1];
+      } else {
+        return colors[0];
+      }
     } else {
-      return colors[0];
+      return color;
     }
-  } else {
-    return input;
   }
 });

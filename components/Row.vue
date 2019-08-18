@@ -1,7 +1,7 @@
 <template>
   <v-row
     v-editable="blok"
-    :class="custom"
+    :class="classProps"
     :dense="blok.dense"
     :no-gutters="blok.no_gutters || blok.use_as_container"
   >
@@ -18,7 +18,7 @@
 export default {
   props: ["blok"],
   computed: {
-    custom() {
+    classProps() {
       return [
         this.blok.align ? "align-" + this.blok.align : "",
         this.blok.align_sm ? "align-sm-" + this.blok.align_sm : "",

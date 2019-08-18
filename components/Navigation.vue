@@ -99,9 +99,9 @@ export default {
       default:
         break;
     }
-    this.blok.primary.length > 0
-      ? (this.$vuetify.theme.themes.light.primary = this.blok.primary)
-      : "";
+    if (this.blok.primary) {
+      this.$vuetify.theme.themes.light.primary = this.blok.primary;
+    }
   },
   computed: {
     detectTheme() {

@@ -5,8 +5,8 @@
   "author": "James Lovallo",
   "private": true,
   "scripts": {
-    "Run_Dev_Server": "netlify dev --live -c nuxt start",
     "Link_Site": "netlify link",
+    "Run_Dev_Server": "netlify dev --live -c nuxt start",
     "Unlink_Site": "netlify unlink",
     "NPM_Update": "npm update",
     "NPM_Outdated": "npm outdated",
