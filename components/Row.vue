@@ -1,7 +1,7 @@
 <template>
   <v-row
     v-editable="blok"
-    :class="classProps"
+    :class="[classProps, blok.helpers]"
     :dense="blok.dense"
     :no-gutters="blok.no_gutters || blok.use_as_container"
   >

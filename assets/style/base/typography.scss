@@ -94,7 +94,7 @@ code {
     margin-top: 0;
   }
 
-  *:last-child {
+  *:last-child:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
     margin-bottom: 0;
   }
 

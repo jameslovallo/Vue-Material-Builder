@@ -1,64 +1,64 @@
 // Page Transitions
 
-#resume {
-  &.page {
-    &-enter-active {
-      animation: slideInBottom 0.33s ease-out;
-    }
-    &-leave-active {
-      animation: slideOutBottom 0.33s ease-in;
-    }
-  }
-}
+// #resume {
+//   &.page {
+//     &-enter-active {
+//       animation: slideInBottom 0.33s ease-out;
+//     }
+//     &-leave-active {
+//       animation: slideOutBottom 0.33s ease-in;
+//     }
+//   }
+// }
 
-#home {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-  &.page {
-    &-enter-active {
-      animation: slideInLeft 0.33s ease-out;
-    }
-    &-leave-active {
-      animation: slideOutLeft 0.33s ease-in;
-    }
-  }
-}
+// #home {
+//   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+//   &.page {
+//     &-enter-active {
+//       animation: slideInLeft 0.33s ease-out;
+//     }
+//     &-leave-active {
+//       animation: slideOutLeft 0.33s ease-in;
+//     }
+//   }
+// }
 
-@keyframes slideInBottom {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
+// @keyframes slideInBottom {
+//   0% {
+//     transform: translateY(100%);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translateY(0%);
+//   }
+// }
 
-@keyframes slideOutLeft {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
+// @keyframes slideOutLeft {
+//   0% {
+//     transform: translateX(0%);
+//   }
+//   100% {
+//     transform: translateX(-100%);
+//     opacity: 0;
+//   }
+// }
 
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
+// @keyframes slideInLeft {
+//   0% {
+//     transform: translateX(-100%);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translateX(0%);
+//   }
+// }
 
-@keyframes slideOutBottom {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-}
+// @keyframes slideOutBottom {
+//   0% {
+//     transform: translateY(0%);
+//   }
+//   100% {
+//     transform: translateY(100%);
+//     opacity: 0;
+//   }
+// }

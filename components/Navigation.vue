@@ -10,6 +10,7 @@
       :class="blok.drawer_helpers"
       :dark="blok.drawer_dark"
       :width="blok.drawer_width"
+      :color="blok.drawer_color | lightOrDark(this.$vuetify.theme.dark)"
     >
       <component
         :key="blok._uid"
