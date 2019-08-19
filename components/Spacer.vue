@@ -1,5 +1,5 @@
 <template>
-  <v-spacer v-editable="blok" :class="[blok.use_as_dot_leader ? 'dot-leader' : '']"></v-spacer>
+  <v-spacer v-editable="blok" :class="blok.use_as_dot_leader ? 'dot-leader' : ''"></v-spacer>
 </template>
 
 <script>
@@ -8,10 +8,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .dot-leader {
-  border-bottom: 1px dotted;
-  height: 1em;
-  margin: 0 0.25em;
+  @media (min-width: 768px) {
+    border-bottom: 1px dotted;
+    height: 1em;
+    margin: 0 0.25em;
+  }
 }
 </style>

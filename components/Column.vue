@@ -1,6 +1,7 @@
 <template>
   <v-col
     v-editable="blok"
+    v-if="this.blok.size"
     :cols="this.blok.size['xsmall']"
     :sm="this.blok.size['small']"
     :md="this.blok.size['medium']"

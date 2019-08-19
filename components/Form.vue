@@ -50,7 +50,7 @@
         <input type="hidden" name="_replyto" />
       </v-card-text>
       <v-divider></v-divider>
-      <v-card-actions class="px-4">
+      <v-card-actions>
         <v-btn
           @click="submit"
           :disabled="!valid"
