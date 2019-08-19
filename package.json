@@ -5,9 +5,9 @@
   "author": "James Lovallo",
   "private": true,
   "scripts": {
+    "Unlink_Site": "netlify unlink",
     "Link_Site": "netlify link",
     "Run_Dev_Server": "netlify dev --live -c nuxt start",
-    "Unlink_Site": "netlify unlink",
     "NPM_Update": "npm update",
     "NPM_Outdated": "npm outdated",
     "dev": "nuxt",
@@ -33,6 +33,7 @@
     "postcss-responsive-type": "^1.0.0",
     "storyblok-nuxt": "^1.0.1",
     "vue-carousel-3d": "^0.2.0",
+    "vue-fragment": "^1.5.1",
     "vue-highlight-component": "^1.0.0",
     "vue-magic-grid": "0.0.4",
     "vue-masonry-css": "^1.0.3",

@@ -55,10 +55,8 @@ export default {
 </script>
 
 <style lang="scss">
-.v-btn:not(.v-btn--flat) {
-  padding: 0 16px;
-}
 .v-btn__content .v-icon--left {
   margin-left: 0;
+  margin-right: 12px;
 }
 </style>

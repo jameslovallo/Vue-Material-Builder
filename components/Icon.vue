@@ -16,9 +16,3 @@ export default {
   props: ["blok"]
 };
 </script>
-
-<style>
-.v-btn__content .v-icon--left {
-  margin-right: 12px;
-}
-</style>

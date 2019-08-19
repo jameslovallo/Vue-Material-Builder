@@ -9,6 +9,7 @@
       app
       :class="blok.drawer_helpers"
       :dark="blok.drawer_dark"
+      :width="blok.drawer_width"
     >
       <component
         :key="blok._uid"
@@ -31,11 +32,7 @@
       :class="blok.helpers"
       :style="blok.style"
     >
-      <v-toolbar-side-icon
-        v-if="blok.sidebar_content != false"
-        @click="drawer = !drawer"
-        class="hidden-md-and-up"
-      ></v-toolbar-side-icon>
+      <v-app-bar-nav-icon v-if="blok.sidebar_content != false" @click="drawer = !drawer"></v-app-bar-nav-icon>
       <component
         :key="blok._uid"
         v-for="blok in blok.toolbar_content"
@@ -62,6 +59,9 @@
         :is="blok.component | dashify"
       ></component>
     </v-footer>
+    <style>
+  {{blok.css}}
+    </style>
   </v-app>
 </template>
 
@@ -83,6 +83,14 @@ export default {
           rel: "icon",
           type: "image/x-icon",
           href: this.blok.favicon ? this.blok.favicon : "/favicon.ico"
+        }
+      ],
+      link: [
+        // Favicon
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: this.blok.font
         }
       ]
     };

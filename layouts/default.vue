@@ -1,16 +1,18 @@
 <template>
-  <div>
+  <fragment>
     <component
       :key="blok._uid"
       v-for="blok in $store.state.settings.navigation"
       :blok="blok"
       :is="blok.component | dashify"
     ></component>
-  </div>
+  </fragment>
 </template>
 
 <script>
+import { Fragment } from "vue-fragment";
 export default {
+  components: { Fragment },
   props: ["blok"]
 };
 if (process.client) {

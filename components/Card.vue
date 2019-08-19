@@ -72,8 +72,13 @@ export default {
   &__actions {
     position: relative;
     overflow: hidden;
-    .v-btn {
-      margin-left: 8px !important;
+    :not(.v-btn--text) & {
+      .v-btn {
+        margin-left: 8px;
+        &.v-size--large {
+          padding: 0 19.5555555556px;
+        }
+      }
     }
   }
 
