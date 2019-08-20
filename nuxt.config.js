@@ -27,6 +27,13 @@ module.exports = {
     ]
   },
 
+  meta: {
+    nativeUI: true,
+    theme_color: ThemePrimary,
+    name: SiteName,
+    appleStatusBarStyle: 'black-translucent'
+  },
+
   // Progress Bar
   loading: { color: ProgressBarColor },
 
