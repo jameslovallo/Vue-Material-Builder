@@ -27,13 +27,6 @@ module.exports = {
     ]
   },
 
-  meta: {
-    nativeUI: true,
-    theme_color: ThemePrimary,
-    name: SiteName,
-    appleStatusBarStyle: 'black-translucent'
-  },
-
   // Progress Bar
   loading: { color: ProgressBarColor },
 
@@ -57,7 +50,12 @@ module.exports = {
     [
       '@nuxtjs/pwa',
       {
-        meta: { appleStatusBarStyle: 'default', name: SiteName }
+        meta: {
+          nativeUI: true,
+          theme_color: ThemePrimary,
+          name: SiteName,
+          appleStatusBarStyle: 'black-translucent'
+        }
       }
     ],
     ['@nuxtjs/sitemap']
@@ -95,7 +93,8 @@ module.exports = {
 
   // Google Analytics
   googleAnalytics: {
-    id: GoogleAnalyticsID
+    id: GoogleAnalyticsID,
+    dev: false
   },
 
   // Markdown-It Config
