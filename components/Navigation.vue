@@ -47,8 +47,9 @@
     <v-footer
       v-editable="blok"
       v-if="blok.footer_content != false"
-      :app="blok.footer_fixed"
       :inset="blok.footer_inset"
+      app
+      :absolute="blok.footer_inset"
       :color="blok.footer_color | lightOrDark(this.$vuetify.theme.dark)"
       :dark="blok.footer_dark"
       :height="blok.footer_height"
@@ -123,3 +124,9 @@ export default {
   }
 };
 </script>
+
+<style>
+.v-footer--absolute.v-footer--inset {
+  width: auto;
+}
+</style>
