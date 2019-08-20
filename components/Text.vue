@@ -3,7 +3,7 @@
     :is="blok.tag"
     v-editable="blok"
     :class="[blok.size, blok.weight, blok.transform, blok.italic, blok.truncate, blok.helpers, blok.shadow, blok.text_background_image ? 'clip-text' : '']"
-    :style="`${blok.style} ${backgroundImage} ${color} ${longShadow}`"
+    :style="`${blok.style} ${backgroundImage} ${longShadow} ${color} `"
   >{{blok.text}}</component>
 </template>
 
