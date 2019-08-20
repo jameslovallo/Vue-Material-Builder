@@ -13,6 +13,9 @@ const ProgressBarColor = process.env.PROGRESS_BAR_COLOR
 const ThemePrimary = process.env.THEME_PRIMARY
   ? process.env.THEME_PRIMARY
   : '#2979FF';
+const DarkThemePrimary = process.env.DARK_THEME_PRIMARY
+  ? process.env.DARK_THEME_PRIMARY
+  : '#2979FF';
 const DarkTheme = process.env.DARK_THEME === 'true' ? true : false;
 
 module.exports = {
@@ -74,6 +77,9 @@ module.exports = {
       themes: {
         light: {
           primary: ThemePrimary
+        },
+        dark: {
+          primary: DarkThemePrimary
         }
       },
       options: {

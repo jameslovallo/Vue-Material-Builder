@@ -45,12 +45,10 @@ h6 {
 }
 
 :not(.not-responsive) {
-  p {
+  p,
+  li {
     font-size: responsive 16px 20px;
     line-height: 1.5em;
-  }
-  li {
-    font-size: 16px;
   }
   ol,
   ul {
@@ -100,35 +98,5 @@ code {
 
   * {
     max-width: 100%;
-  }
-
-  a {
-    color: var(--v-primary-base);
-    font-weight: 500;
-    text-decoration: none;
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 15%;
-      left: 0;
-      right: 0;
-      height: 6%;
-      background: var(--v-primary-base);
-      z-index: -1;
-      &:hover {
-        height: 100%;
-        transition: 0.5s;
-        background: linear-gradient(
-          to top,
-          var(--v-primary-base) 0%,
-          var(--v-primary-base) 6%,
-          transparent 7%,
-          transparent 100%
-        );
-      }
-    }
   }
 }

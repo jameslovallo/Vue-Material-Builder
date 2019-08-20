@@ -5,11 +5,8 @@
   "author": "James Lovallo",
   "private": true,
   "scripts": {
-    "Unlink_Site": "netlify unlink",
-    "Link_Site": "netlify link",
-    "Run_Dev_Server": "netlify dev --live -c nuxt start",
-    "NPM_Update": "npm update",
-    "NPM_Outdated": "npm outdated",
+    "Run_Dev_Server": "netlify unlink && netlify link && netlify dev -c nuxt start",
+    "Update_Packages": "npm update && npm outdated",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
@@ -36,7 +33,6 @@
     "vue-fragment": "^1.5.1",
     "vue-highlight-component": "^1.0.0",
     "vue-magic-grid": "0.0.4",
-    "vue-masonry-css": "^1.0.3",
     "vue-typer": "^1.2.0"
   }
 }

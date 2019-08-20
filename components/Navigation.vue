@@ -61,6 +61,18 @@
         :is="blok.component | dashify"
       ></component>
     </v-footer>
+    <v-btn
+      v-if="blok.show_theme_switcher"
+      @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+      fab
+      color="primary"
+      fixed
+      bottom
+      right
+    >
+      <v-icon v-if="this.$vuetify.theme.dark">mdi-weather-night</v-icon>
+      <v-icon v-if="!this.$vuetify.theme.dark">mdi-weather-sunny</v-icon>
+    </v-btn>
     <style>
   {{blok.css}}
     </style>
@@ -98,6 +110,12 @@ export default {
     };
   },
   mounted() {
+    if (this.blok.primary) {
+      this.$vuetify.theme.themes.light.primary = this.blok.primary;
+    }
+    if (this.blok.primary_dark) {
+      this.$vuetify.theme.themes.dark.primary = this.blok.primary_dark;
+    }
     switch (this.blok.theme) {
       case "light":
         break;
@@ -108,9 +126,6 @@ export default {
         break;
       default:
         break;
-    }
-    if (this.blok.primary) {
-      this.$vuetify.theme.themes.light.primary = this.blok.primary;
     }
   },
   computed: {
