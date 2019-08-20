@@ -11,3 +11,15 @@ iframe {
 [data-aos]:not(.aos-animate) {
   visibility: hidden;
 }
+
+.theme--dark {
+  &.v-application {
+    background: #111;
+  }
+  &.v-card {
+    background-color: #222;
+  }
+  &.v-list {
+    background-color: #333;
+  }
+}
