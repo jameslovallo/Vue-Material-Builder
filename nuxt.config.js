@@ -37,7 +37,6 @@ module.exports = {
   plugins: [
     '~/plugins/components',
     '~/plugins/filters',
-    '~/plugins/masonry',
     { src: 'plugins/vue-typer.js', ssr: false },
     { src: 'plugins/vue-carousel-3d.js', ssr: false },
     { src: 'plugins/magicgrid.js', ssr: false }
