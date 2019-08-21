@@ -71,7 +71,8 @@ module.exports = {
 
   // Site Meta (Through PWA Submodule)
   meta: {
-    name: NAME
+    name: NAME,
+    theme_color: PWA_THEME
   },
   icon: {
     iconFileName: ICON
