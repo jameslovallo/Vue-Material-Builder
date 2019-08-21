@@ -58,7 +58,7 @@ module.exports = {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: FAVICON ? FAVICON : 'favicon.ico'
+        href: FAVICON ? FAVICON : '/favicon.ico'
       }
     ]
   },
@@ -69,7 +69,7 @@ module.exports = {
     theme_color: PWA_THEME
   },
   icon: {
-    iconFileName: ICON
+    iconFileName: ICON ? ICON : '/icon.png'
   },
 
   // Web App Manifest (Through PWA Submodule)
@@ -79,7 +79,7 @@ module.exports = {
     theme_color: PWA_THEME,
     icons: [
       {
-        src: ICON,
+        src: ICON ? ICON : '/icon.png',
         sizes: '512x512',
         type: 'image/png'
       }
