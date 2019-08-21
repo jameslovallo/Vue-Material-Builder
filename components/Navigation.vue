@@ -92,7 +92,7 @@ export default {
       title: this.blok.site_name,
       description: this.blok.site_description,
       link: [
-        // Favicon
+        // Favicon?
         {
           rel: "icon",
           type: "image/x-icon",
@@ -100,7 +100,7 @@ export default {
         }
       ],
       link: [
-        // Favicon
+        // CSS overrides from authoring
         {
           rel: "stylesheet",
           type: "text/css",
@@ -118,6 +118,7 @@ export default {
     }
     switch (this.blok.theme) {
       case "light":
+        this.$vuetify.theme.dark = false;
         break;
       case "dark":
         this.$vuetify.theme.dark = true;

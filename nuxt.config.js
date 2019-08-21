@@ -4,6 +4,8 @@ import axios from 'axios';
 // Site-Specific Settings
 const SiteName = process.env.SITE_NAME;
 const SiteUrl = process.env.SITE_URL;
+const SiteIcon = process.env.SITE_ICON;
+const SiteFavicon = process.env.SITE_FAVICON;
 const StoryblokToken = process.env.STORYBLOK_TOKEN;
 const BingWebmasterID = process.env.BING_WEBMASTER;
 const GoogleAnalyticsID = process.env.GOOGLE_ANALYTICS;
@@ -19,28 +21,28 @@ const DarkThemePrimary = process.env.DARK_THEME_PRIMARY
 const DarkTheme = process.env.DARK_THEME === 'true' ? true : false;
 
 module.exports = {
+  // Enables server side rendering
   mode: 'universal',
 
-  // Page Headers
-  head: {
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'msvalidate.01', content: BingWebmasterID }
-    ]
-  },
-
-  // Progress Bar
+  // Progress Bar Color
   loading: { color: ProgressBarColor },
 
-  // Plugins
-  plugins: [
-    '~/plugins/components',
-    '~/plugins/filters',
-    { src: 'plugins/vue-typer.js', ssr: false },
-    { src: 'plugins/vue-carousel-3d.js', ssr: false },
-    { src: 'plugins/magicgrid.js', ssr: false }
-  ],
+  // Custom Site Meta
+  head: {
+    meta: [{ name: 'msvalidate.01', content: BingWebmasterID }]
+  },
+
+  // Site Meta (PWA Submodule)
+  meta: {
+    name: SiteName,
+    theme_color: ThemePrimary,
+    nativeUI: true,
+    favicon: SiteFavicon ? SiteFavicon : '/favicon.ico'
+  },
+
+  icon: {
+    iconSrc: SiteIcon
+  },
 
   // Nuxt Modules
   modules: [
@@ -53,12 +55,19 @@ module.exports = {
     ['@nuxtjs/sitemap']
   ],
 
-  meta: {
-    name: SiteName
-  },
+  // Nuxt Build Modules
+  buildModules: ['@nuxtjs/vuetify'],
 
-  devModules: ['@nuxtjs/vuetify'],
+  // Plugins (Global component registration, filters, etc)
+  plugins: [
+    '~/plugins/components',
+    '~/plugins/filters',
+    { src: 'plugins/vue-typer.js', ssr: false },
+    { src: 'plugins/vue-carousel-3d.js', ssr: false },
+    { src: 'plugins/magicgrid.js', ssr: false }
+  ],
 
+  // Vuetify Configuration
   vuetify: {
     customProperties: true,
     defaultAssets: {
@@ -66,7 +75,7 @@ module.exports = {
       icons: 'mdi'
     },
     theme: {
-      // dark: DarkTheme,
+      dark: DarkTheme,
       themes: {
         light: {
           primary: ThemePrimary
@@ -81,6 +90,7 @@ module.exports = {
     }
   },
 
+  // Includes SCSS for build
   css: ['@/assets/style/style.scss'],
 
   // Sitemap Config
