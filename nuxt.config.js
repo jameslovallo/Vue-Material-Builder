@@ -1,4 +1,4 @@
-import axios from 'axios'; // Load Dependencies
+import axios from 'axios'; // Load dependencies
 require('dotenv').config(); // Allow .env files
 
 //
@@ -50,8 +50,6 @@ module.exports = {
 
   // Progress Bar Color
   loading: { color: PROGRESS ? PROGRESS : '#fff' },
-
-  env: { background: PWA_THEME },
 
   // Custom Site Meta (i.e. favicons)
   head: {
