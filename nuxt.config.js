@@ -1,6 +1,8 @@
 // Load Dependencies
-require('dotenv').config();
 import axios from 'axios';
+
+// Allow using .env files for local development
+require('dotenv').config();
 
 // Read site settings from environment variables
 const NAME = process.env.SITE_NAME;
@@ -43,7 +45,9 @@ module.exports = {
 
   // Web App Manifest
   manifest: {
-    name: NAME
+    name: NAME,
+    short_name: NAME,
+    theme_color: DARK ? DARK_THEME_PRIMARY : THEME_PRIMARY
   },
 
   // Web App Icon
