@@ -47,12 +47,14 @@ module.exports = {
   manifest: {
     name: NAME,
     short_name: NAME,
-    theme_color: DARK ? PRIMARY_DARK : PRIMARY_LIGHT
-  },
-
-  // Web App Icon
-  icon: {
-    iconFileName: process.env.SITE_ICON
+    theme_color: DARK ? PRIMARY_DARK : PRIMARY_LIGHT,
+    icons: [
+      {
+        src: ICON,
+        sizes: '512x512',
+        type: 'image/png'
+      }
+    ]
   },
 
   // Nuxt Modules
