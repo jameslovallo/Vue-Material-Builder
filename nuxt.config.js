@@ -52,7 +52,7 @@ module.exports = {
 
   // Web App Icon
   icon: {
-    iconFileName: ICON.length > 0 ? ICON : '/icon.png'
+    iconFileName: process.env.SITE_ICON
   },
 
   // Nuxt Modules
