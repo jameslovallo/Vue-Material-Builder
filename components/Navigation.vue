@@ -75,6 +75,7 @@
     </v-btn>
     <style>
   {{blok.css}}
+  body: background: {{process.env.background}} !important;
     </style>
   </v-app>
 </template>

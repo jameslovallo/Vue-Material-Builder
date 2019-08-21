@@ -51,6 +51,8 @@ module.exports = {
   // Progress Bar Color
   loading: { color: PROGRESS ? PROGRESS : '#fff' },
 
+  env: { background: PWA_THEME },
+
   // Custom Site Meta (i.e. favicons)
   head: {
     meta: [{ name: 'msvalidate.01', content: BING_ID }],
@@ -67,7 +69,7 @@ module.exports = {
   meta: {
     name: NAME,
     theme_color: PRIMARY_DARK ? PRIMARY_DARK : PRIMARY_LIGHT,
-    nativeUI: true
+    appleStatusBarStyle: 'black-translucent'
   },
   icon: {
     iconFileName: ICON
