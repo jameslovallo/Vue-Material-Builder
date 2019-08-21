@@ -47,7 +47,7 @@ module.exports = {
   manifest: {
     name: NAME,
     short_name: NAME,
-    theme_color: DARK ? DARK_THEME_PRIMARY : THEME_PRIMARY
+    theme_color: DARK ? PRIMARY_DARK : PRIMARY_LIGHT
   },
 
   // Web App Icon
