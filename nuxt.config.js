@@ -54,12 +54,6 @@ module.exports = {
   // Custom Site Meta (i.e. favicons)
   head: {
     meta: [{ name: 'msvalidate.01', content: BING_ID }],
-    meta: [
-      {
-        name: 'apple-mobile-web-app-status-bar-style',
-        content: 'black-translucent'
-      }
-    ],
     link: [
       {
         rel: 'icon',
