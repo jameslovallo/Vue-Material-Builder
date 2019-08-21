@@ -49,19 +49,12 @@ module.exports = {
       { accessToken: StoryblokToken, cacheProvider: 'memory' }
     ],
     ['@nuxtjs/markdownit'],
-    [
-      '@nuxtjs/pwa',
-      {
-        meta: {
-          name: 'This is finally working'
-        }
-      }
-    ],
+    ['@nuxtjs/pwa'],
     ['@nuxtjs/sitemap']
   ],
 
   meta: {
-    name: 'This is finally working'
+    name: SiteName
   },
 
   devModules: ['@nuxtjs/vuetify'],
