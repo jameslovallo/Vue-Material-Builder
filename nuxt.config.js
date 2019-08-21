@@ -6,7 +6,7 @@ import axios from 'axios';
 const NAME = process.env.SITE_NAME;
 const URL = process.env.SITE_URL;
 const ICON = process.env.SITE_ICON;
-const ICON = process.env.SITE_FAVICON;
+const FAVICON = process.env.SITE_FAVICON;
 const TOKEN = process.env.STORYBLOK_TOKEN;
 const BING_ID = process.env.BING_WEBMASTER;
 const ANALYTICS = process.env.GOOGLE_ANALYTICS;
@@ -38,7 +38,7 @@ module.exports = {
     name: NAME,
     theme_color: PRIMARY_DARK ? PRIMARY_DARK : PRIMARY_LIGHT,
     nativeUI: true,
-    favicon: ICON ? ICON : '/favicon.ico'
+    favicon: FAVICON ? FAVICON : '/favicon.ico'
   },
 
   // Web App Manifest
