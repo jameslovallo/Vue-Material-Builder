@@ -79,7 +79,7 @@ module.exports = {
       {
         src: ICON,
         sizes: '512x512',
-        type: 'image/jpg'
+        type: 'image/png'
       }
     ]
   },
