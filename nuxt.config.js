@@ -7,7 +7,7 @@ require('dotenv').config();
 // Read site settings from environment variables
 const NAME = process.env.SITE_NAME;
 const URL = process.env.SITE_URL;
-const ICON = process.env.SITE_ICON;
+const ICON = process.env.SITE_ICON.toString();
 const FAVICON = process.env.SITE_FAVICON;
 const TOKEN = process.env.STORYBLOK_TOKEN;
 const BING_ID = process.env.BING_WEBMASTER;
@@ -52,7 +52,7 @@ module.exports = {
 
   // Web App Icon
   icon: {
-    iconFileName: ICON.toString()
+    iconFileName: ICON
   },
 
   // Nuxt Modules
