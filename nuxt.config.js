@@ -54,6 +54,12 @@ module.exports = {
   // Custom Site Meta (i.e. favicons)
   head: {
     meta: [{ name: 'msvalidate.01', content: BING_ID }],
+    meta: [
+      {
+        name: 'apple-mobile-web-app-status-bar-style',
+        content: 'black-translucent'
+      }
+    ],
     link: [
       {
         rel: 'icon',
@@ -65,9 +71,7 @@ module.exports = {
 
   // Site Meta (Through PWA Submodule)
   meta: {
-    name: NAME,
-    theme_color: PRIMARY_DARK ? PRIMARY_DARK : PRIMARY_LIGHT,
-    appleStatusBarStyle: 'black-translucent'
+    name: NAME
   },
   icon: {
     iconFileName: ICON
