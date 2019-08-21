@@ -47,14 +47,7 @@ module.exports = {
   manifest: {
     name: NAME,
     short_name: NAME,
-    theme_color: DARK ? PRIMARY_DARK : PRIMARY_LIGHT,
-    icons: [
-      {
-        src: ICON,
-        sizes: '512x512',
-        type: 'image/png'
-      }
-    ]
+    theme_color: DARK ? PRIMARY_DARK : PRIMARY_LIGHT
   },
 
   // Nuxt Modules
