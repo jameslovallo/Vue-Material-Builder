@@ -85,7 +85,7 @@ module.exports = {
           primary: PRIMARY_LIGHT
         },
         dark: {
-          primary: DarkThemePrimary
+          primary: PRIMARY_DARK
         }
       },
       options: {
