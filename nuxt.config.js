@@ -1,55 +1,59 @@
+// Load Dependencies
 require('dotenv').config();
 import axios from 'axios';
 
-// Site-Specific Settings
-const SiteName = process.env.SITE_NAME;
-const SiteUrl = process.env.SITE_URL;
-const SiteIcon = process.env.SITE_ICON;
-const SiteFavicon = process.env.SITE_FAVICON;
-const StoryblokToken = process.env.STORYBLOK_TOKEN;
-const BingWebmasterID = process.env.BING_WEBMASTER;
-const GoogleAnalyticsID = process.env.GOOGLE_ANALYTICS;
-const ProgressBarColor = process.env.PROGRESS_BAR_COLOR
+// Read site settings from environment variables
+const NAME = process.env.SITE_NAME;
+const URL = process.env.SITE_URL;
+const ICON = process.env.SITE_ICON;
+const ICON = process.env.SITE_FAVICON;
+const TOKEN = process.env.STORYBLOK_TOKEN;
+const BING_ID = process.env.BING_WEBMASTER;
+const ANALYTICS = process.env.GOOGLE_ANALYTICS;
+const PROGRESS = process.env.PROGRESS_BAR_COLOR
   ? process.env.PROGRESS_BAR_COLOR
   : '#fff';
-const ThemePrimary = process.env.THEME_PRIMARY
+const PRIMARY_LIGHT = process.env.THEME_PRIMARY
   ? process.env.THEME_PRIMARY
   : '#2979FF';
-const DarkThemePrimary = process.env.DARK_THEME_PRIMARY
+const PRIMARY_DARK = process.env.DARK_THEME_PRIMARY
   ? process.env.DARK_THEME_PRIMARY
   : '#2979FF';
-const DarkTheme = process.env.DARK_THEME === 'true' ? true : false;
+const DARK = process.env.DARK_THEME === 'true' ? true : false;
 
 module.exports = {
-  // Enables server side rendering
+  // Enable Server-Side Rendering
   mode: 'universal',
 
   // Progress Bar Color
-  loading: { color: ProgressBarColor },
+  loading: { color: PROGRESS },
 
   // Custom Site Meta
   head: {
-    meta: [{ name: 'msvalidate.01', content: BingWebmasterID }]
+    meta: [{ name: 'msvalidate.01', content: BING_ID }]
   },
 
   // Site Meta (PWA Submodule)
   meta: {
-    name: SiteName,
-    theme_color: ThemePrimary,
+    name: NAME,
+    theme_color: PRIMARY_DARK ? PRIMARY_DARK : PRIMARY_LIGHT,
     nativeUI: true,
-    favicon: SiteFavicon ? SiteFavicon : '/favicon.ico'
+    favicon: ICON ? ICON : '/favicon.ico'
   },
 
+  // Web App Manifest
+  manifest: {
+    name: NAME
+  },
+
+  // Web App Icon
   icon: {
-    iconSrc: SiteIcon
+    iconSrc: ICON
   },
 
   // Nuxt Modules
   modules: [
-    [
-      'storyblok-nuxt',
-      { accessToken: StoryblokToken, cacheProvider: 'memory' }
-    ],
+    ['storyblok-nuxt', { accessToken: TOKEN, cacheProvider: 'memory' }],
     ['@nuxtjs/markdownit'],
     ['@nuxtjs/pwa'],
     ['@nuxtjs/sitemap']
@@ -75,10 +79,10 @@ module.exports = {
       icons: 'mdi'
     },
     theme: {
-      dark: DarkTheme,
+      dark: DARK,
       themes: {
         light: {
-          primary: ThemePrimary
+          primary: PRIMARY_LIGHT
         },
         dark: {
           primary: DarkThemePrimary
@@ -90,19 +94,19 @@ module.exports = {
     }
   },
 
-  // Includes SCSS for build
+  // Load SCSS
   css: ['@/assets/style/style.scss'],
 
   // Sitemap Config
   sitemap: {
-    hostname: SiteUrl,
+    hostname: URL,
     gzip: true,
     exclude: ['/global']
   },
 
   // Google Analytics
   googleAnalytics: {
-    id: GoogleAnalyticsID,
+    id: ANALYTICS,
     dev: false
   },
 
@@ -148,9 +152,7 @@ module.exports = {
 
       // Load space and receive latest cache version key to improve performance
       axios
-        .get(
-          `https://api.storyblok.com/v1/cdn/spaces/me?token=${StoryblokToken}`
-        )
+        .get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${TOKEN}`)
         .then(space_res => {
           // timestamp of latest publish
           cache_version = space_res.data.space.version;
@@ -158,7 +160,7 @@ module.exports = {
           // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
           axios
             .get(
-              `https://api.storyblok.com/v1/cdn/links?token=${StoryblokToken}&version=${version}&cv=${cache_version}`
+              `https://api.storyblok.com/v1/cdn/links?token=${TOKEN}&version=${version}&cv=${cache_version}`
             )
             .then(res => {
               Object.keys(res.data.links).forEach(key => {
