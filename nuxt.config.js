@@ -1,8 +1,5 @@
-// Load Dependencies
-import axios from 'axios';
-
-// Allow using .env files for local development
-require('dotenv').config();
+import axios from 'axios'; // Load Dependencies
+require('dotenv').config(); // Allow .env files
 
 //
 //
@@ -13,28 +10,32 @@ require('dotenv').config();
 //
 //
 
-// Read site settings from environment variables
+// GET SITE SETTINGS FROM NETLIFY ENVIRONMENT VARIABLES
+
+//// Storyblok Preview Token
+const TOKEN = process.env.STORYBLOK_TOKEN;
+
+//// Meta
 const NAME = process.env.SITE_NAME;
 const URL = process.env.SITE_URL;
 const ICON = process.env.SITE_ICON;
 const FAVICON = process.env.SITE_FAVICON;
-const TOKEN = process.env.STORYBLOK_TOKEN;
-const BING_ID = process.env.BING_WEBMASTER;
 const ANALYTICS = process.env.GOOGLE_ANALYTICS;
-const PROGRESS = process.env.PROGRESS_BAR_COLOR
-  ? process.env.PROGRESS_BAR_COLOR
-  : '#fff';
-const PRIMARY_LIGHT = process.env.THEME_PRIMARY
-  ? process.env.THEME_PRIMARY
-  : '#2979FF';
-const PRIMARY_DARK = process.env.DARK_THEME_PRIMARY
-  ? process.env.DARK_THEME_PRIMARY
-  : '#2979FF';
+const BING_ID = process.env.BING_WEBMASTER;
+
+//// Theme
+const PROGRESS = process.env.PROGRESS_BAR_COLOR;
 const DARK = process.env.DARK_THEME === 'true' ? true : false;
+const PRIMARY_LIGHT = process.env.THEME_PRIMARY;
+const PRIMARY_DARK = process.env.DARK_THEME_PRIMARY;
+const PWA_THEME = process.env.PWA_COLOR; // Use nav color;
+
+/////////////////////////////
+// NUXT CONFIG STARTS HERE //
+/////////////////////////////
 
 module.exports = {
-  // Enable Server-Side Rendering
-  mode: 'universal',
+  mode: 'universal', // Enable server-side rendering
 
   //                   _
   //                  | |
@@ -45,8 +46,10 @@ module.exports = {
   //
   //
 
+  // SET THE SITE'S META TAGS AND PWA MANIFEST FILE
+
   // Progress Bar Color
-  loading: { color: PROGRESS },
+  loading: { color: PROGRESS ? PROGRESS : '#fff' },
 
   // Custom Site Meta (i.e. favicons)
   head: {
@@ -66,7 +69,6 @@ module.exports = {
     theme_color: PRIMARY_DARK ? PRIMARY_DARK : PRIMARY_LIGHT,
     nativeUI: true
   },
-
   icon: {
     iconFileName: ICON
   },
@@ -75,6 +77,7 @@ module.exports = {
   manifest: {
     name: NAME,
     short_name: NAME,
+    theme_color: PWA_THEME,
     icons: [
       {
         src: ICON,
