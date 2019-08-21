@@ -53,15 +53,16 @@ module.exports = {
       '@nuxtjs/pwa',
       {
         meta: {
-          nativeUI: true,
-          theme_color: ThemePrimary,
-          name: SiteName,
-          appleStatusBarStyle: 'black-translucent'
+          name: 'This is finally working'
         }
       }
     ],
     ['@nuxtjs/sitemap']
   ],
+
+  meta: {
+    name: 'This is finally working'
+  },
 
   devModules: ['@nuxtjs/vuetify'],
 
@@ -72,7 +73,7 @@ module.exports = {
       icons: 'mdi'
     },
     theme: {
-      dark: DarkTheme,
+      // dark: DarkTheme,
       themes: {
         light: {
           primary: ThemePrimary
