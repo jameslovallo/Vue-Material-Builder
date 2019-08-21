@@ -4,6 +4,15 @@ import axios from 'axios';
 // Allow using .env files for local development
 require('dotenv').config();
 
+//
+//
+//     ___ _ ____   __
+//    / _ \ '_ \ \ / /
+//   |  __/ | | \ V /
+//    \___|_| |_|\_/
+//
+//
+
 // Read site settings from environment variables
 const NAME = process.env.SITE_NAME;
 const URL = process.env.SITE_URL;
@@ -27,28 +36,65 @@ module.exports = {
   // Enable Server-Side Rendering
   mode: 'universal',
 
+  //                   _
+  //                  | |
+  //    _ __ ___   ___| |_ __ _
+  //   | '_ ` _ \ / _ \ __/ _` |
+  //   | | | | | |  __/ || (_| |
+  //   |_| |_| |_|\___|\__\__,_|
+  //
+  //
+
   // Progress Bar Color
   loading: { color: PROGRESS },
 
-  // Custom Site Meta
+  // Custom Site Meta (i.e. favicons)
   head: {
-    meta: [{ name: 'msvalidate.01', content: BING_ID }]
+    meta: [{ name: 'msvalidate.01', content: BING_ID }],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: FAVICON ? FAVICON : 'favicon.ico'
+      }
+    ]
   },
 
-  // Site Meta (PWA Submodule)
+  // Site Meta (Through PWA Submodule)
   meta: {
     name: NAME,
     theme_color: PRIMARY_DARK ? PRIMARY_DARK : PRIMARY_LIGHT,
-    nativeUI: true,
-    favicon: FAVICON ? FAVICON : '/favicon.ico'
+    nativeUI: true
   },
 
-  // Web App Manifest
+  icon: {
+    iconFileName: ICON
+  },
+
+  // Web App Manifest (Through PWA Submodule)
   manifest: {
     name: NAME,
     short_name: NAME,
-    theme_color: DARK ? PRIMARY_DARK : PRIMARY_LIGHT
+    icons: [
+      {
+        src: ICON,
+        sizes: '512x512',
+        type: 'image/jpg'
+      }
+    ]
   },
+
+  //          _             _
+  //         | |           (_)
+  //    _ __ | |_   _  __ _ _ _ __  ___
+  //   | '_ \| | | | |/ _` | | '_ \/ __|
+  //   | |_) | | |_| | (_| | | | | \__ \
+  //   | .__/|_|\__,_|\__, |_|_| |_|___/
+  //   | |             __/ |
+  //   |_|            |___/
+
+  // Nuxt Build Modules
+  buildModules: ['@nuxtjs/vuetify'],
 
   // Nuxt Modules
   modules: [
@@ -58,9 +104,6 @@ module.exports = {
     ['@nuxtjs/sitemap']
   ],
 
-  // Nuxt Build Modules
-  buildModules: ['@nuxtjs/vuetify'],
-
   // Plugins (Global component registration, filters, etc)
   plugins: [
     '~/plugins/components',
@@ -69,6 +112,34 @@ module.exports = {
     { src: 'plugins/vue-carousel-3d.js', ssr: false },
     { src: 'plugins/magicgrid.js', ssr: false }
   ],
+
+  // Load SCSS
+  css: ['@/assets/style/style.scss'],
+
+  // Sitemap Config
+  sitemap: {
+    hostname: URL,
+    gzip: true,
+    exclude: ['/global']
+  },
+
+  // Google Analytics
+  googleAnalytics: {
+    id: ANALYTICS,
+    dev: false
+  },
+
+  // Markdown-It Config
+  markdownit: { injected: true },
+
+  //                     _   _  __
+  //                    | | (_)/ _|
+  //   __   ___   _  ___| |_ _| |_ _   _
+  //   \ \ / / | | |/ _ \ __| |  _| | | |
+  //    \ V /| |_| |  __/ |_| | | | |_| |
+  //     \_/  \__,_|\___|\__|_|_|  \__, |
+  //                                __/ |
+  //                               |___/
 
   // Vuetify Configuration
   vuetify: {
@@ -93,24 +164,14 @@ module.exports = {
     }
   },
 
-  // Load SCSS
-  css: ['@/assets/style/style.scss'],
-
-  // Sitemap Config
-  sitemap: {
-    hostname: URL,
-    gzip: true,
-    exclude: ['/global']
-  },
-
-  // Google Analytics
-  googleAnalytics: {
-    id: ANALYTICS,
-    dev: false
-  },
-
-  // Markdown-It Config
-  markdownit: { injected: true },
+  //    _           _ _     _
+  //   | |         (_) |   | |
+  //   | |__  _   _ _| | __| |
+  //   | '_ \| | | | | |/ _` |
+  //   | |_) | |_| | | | (_| |
+  //   |_.__/ \__,_|_|_|\__,_|
+  //
+  //
 
   // Router Middleware
   router: {

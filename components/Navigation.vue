@@ -92,14 +92,6 @@ export default {
       title: this.blok.site_name,
       description: this.blok.site_description,
       link: [
-        // Favicon?
-        {
-          rel: "icon",
-          type: "image/x-icon",
-          href: this.blok.favicon ? this.blok.favicon : "/favicon.ico"
-        }
-      ],
-      link: [
         // CSS overrides from authoring
         {
           rel: "stylesheet",
