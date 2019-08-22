@@ -106,9 +106,6 @@ Vue.component('blok-markdown', Markdown);
 import Masonry from '~/components/Masonry.vue';
 Vue.component('blok-masonry', Masonry);
 
-import Navigation from '~/components/Navigation.vue';
-Vue.component('blok-navigation', Navigation);
-
 import Page from '~/components/Page.vue';
 Vue.component('blok-page', Page);
 
