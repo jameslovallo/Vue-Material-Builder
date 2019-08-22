@@ -2,7 +2,7 @@
   <v-img
     v-editable="blok"
     :alt="blok.alt"
-    :aspect-ratio="blok.aspectratio"
+    :aspect-ratio="aspectRatio"
     :contain="blok.contain"
     :gradient="blok.gradient"
     :height="blok.height"
@@ -30,6 +30,15 @@
 export default {
   props: ["blok"],
   computed: {
+    aspectRatio() {
+      let ratio = this.blok.aspectratio;
+      if (ratio.includes("/")) {
+        let ratioValues = ratio.split("/");
+        return ratioValues[0] / ratioValues[1];
+      } else {
+        return this.blok.aspectratio;
+      }
+    },
     randomImage() {
       let width = this.blok.width
         ? this.blok.width
