@@ -76,7 +76,7 @@ module.exports = {
   manifest: {
     name: NAME,
     short_name: NAME,
-    theme_color: PWA_THEME,
+    theme_color: PRIMARY_DARK,
     icons: [
       {
         src: ICON ? ICON : '/icon.png',
