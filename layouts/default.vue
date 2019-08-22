@@ -2,7 +2,7 @@
   <v-app>
     <v-navigation-drawer
       v-editable="blok"
-      v-if="blok.sidebar_content != false"
+      v-if="blok.sidebar_content ? true : false"
       v-model="drawer"
       clipped
       app
@@ -34,7 +34,7 @@
       :style="blok.style"
     >
       <v-app-bar-nav-icon
-        v-if="blok.sidebar_content != false"
+        v-if="blok.toolbar_content ? true : false"
         @click="drawer = !drawer"
         aria-label="Toggle the Sidebar Navigation"
       ></v-app-bar-nav-icon>
@@ -50,7 +50,7 @@
     </v-content>
     <v-footer
       v-editable="blok"
-      v-if="blok.footer_content != false"
+      v-if="blok.footer_content ? true : false"
       :inset="blok.footer_inset"
       app
       :absolute="blok.footer_inset"
@@ -86,7 +86,9 @@
 <script>
 import axios from "axios";
 export default {
-  data: () => ({ blok: {}, drawer: null }),
+  data: () => ({
+    blok: {}
+  }),
   mounted() {
     this.getData();
     this.setTheme();
