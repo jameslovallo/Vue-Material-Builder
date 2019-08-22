@@ -39,11 +39,9 @@
 <script>
 export default {
   props: ["blok"],
-  data() {
-    return {
-      currentStep: 1
-    };
-  }
+  data: () => ({
+    currentStep: 1
+  })
 };
 </script>
 

@@ -18,11 +18,9 @@
 <script>
 export default {
   props: ["blok"],
-  data() {
-    return {
-      alert: true
-    };
-  }
+  data: () => ({
+    alert: true
+  })
 };
 </script>
 

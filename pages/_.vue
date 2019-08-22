@@ -38,9 +38,7 @@ const loadData = function({ api, cacheVersion, errorCallback, version, path }) {
 };
 
 export default {
-  data() {
-    return { story: { content: {} } };
-  },
+  data: () => ({ story: { content: {} } }),
   mounted() {
     this.$storybridge.on(["input", "published", "change"], event => {
       if (event.action == "input") {

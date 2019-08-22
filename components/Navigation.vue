@@ -86,11 +86,9 @@
 <script>
 export default {
   props: ["blok"],
-  data() {
-    return {
-      drawer: null
-    };
-  },
+  data: () => ({
+    drawer: null
+  }),
   head() {
     return {
       title: this.blok.site_name,

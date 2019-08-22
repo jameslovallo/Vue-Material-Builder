@@ -34,11 +34,9 @@
 <script>
 export default {
   props: ["blok"],
-  data() {
-    return {
-      time: null,
-      menu: false
-    };
-  }
+  data: () => ({
+    time: null,
+    menu: false
+  })
 };
 </script>

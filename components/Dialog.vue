@@ -78,11 +78,9 @@
 <script>
 export default {
   props: ["blok"],
-  data() {
-    return {
-      dialog: false
-    };
-  }
+  data: () => ({
+    dialog: false
+  })
 };
 </script>
 

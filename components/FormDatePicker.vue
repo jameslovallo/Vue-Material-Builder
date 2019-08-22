@@ -33,11 +33,9 @@
 <script>
 export default {
   props: ["blok"],
-  data() {
-    return {
-      date: new Date().toISOString().substr(0, 10),
-      menu: false
-    };
-  }
+  data: () => ({
+    date: new Date().toISOString().substr(0, 10),
+    menu: false
+  })
 };
 </script>

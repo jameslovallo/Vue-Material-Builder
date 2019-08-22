@@ -38,11 +38,9 @@
 <script>
 export default {
   props: ["blok"],
-  data() {
-    return {
-      item: null
-    };
-  },
+  data: () => ({
+    item: null
+  }),
   computed: {
     gridStyles() {
       return `grid-template-columns: repeat(auto-fit, minmax(${this.blok.grid_column_width}px, 1fr)); gap: ${this.blok.grid_gap} ${this.blok.grid_gap};`;
