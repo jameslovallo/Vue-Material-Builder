@@ -10,6 +10,7 @@
       <v-btn
         v-editable="blok"
         v-on="on"
+        :aria-label="blok.text"
         :absolute="blok.absolute"
         :active-class="blok.active_class"
         :block="blok.block"
