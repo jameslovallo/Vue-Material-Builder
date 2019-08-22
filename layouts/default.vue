@@ -34,7 +34,7 @@
       :style="blok.style"
     >
       <v-app-bar-nav-icon
-        v-if="blok.toolbar_content ? true : false"
+        v-if="blok.sidebar_content ? true : false"
         @click="drawer = !drawer"
         aria-label="Toggle the Sidebar Navigation"
       ></v-app-bar-nav-icon>
