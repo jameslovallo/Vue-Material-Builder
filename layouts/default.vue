@@ -22,7 +22,7 @@
     <!-- TOOLBAR -->
     <v-app-bar
       v-editable="blok"
-      v-if="blok.toolbar_content"
+      v-if="blok.toolbar_content ? true : false"
       app
       clipped-left
       :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
@@ -34,7 +34,7 @@
       :style="blok.style"
     >
       <v-app-bar-nav-icon
-        v-if="blok.sidebar_content ? true : false"
+        v-if="blok.sidebar_content.length > 0"
         @click="drawer = !drawer"
         aria-label="Toggle the Sidebar Navigation"
       ></v-app-bar-nav-icon>
@@ -87,7 +87,8 @@
 import axios from "axios";
 export default {
   data: () => ({
-    blok: {}
+    blok: {},
+    drawer: null
   }),
   mounted() {
     this.getData();
