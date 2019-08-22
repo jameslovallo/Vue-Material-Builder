@@ -33,7 +33,11 @@
       :class="blok.helpers"
       :style="blok.style"
     >
-      <v-app-bar-nav-icon v-if="blok.sidebar_content != false" @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        v-if="blok.sidebar_content != false"
+        @click="drawer = !drawer"
+        aria-label="Toggle the Sidebar Navigation"
+      ></v-app-bar-nav-icon>
       <component
         :key="blok._uid"
         v-for="blok in blok.toolbar_content"
