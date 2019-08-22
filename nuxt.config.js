@@ -36,6 +36,7 @@ const PWA_THEME = process.env.PWA_COLOR; // Use nav color;
 
 module.exports = {
   mode: 'universal', // Enable server-side rendering
+  env: { token: TOKEN },
 
   //                   _
   //                  | |
