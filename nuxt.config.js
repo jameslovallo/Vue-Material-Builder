@@ -65,8 +65,7 @@ module.exports = {
 
   // Site Meta (Through PWA Submodule)
   meta: {
-    name: NAME,
-    theme_color: PWA_THEME
+    name: NAME
   },
   icon: {
     iconFileName: ICON ? ICON : '/icon.png'
@@ -76,7 +75,7 @@ module.exports = {
   manifest: {
     name: NAME,
     short_name: NAME,
-    theme_color: PRIMARY_DARK,
+    theme_color: PWA_THEME,
     icons: [
       {
         src: ICON ? ICON : '/icon.png',
