@@ -102,7 +102,6 @@ export default {
         .then(response => {
           this.blok = response.data.story.content.navigation[0];
         })
-        .then(console.log(this.blok))
         .catch(error => console.log("Error:", error));
     },
     detectTheme() {
