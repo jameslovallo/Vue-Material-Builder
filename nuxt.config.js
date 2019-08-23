@@ -71,10 +71,6 @@ module.exports = {
     ]
   },
 
-  // Site Meta (Through PWA Submodule)
-  meta: {
-    name: NAME
-  },
   icon: {
     iconFileName: ICON ? ICON : '/icon.png'
   },
