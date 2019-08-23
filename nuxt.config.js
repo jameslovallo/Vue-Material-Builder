@@ -58,19 +58,24 @@ module.exports = {
     meta: [{ name: 'msvalidate.01', content: BING }],
     link: [
       {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: FAVICON ? FAVICON : '/favicon.ico'
+        rel: 'apple-touch-icon',
+        href: IOS_ICON ? IOS_ICON : '/icon.png'
       }
     ],
     link: [
       {
-        rel: 'apple-touch-icon',
-        href: IOS_ICON ? IOS_ICON : '/icon.png'
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: FAVICON ? FAVICON : '/favicon.ico'
       }
     ]
   },
 
+  // Site Meta (Through PWA Submodule)
+  meta: {
+    name: NAME,
+    favicon: false
+  },
   icon: {
     iconFileName: ICON ? ICON : '/icon.png'
   },
