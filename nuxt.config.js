@@ -16,20 +16,20 @@ require('dotenv').config(); // Allow .env files
 const TOKEN = process.env.STORYBLOK_TOKEN;
 
 //// Meta
-const NAME = process.env.SITE_NAME;
-const URL = process.env.SITE_URL;
-const ICON = process.env.SITE_ICON;
+const NAME = process.env.NAME;
+const URL = process.env.URL;
+const FAVICON = process.env.FAVICON;
+const ICON = process.env.ICON;
 const IOS_ICON = process.env.IOS_ICON;
-const FAVICON = process.env.SITE_FAVICON;
-const ANALYTICS = process.env.GOOGLE_ANALYTICS;
-const BING_ID = process.env.BING_WEBMASTER;
+const GOOGLE = process.env.GOOGLE;
+const BING = process.env.BING;
 
 //// Theme
-const PROGRESS = process.env.PROGRESS_BAR_COLOR;
-const DARK = process.env.DARK_THEME === 'true' ? true : false;
-const PRIMARY_LIGHT = process.env.THEME_PRIMARY;
-const PRIMARY_DARK = process.env.DARK_THEME_PRIMARY;
-const PWA_THEME = process.env.PWA_COLOR; // Use nav color;
+const DARK = process.env.DARK === 'true' ? true : false;
+const PRIMARY_DARK = process.env.PRIMARY_DARK;
+const PRIMARY_LIGHT = process.env.PRIMARY_LIGHT;
+const PROGRESS_BAR = process.env.PROGRESS_BAR;
+const PWA_THEME = process.env.PWA_THEME; // Use nav color;
 
 /////////////////////////////
 // NUXT CONFIG STARTS HERE //
@@ -51,11 +51,11 @@ module.exports = {
   // SET THE SITE'S META TAGS AND PWA MANIFEST FILE
 
   // Progress Bar Color
-  loading: { color: PROGRESS ? PROGRESS : '#fff' },
+  loading: { color: PROGRESS_BAR ? PROGRESS_BAR : '#fff' },
 
   // Custom Site Meta (i.e. favicons)
   head: {
-    meta: [{ name: 'msvalidate.01', content: BING_ID }],
+    meta: [{ name: 'msvalidate.01', content: BING }],
     link: [
       {
         rel: 'icon',
@@ -135,7 +135,7 @@ module.exports = {
 
   // Google Analytics
   googleAnalytics: {
-    id: ANALYTICS,
+    id: GOOGLE,
     dev: false
   },
 
