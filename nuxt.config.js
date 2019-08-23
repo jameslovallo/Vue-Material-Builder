@@ -56,12 +56,12 @@ module.exports = {
   // Custom Site Meta (i.e. favicons)
   head: {
     meta: [{ name: 'msvalidate.01', content: BING }],
-    link: [
-      {
-        rel: 'apple-touch-icon',
-        href: IOS_ICON ? IOS_ICON : '/icon.png'
-      }
-    ],
+    // link: [
+    //   {
+    //     rel: 'apple-touch-icon',
+    //     href: IOS_ICON ? IOS_ICON : '/icon.png'
+    //   }
+    // ],
     link: [
       {
         rel: 'icon',
