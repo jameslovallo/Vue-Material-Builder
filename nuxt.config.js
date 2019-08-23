@@ -19,6 +19,7 @@ const TOKEN = process.env.STORYBLOK_TOKEN;
 const NAME = process.env.SITE_NAME;
 const URL = process.env.SITE_URL;
 const ICON = process.env.SITE_ICON;
+const IOS_ICON = process.env.IOS_ICON;
 const FAVICON = process.env.SITE_FAVICON;
 const ANALYTICS = process.env.GOOGLE_ANALYTICS;
 const BING_ID = process.env.BING_WEBMASTER;
@@ -61,12 +62,19 @@ module.exports = {
         type: 'image/x-icon',
         href: FAVICON ? FAVICON : '/favicon.ico'
       }
+    ],
+    link: [
+      {
+        rel: 'apple-touch-icon',
+        href: IOS_ICON ? IOS_ICON : '/icon.png'
+      }
     ]
   },
 
   // Site Meta (Through PWA Submodule)
   meta: {
-    name: NAME
+    name: NAME,
+    icon: false
   },
   icon: {
     iconFileName: ICON ? ICON : '/icon.png'
