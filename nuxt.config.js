@@ -25,7 +25,7 @@ const GOOGLE = process.env.GOOGLE;
 const BING = process.env.BING;
 
 //// Theme
-const DARK = process.env.DARK === 'true' ? true : false;
+const THEME = process.env.THEME;
 const PRIMARY_DARK = process.env.PRIMARY_DARK;
 const PRIMARY_LIGHT = process.env.PRIMARY_LIGHT;
 const PROGRESS_BAR = process.env.PROGRESS_BAR;
@@ -37,7 +37,7 @@ const PWA_THEME = process.env.PWA_THEME; // Use nav color;
 
 module.exports = {
   mode: 'universal', // Enable server-side rendering
-  env: { token: TOKEN },
+  env: { token: TOKEN, theme: THEME },
 
   //                   _
   //                  | |
@@ -158,7 +158,7 @@ module.exports = {
       icons: 'mdi'
     },
     theme: {
-      dark: DARK,
+      dark: THEME === 'dark' || THEME === 'auto' ? true : false,
       themes: {
         light: {
           primary: PRIMARY_LIGHT

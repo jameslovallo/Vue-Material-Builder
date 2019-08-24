@@ -44,22 +44,23 @@ h6 {
   letter-spacing: 0.15;
 }
 
-:not(.not-responsive) {
+p,
+li {
+  .not-responsive & {
+    font-size: 1rem;
+  }
+  font-size: responsive 16px 20px;
+  line-height: 1.5em;
+}
+ol,
+ul {
+  margin-bottom: 1em;
+}
+
+blockquote {
   p,
   li {
-    font-size: responsive 16px 20px;
-    line-height: 1.5em;
-  }
-  ol,
-  ul {
-    margin-bottom: 1em;
-  }
-
-  blockquote {
-    p,
-    li {
-      font-size: 1em;
-    }
+    font-size: 1em;
   }
 }
 

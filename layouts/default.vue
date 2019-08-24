@@ -1,15 +1,15 @@
 <template>
   <v-app>
     <v-navigation-drawer
-      v-editable="blok"
-      v-if="blok.sidebar_content ? true : false"
-      v-model="drawer"
-      clipped
+      v-if="blok.sidebar_content != false"
+      v-model="sidebar"
       app
-      :class="blok.drawer_helpers"
-      :dark="blok.drawer_dark"
-      :width="blok.drawer_width"
-      :color="blok.drawer_color | lightOrDark(this.$vuetify.theme.dark)"
+      :clipped="!blok.sidebar_prominent"
+      :class="blok.sidebar_helpers"
+      :color="blok.sidebar_color | lightOrDark(this.$vuetify.theme.dark)"
+      :dark="blok.sidebar_dark"
+      :style="blok.sidebar_style"
+      :width="blok.sidebar_width"
     >
       <component
         v-for="blok in blok.sidebar_content"
@@ -17,25 +17,23 @@
         :blok="blok"
         :is="blok.component | dashify"
       ></component>
-      {{blok.drawer_color}}
     </v-navigation-drawer>
     <!-- TOOLBAR -->
     <v-app-bar
-      v-editable="blok"
-      v-if="blok.toolbar_content ? true : false"
+      v-if="blok.toolbar_content ? blok.toolbar_content.length > 0 : false"
       app
-      clipped-left
-      :color="blok.color | lightOrDark(this.$vuetify.theme.dark)"
-      :dark="blok.dark"
-      :height="blok.height"
-      :flat="blok.flat"
-      :dense="blok.dense"
-      :class="blok.helpers"
-      :style="blok.style"
+      :clipped-left="!blok.sidebar_prominent"
+      :color="blok.toolbar_color | lightOrDark(this.$vuetify.theme.dark)"
+      :dark="blok.toolbar_dark"
+      :height="blok.toolbar_height"
+      :flat="blok.toolbar_flat"
+      :dense="blok.toolbar_dense"
+      :class="blok.toolbar_helpers"
+      :style="blok.toolbar_style"
     >
       <v-app-bar-nav-icon
-        v-if="blok.sidebar_content.length > 0"
-        @click="drawer = !drawer"
+        v-if="blok.sidebar_content != false"
+        @click="sidebar = !sidebar"
         aria-label="Toggle the Sidebar Navigation"
       ></v-app-bar-nav-icon>
       <component
@@ -49,10 +47,9 @@
       <nuxt />
     </v-content>
     <v-footer
-      v-editable="blok"
-      v-if="blok.footer_content ? true : false"
-      :inset="blok.footer_inset"
+      v-if="blok.footer_content != false"
       app
+      :inset="blok.footer_inset"
       :absolute="blok.footer_inset"
       :color="blok.footer_color | lightOrDark(this.$vuetify.theme.dark)"
       :dark="blok.footer_dark"
@@ -84,52 +81,41 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   data: () => ({
     blok: {},
-    drawer: null
+    sidebar: false
   }),
   mounted() {
     this.getData();
-    this.setTheme();
+    if (process.client && process.env.theme === "auto") {
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? (this.$vuetify.theme.dark = true)
+        : (this.$vuetify.theme.dark = false);
+    }
   },
   methods: {
-    async getData() {
-      let url = `https://api.storyblok.com/v1/cdn/stories/global?token=${process.env.token}`;
-      axios
-        .get(url)
+    getData() {
+      // load js client
+      const StoryblokClient = require("storyblok-js-client");
+
+      // init with access token
+      const Storyblok = new StoryblokClient({
+        accessToken: process.env.token,
+        cache: {
+          clear: "auto",
+          type: "memory"
+        }
+      });
+
+      Storyblok.get("cdn/stories/layout", {})
         .then(response => {
-          this.blok = response.data.story.content.navigation[0];
+          this.blok = response.data.story.content;
+          this.sidebar = null;
         })
-        .catch(error => console.log("Error:", error));
-    },
-    detectTheme() {
-      if (process.client) {
-        return window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? true
-          : false;
-      }
-    },
-    setTheme() {
-      if (this.blok.primary) {
-        this.$vuetify.theme.themes.light.primary = this.blok.primary;
-      }
-      if (this.blok.primary_dark) {
-        this.$vuetify.theme.themes.dark.primary = this.blok.primary_dark;
-      }
-      switch (this.blok.theme) {
-        case "light":
-          this.$vuetify.theme.dark = false;
-          break;
-        case "dark":
-          this.$vuetify.theme.dark = true;
-        case "auto":
-          this.$vuetify.theme.dark = this.detectTheme;
-          break;
-        default:
-          break;
-      }
+        .catch(error => {
+          console.log(error);
+        });
     }
   },
   head() {

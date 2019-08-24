@@ -14,7 +14,7 @@
           cx="21"
           cy="21"
           r="15.91549430918954"
-          :stroke="this.$vuetify.theme.themes.light.primary"
+          :stroke="computedColor"
           stroke-width=".75"
           style="opacity: 0.3"
         />
@@ -23,7 +23,7 @@
           cx="21"
           cy="21"
           r="15.91549430918954"
-          :stroke="this.$vuetify.theme.themes.light.primary"
+          :stroke="computedColor"
           stroke-width="2"
           stroke-dashoffset="25"
           class="swoosh-in"
@@ -51,6 +51,14 @@ export default {
   computed: {
     dashArray() {
       return `stroke-dasharray: ${this.blok.value} ${100 - this.blok.value}`;
+    },
+    computedColor() {
+      let dark = this.$vuetify.theme.dark;
+      if (dark) {
+        return this.$vuetify.theme.themes.dark.primary;
+      } else {
+        return this.$vuetify.theme.themes.light.primary;
+      }
     }
   }
 };
