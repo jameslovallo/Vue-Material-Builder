@@ -76,6 +76,9 @@
     </v-btn>
     <style>
   {{blok.css}}
+  body {
+    background-color: {{htmlBackground}};
+  }
     </style>
   </v-app>
 </template>
@@ -84,7 +87,8 @@
 export default {
   data: () => ({
     blok: {},
-    sidebar: false
+    sidebar: false,
+    htmlBackground: process.env.pwa_theme ? process.env.pwa_theme : "auto"
   }),
   mounted() {
     this.getData();
