@@ -30,7 +30,7 @@
       ></component>
     </v-list-item-avatar>
     <v-list-item-content>
-      <v-list-item-title v-if="blok.title">{{blok.title}}</v-list-item-title>
+      <v-list-item-title v-if="blok.title" class="font-weight-medium">{{blok.title}}</v-list-item-title>
       <v-list-item-subtitle v-if="blok.subtitle">{{blok.subtitle}}</v-list-item-subtitle>
     </v-list-item-content>
   </v-list-item>

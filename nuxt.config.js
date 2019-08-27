@@ -26,8 +26,10 @@ const BING = process.env.BING;
 
 //// Theme
 const THEME = process.env.THEME;
-const PRIMARY_DARK = process.env.PRIMARY_DARK;
 const PRIMARY_LIGHT = process.env.PRIMARY_LIGHT;
+const PRIMARY_DARK = process.env.PRIMARY_DARK;
+const SECONDARY_LIGHT = process.env.SECONDARY_LIGHT;
+const SECONDARY_DARK = process.env.SECONDARY_DARK;
 const PROGRESS_BAR = process.env.PROGRESS_BAR;
 const PWA_THEME = process.env.PWA_THEME; // Use nav color;
 
@@ -161,10 +163,12 @@ module.exports = {
       dark: THEME === 'dark' || THEME === 'auto' ? true : false,
       themes: {
         light: {
-          primary: PRIMARY_LIGHT
+          primary: PRIMARY_LIGHT,
+          secondary: SECONDARY_LIGHT
         },
         dark: {
-          primary: PRIMARY_DARK
+          primary: PRIMARY_DARK,
+          secondary: SECONDARY_DARK
         }
       },
       options: {

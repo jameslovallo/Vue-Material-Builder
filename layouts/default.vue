@@ -1,5 +1,18 @@
 <template>
   <v-app>
+    <div class="video-wrapper" :style="`align-items: ${blok.video_alignment};`">
+      <video
+        v-if="blok.video_webm || blok.video_mp4"
+        playsinline
+        autoplay
+        muted
+        loop
+        class="hidden-sm-and-down"
+      >
+        <source :src="blok.video_webm" type="video/webm" />
+        <source :src="blok.video_mp4" type="video/mp4" />
+      </video>
+    </div>
     <v-navigation-drawer
       v-if="blok.sidebar_content != false"
       v-model="sidebar"
@@ -138,6 +151,16 @@ export default {
 </script>
 
 <style>
+.v-application--wrap > .video-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow: hidden;
+  object-fit: cover;
+}
 .v-footer--absolute.v-footer--inset {
   width: auto;
 }

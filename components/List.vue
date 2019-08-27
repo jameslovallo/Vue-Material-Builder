@@ -4,14 +4,13 @@
     :dark="blok.dark"
     :dense="blok.dense"
     :disabled="blok.disabled"
-    :expand="blok.expand"
     :nav="blok.list_style==='nav'"
     :rounded="blok.list_style==='rounded'"
     :shaped="blok.list_style==='shaped'"
     :subheader="blok.subheader.length > 0"
     :three-line="blok.threeline"
     :two-line="blok.twoline"
-    :class="blok.helpers"
+    :class="[blok.helpers, blok.expand ? 'content-list' : '']"
     :style="blok.style"
   >
     <v-subheader v-if="blok.subheader">{{blok.subheader}}</v-subheader>
@@ -77,5 +76,24 @@ export default {
   100% {
     opacity: 1;
   }
+}
+</style>
+
+<style>
+.content-list .v-list-item__title,
+.content-list .v-list-item__subtitle {
+  overflow: visible;
+  text-overflow: auto;
+  white-space: unset;
+}
+.content-list .v-list-item__content {
+  overflow: visible;
+  white-space: unset;
+}
+.content-list.v-list--three-line .v-list-item .v-list-item__subtitle,
+.content-list .v-list-item--three-line .v-list-item__subtitle {
+  -webkit-line-clamp: none;
+  white-space: unset;
+  font-size: 1.1em;
 }
 </style>
