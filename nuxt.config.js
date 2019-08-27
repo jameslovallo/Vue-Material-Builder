@@ -193,7 +193,6 @@ module.exports = {
 
   // Build Configuration
   build: {
-    extractCSS: true,
     // PostCSS Config
     postcss: {
       // Add plugin names as key and arguments as value
