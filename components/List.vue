@@ -92,7 +92,7 @@ export default {
 }
 .content-list.v-list--three-line .v-list-item .v-list-item__subtitle,
 .content-list .v-list-item--three-line .v-list-item__subtitle {
-  -webkit-line-clamp: none;
+  -webkit-line-clamp: unset;
   white-space: unset;
   font-size: 1.1em;
 }
