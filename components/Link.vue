@@ -1,5 +1,5 @@
 <template>
-  <div id="tooltip-flexbox-fix">
+  <div id="tooltip-flexbox-fix" :class="blok.helpers" :style="blok.style" v-editable="blok">
     <v-tooltip
       v-editable="blok"
       :disabled="!blok.enable_tooltip"
@@ -8,8 +8,6 @@
       :right="blok.tooltip_direction === 'right'"
       :top="blok.tooltip_direction === 'top'"
       :color="blok.tooltip_color | lightOrDark(this.$vuetify.theme.dark)"
-      :helpers="blok.helpers"
-      :style="blok.style"
     >
       <template v-slot:activator="{ on }">
         <a v-if="blok.action==='href'" :href="blok.path" target="_blank" v-on="on">
