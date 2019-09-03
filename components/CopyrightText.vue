@@ -1,5 +1,8 @@
 <template>
-  <span>&copy; {{ new Date().getFullYear() + ' ' + blok.site_name}}</span>
+  <span
+    :class="blok.helpers"
+    :style="blok.style"
+  >&copy; {{ new Date().getFullYear() + ' ' + blok.site_name}}</span>
 </template>
 
 <script>

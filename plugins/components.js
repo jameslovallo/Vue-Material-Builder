@@ -28,6 +28,9 @@ Vue.component('blok-container', Container);
 import CopyrightText from '~/components/CopyrightText.vue';
 Vue.component('blok-copyrighttext', CopyrightText);
 
+import CustomHTML from '~/components/CustomHTML.vue';
+Vue.component('blok-customhtml', CustomHTML);
+
 import Dialog from '~/components/Dialog.vue';
 Vue.component('blok-dialog', Dialog);
 

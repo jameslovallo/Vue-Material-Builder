@@ -21,10 +21,11 @@ iframe {
   &.v-application {
     background: #111;
   }
-  &.v-card {
+  .v-card,
+  .v-list {
     background-color: #222;
   }
-  &.v-list {
-    background-color: transparent;
+  .v-navigation-drawer {
+    background-color: #222;
   }
 }

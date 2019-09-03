@@ -67,6 +67,8 @@ export default {
 }
 
 .v-card {
+  display: flex;
+  flex-direction: column;
   &__title,
   &__text,
   &__actions {
@@ -93,6 +95,10 @@ export default {
       margin-bottom: 0;
       margin-top: 0;
     }
+  }
+
+  &__text {
+    flex-grow: 1;
   }
 }
 

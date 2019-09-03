@@ -13,7 +13,9 @@
         :is="blok.component | dashify"
       ></component>
     </div>
-    <div :class="['page-content', blok.page_layout, 'py-6']">
+    <div
+      :class="['page-content', blok.page_layout, blok.disable_default_page_padding ? '' : 'py-6']"
+    >
       <component
         :key="blok._uid"
         v-for="blok in blok.body"

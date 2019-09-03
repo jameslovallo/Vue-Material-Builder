@@ -24,8 +24,8 @@ const IOS_ICON = process.env.IOS_ICON;
 const GOOGLE = process.env.GOOGLE;
 const BING = process.env.BING;
 
-//// Theme
-const THEME = process.env.THEME;
+//// Theme (Use hex values for colors)
+const THEME = process.env.THEME; // 'light' 'dark' 'auto'
 const PRIMARY_LIGHT = process.env.PRIMARY_LIGHT;
 const PRIMARY_DARK = process.env.PRIMARY_DARK;
 const SECONDARY_LIGHT = process.env.SECONDARY_LIGHT;
