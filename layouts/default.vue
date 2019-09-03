@@ -14,7 +14,7 @@
       </video>
     </div>
     <v-navigation-drawer
-      v-if="blok.sidebar_content != false && blok.sidebar_only_on_mobile ? $vuetify.breakpoint.mdAndDown : false"
+      v-if="blok.sidebar_content != false && blok.sidebar_only_on_mobile ? !$vuetify.breakpoint.lgAndUp : false"
       v-model="sidebar"
       app
       :clipped="!blok.sidebar_prominent"
@@ -45,7 +45,7 @@
       :style="blok.toolbar_style"
     >
       <v-app-bar-nav-icon
-        v-if="blok.sidebar_content != false && blok.sidebar_only_on_mobile ? $vuetify.breakpoint.mdAndDown : false"
+        v-if="blok.sidebar_content != false && blok.sidebar_only_on_mobile ? !$vuetify.breakpoint.lgAndUp : false"
         @click="sidebar = !sidebar"
         aria-label="Toggle the Sidebar Navigation"
       ></v-app-bar-nav-icon>
