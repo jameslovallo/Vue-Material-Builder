@@ -99,6 +99,7 @@ export default {
 
   &__text {
     flex-grow: 1;
+    height: 100%;
   }
 }
 
