@@ -1,5 +1,7 @@
 <template>
+  <!-- Vuetify Application Wrapper -->
   <v-app>
+    <!-- Background Video -->
     <div class="video-wrapper" :style="`align-items: ${blok.video_alignment};`">
       <video
         v-if="blok.video_webm || blok.video_mp4"
@@ -13,8 +15,9 @@
         <source :src="blok.video_mp4" type="video/mp4" />
       </video>
     </div>
+    <!-- App Drawer -->
     <v-navigation-drawer
-      v-if="blok.sidebar_content != false && blok.sidebar_only_on_mobile ? !$vuetify.breakpoint.lgAndUp : false"
+      v-if="showDrawer ? true : false"
       v-model="sidebar"
       app
       :clipped="!blok.sidebar_prominent"
@@ -31,7 +34,7 @@
         :is="blok.component | dashify"
       ></component>
     </v-navigation-drawer>
-    <!-- TOOLBAR -->
+    <!-- App Toolbar -->
     <v-app-bar
       v-if="blok.toolbar_content ? blok.toolbar_content.length > 0 : false"
       app
@@ -45,9 +48,9 @@
       :style="blok.toolbar_style"
     >
       <v-app-bar-nav-icon
-        v-if="blok.sidebar_content != false && blok.sidebar_only_on_mobile ? !$vuetify.breakpoint.lgAndUp : false"
+        v-if="showDrawer"
         @click="sidebar = !sidebar"
-        aria-label="Toggle the Sidebar Navigation"
+        aria-label="Toggle the Navigation Sidebar"
       ></v-app-bar-nav-icon>
       <component
         :key="blok._uid"
@@ -56,9 +59,11 @@
         :is="blok.component | dashify"
       ></component>
     </v-app-bar>
+    <!-- App Content -->
     <v-content>
       <nuxt />
     </v-content>
+    <!-- App Footer -->
     <v-footer
       v-if="blok.footer_content != false"
       app
@@ -75,6 +80,7 @@
         :is="blok.component | dashify"
       ></component>
     </v-footer>
+    <!-- Theme Switcher for Dev Purposes -->
     <v-btn
       v-if="blok.show_theme_switcher"
       @click="$vuetify.theme.dark = !$vuetify.theme.dark"
@@ -87,6 +93,7 @@
       <v-icon v-if="this.$vuetify.theme.dark">mdi-weather-night</v-icon>
       <v-icon v-if="!this.$vuetify.theme.dark">mdi-weather-sunny</v-icon>
     </v-btn>
+    <!-- Add Custom CSS Through Storyblok -->
     <style>
   {{blok.css}}
   body {
@@ -99,7 +106,7 @@
 export default {
   data: () => ({
     blok: {},
-    sidebar: null
+    sidebar: false
   }),
   mounted() {
     this.getData();
@@ -131,6 +138,19 @@ export default {
         .catch(error => {
           console.log(error);
         });
+    }
+  },
+  computed: {
+    showDrawer() {
+      let visible = false;
+      if (this.blok.sidebar_content != false) {
+        if (this.blok.sidebar_only_on_mobile) {
+          visible = this.$vuetify.breakpoint.smAndDown;
+        } else {
+          visible = true;
+        }
+      }
+      return visible;
     }
   },
   head() {

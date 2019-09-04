@@ -79,21 +79,20 @@ export default {
 }
 </style>
 
-<style>
-.content-list .v-list-item__title,
-.content-list .v-list-item__subtitle {
-  overflow: visible;
-  text-overflow: auto;
-  white-space: unset;
+<style lang="scss">
+.v-navigation-drawer__content .v-list {
+  background: transparent;
 }
-.content-list .v-list-item__content {
-  overflow: visible;
-  white-space: unset;
-}
-.content-list.v-list--three-line .v-list-item .v-list-item__subtitle,
-.content-list .v-list-item--three-line .v-list-item__subtitle {
-  -webkit-line-clamp: unset;
-  white-space: unset;
-  font-size: 1.1em;
+.content-list {
+  .v-list-item {
+    &__title,
+    &__subtitle,
+    &__content {
+      -webkit-line-clamp: unset;
+      overflow: visible;
+      text-overflow: auto;
+      white-space: unset;
+    }
+  }
 }
 </style>
