@@ -20,7 +20,6 @@ const NAME = process.env.NAME;
 const URL = process.env.URL;
 const FAVICON = process.env.FAVICON;
 const ICON = process.env.ICON;
-const IOS_ICON = process.env.IOS_ICON;
 const GOOGLE = process.env.GOOGLE;
 const BING = process.env.BING;
 
@@ -58,12 +57,6 @@ module.exports = {
   // Custom Site Meta (i.e. favicons)
   head: {
     meta: [{ name: 'msvalidate.01', content: BING }],
-    // link: [
-    //   {
-    //     rel: 'apple-touch-icon',
-    //     href: IOS_ICON ? IOS_ICON : '/icon.png'
-    //   }
-    // ],
     link: [
       {
         rel: 'icon',
