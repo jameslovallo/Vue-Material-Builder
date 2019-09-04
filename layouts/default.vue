@@ -145,7 +145,7 @@ export default {
       let visible = false;
       if (this.blok.sidebar_content != false) {
         if (this.blok.sidebar_only_on_mobile) {
-          visible = this.$vuetify.breakpoint.smAndDown;
+          visible = this.$vuetify.breakpoint.mdAndDown;
         } else {
           visible = true;
         }
