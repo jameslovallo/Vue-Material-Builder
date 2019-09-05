@@ -10,14 +10,12 @@ export default {
       if (process.client) {
         var el = document.getElementById(this.blok.id);
         var top = el.getBoundingClientRect().top;
-        if (top >= -200 && top <= 200) {
-          // this.$router.push("/#" + this.blok.id);
-          if (history.pushState) {
-            history.pushState(null, null, "/#" + this.blok.id);
-          } else {
-            location.hash = "/#" + this.blok.id;
-          }
+        if (top >= -75 && top <= 75) {
+          this.$router.push("/#" + this.blok.id);
         }
+        var toolbar = document.querySelector(".v-toolbar__content");
+        var selected = document.activeElement;
+        if (selected.parentNode == toolbar) selected.blur();
       }
     }
   }
