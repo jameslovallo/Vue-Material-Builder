@@ -49,6 +49,7 @@ export default {
         top: 0,
         behavior: "smooth"
       });
+      window.location = window.location.href.split("#")[0];
     }
   }
 };
