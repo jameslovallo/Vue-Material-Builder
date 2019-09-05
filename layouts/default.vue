@@ -115,6 +115,15 @@ export default {
         ? (this.$vuetify.theme.dark = true)
         : (this.$vuetify.theme.dark = false);
     }
+    // Fix scroll to hash on load for Chrome
+    window.onload = function() {
+      if (window.location.href.includes("#")) {
+        let hash = window.location.href.split("#")[1];
+        var el = document.getElementById(hash);
+        var top = el.getBoundingClientRect().top;
+        window.scrollTo(0, top + 60);
+      }
+    };
   },
   methods: {
     getData() {
