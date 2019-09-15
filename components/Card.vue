@@ -67,11 +67,14 @@ export default {
 }
 
 .v-card {
+  display: flex;
+  flex-direction: column;
   &__title,
   &__text,
   &__actions {
     position: relative;
     overflow: hidden;
+    flex-grow: 0;
     .v-btn {
       margin-left: 8px;
       &.v-size--large {
@@ -81,6 +84,10 @@ export default {
         margin-left: 0;
       }
     }
+  }
+
+  &__text {
+    flex-grow: 1;
   }
 
   &__title {
