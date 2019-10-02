@@ -200,4 +200,9 @@ export default {
 .v-footer--absolute.v-footer--inset {
 	width: auto;
 }
+@media (display-mode: standalone) {
+  .v-footer {
+    padding-bottom: 20px;
+  }
+}
 </style>
