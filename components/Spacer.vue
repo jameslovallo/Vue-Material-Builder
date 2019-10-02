@@ -1,10 +1,15 @@
 <template>
-  <v-spacer v-editable="blok" :class="blok.use_as_dot_leader ? 'dot-leader' : ''"></v-spacer>
+  <v-spacer v-editable="blok" :class="[blok.helpers, dotLeader]"></v-spacer>
 </template>
 
 <script>
 export default {
-  props: ["blok"]
+  props: ["blok"],
+  computed: {
+    dotLeader() {
+      return this.blok.use_as_dot_leader ? 'dot-leader' : ''
+    }
+  }
 };
 </script>
 
