@@ -74,7 +74,7 @@ export default {
     }
 
     let version = editMode ? "draft" : "published";
-    let path = context.route.path == "/" ? "home" : context.route.path;
+    let path = context.route.path == "/" ? "/home" : context.route.path;
 
     // Load the JSON from the API
     return loadData({
