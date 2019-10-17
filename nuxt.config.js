@@ -1,5 +1,5 @@
-import axios from 'axios'; // Load dependencies
-require('dotenv').config(); // Allow .env files
+import axios from 'axios' // Load dependencies
+require('dotenv').config() // Allow .env files
 
 //
 //
@@ -13,31 +13,31 @@ require('dotenv').config(); // Allow .env files
 // GET SITE SETTINGS FROM NETLIFY ENVIRONMENT VARIABLES
 
 //// Storyblok Preview Token
-const TOKEN = process.env.STORYBLOK_TOKEN;
+const TOKEN = process.env.STORYBLOK_TOKEN
 
 //// Meta
-const NAME = process.env.NAME;
-const URL = process.env.URL;
-const FAVICON = process.env.FAVICON;
-const ICON = process.env.ICON;
-const GOOGLE = process.env.GOOGLE;
-const BING = process.env.BING;
+const NAME = process.env.NAME
+const URL = process.env.URL
+const FAVICON = process.env.FAVICON
+const ICON = process.env.ICON
+const GOOGLE = process.env.GOOGLE
+const BING = process.env.BING
 
 //// Theme (Use hex values for colors)
-const THEME = process.env.THEME; // 'light' 'dark' 'auto'
-const PRIMARY_LIGHT = process.env.PRIMARY_LIGHT;
-const PRIMARY_DARK = process.env.PRIMARY_DARK;
-const SECONDARY_LIGHT = process.env.SECONDARY_LIGHT;
-const SECONDARY_DARK = process.env.SECONDARY_DARK;
-const PROGRESS_BAR = process.env.PROGRESS_BAR;
-const PWA_THEME = process.env.PWA_THEME; // Use nav color;
+const THEME = process.env.THEME // 'light' 'dark' 'auto'
+const PRIMARY_LIGHT = process.env.PRIMARY_LIGHT
+const PRIMARY_DARK = process.env.PRIMARY_DARK
+const SECONDARY_LIGHT = process.env.SECONDARY_LIGHT
+const SECONDARY_DARK = process.env.SECONDARY_DARK
+const PROGRESS_BAR = process.env.PROGRESS_BAR
+const PWA_THEME = process.env.PWA_THEME // Use nav color;
 
 /////////////////////////////
 // NUXT CONFIG STARTS HERE //
 /////////////////////////////
 
 module.exports = {
-  mode: 'universal', // Enable server-side rendering
+  mode: 'spa', // Enable server-side rendering
   env: { token: TOKEN, theme: THEME },
 
   //                   _
@@ -102,7 +102,10 @@ module.exports = {
 
   // Nuxt Modules
   modules: [
-    ['storyblok-nuxt', { accessToken: TOKEN, cacheProvider: 'memory' }],
+    [
+      'storyblok-nuxt',
+      { accessToken: TOKEN, cacheProvider: 'memory' }
+    ],
     ['@nuxtjs/markdownit'],
     ['@nuxtjs/pwa'],
     ['@nuxtjs/sitemap']
@@ -210,18 +213,20 @@ module.exports = {
   // Generate Routes
   generate: {
     routes: function(callback) {
-      const version = 'published';
-      let cache_version = 0;
+      const version = 'published'
+      let cache_version = 0
 
       // Other routes that are not in Storyblok with their slug.
-      let routes = ['/', '/home'];
+      let routes = ['/', '/home']
 
       // Load space and receive latest cache version key to improve performance
       axios
-        .get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${TOKEN}`)
+        .get(
+          `https://api.storyblok.com/v1/cdn/spaces/me?token=${TOKEN}`
+        )
         .then(space_res => {
           // timestamp of latest publish
-          cache_version = space_res.data.space.version;
+          cache_version = space_res.data.space.version
 
           // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
           axios
@@ -231,13 +236,13 @@ module.exports = {
             .then(res => {
               Object.keys(res.data.links).forEach(key => {
                 if (res.data.links[key].slug != 'home') {
-                  routes.push('/' + res.data.links[key].slug);
+                  routes.push('/' + res.data.links[key].slug)
                 }
-              });
+              })
 
-              callback(null, routes);
-            });
-        });
+              callback(null, routes)
+            })
+        })
     }
   }
-};
+}
