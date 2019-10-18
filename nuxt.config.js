@@ -37,7 +37,7 @@ const PWA_THEME = process.env.PWA_THEME // Use nav color;
 /////////////////////////////
 
 module.exports = {
-  mode: 'spa', // Enable server-side rendering
+  mode: 'spa', // Disbled server-rendering, best for live-editing
   env: { token: TOKEN, theme: THEME },
 
   //                   _
